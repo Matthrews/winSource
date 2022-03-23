@@ -2,12 +2,11 @@
 # @date: 2022/3/13 19:20
 import time
 
-from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.views import View
 
-from tools.emailSend import sendmail
 from tools.win_source import *
+from tools.emailSend import sendmail
 from winSource.settings import BASE_DIR, Domain
 
 
@@ -79,9 +78,8 @@ class Table(View):
                 <p>提交的文件访问地址是：{data['file']}"</p>
             '''
 
-        # print(data)
-        # print(html)
-
+        # 给他人时候这个发邮件的需要开启
         # sendmail(html)
+        print(data)
         # return HttpResponse(data)
-        return JsonResponse(data)
+        return render(request, 'myapp/result.html',context={"data":data})
