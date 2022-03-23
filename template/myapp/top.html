@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'loaders.css'%}"/>
+    <style>
+        nav {
+            height: 80px;
+        }
+
+        nav img {
+            margin: 0 0 0 5px;
+        }
+
+        #subHeader {
+            height: 300px;
+            width: 100%;
+            /*background: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");*/
+        }
+        #loader{
+            position: fixed;
+            top: 50vh;
+            left: 50vw;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+        <img src="https://via.placeholder.com/120x60" alt="">
+    </a>
+    <!-- Links -->
+    <!--        <ul class="navbar-nav">-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link" href="#">Link 1</a>-->
+    <!--            </li>-->
+    <!--        </ul>-->
+</nav>
+<div id="subHeader"></div>
+<div class="loader-inner ball-spin-fade-loader" id="loader" hidden>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
