@@ -11,30 +11,33 @@
         }
 
         h3 {
-            margin: 20px 0 20px 20px;
+            margin: 20px;
         }
+
         .search-container{
             margin: 0;
             width: 100%;
             background-color: #0070c0;
-            padding: 10px 0 10px 0;
+            padding: 10px 0;
         }
+
         .search {
             text-align: center;
-            display: flex;
-            width: 60%;
             margin: auto;
         }
 
         .search input {
+            display: inline;
+            vertical-align: top;
             width: 50%;
         }
 
         .search button {
+            display: inline;
             background-color: dodgerblue;
-            margin: auto 10px;
         }
         .search a{
+            display: inline;
             background-color: dodgerblue;
         }
 
@@ -61,19 +64,6 @@
 </head>
 <body>
 <div class="container">
-<!--    <nav class="navbar navbar-expand-sm bg-light navbar-light">-->
-        <!-- Brand/logo -->
-<!--        <a class="navbar-brand" href="#">-->
-<!--            <img src="https://via.placeholder.com/120x60" alt="">-->
-<!--        </a>-->
-
-        <!-- Links -->
-        <!--        <ul class="navbar-nav">-->
-        <!--            <li class="nav-item">-->
-        <!--                <a class="nav-link" href="#">Link 1</a>-->
-        <!--            </li>-->
-        <!--        </ul>-->
-<!--    </nav>-->
 {% include 'myapp/top.html' %}
 
 <div class="search-container">
@@ -110,18 +100,18 @@
             <!--                <td>{{item.item_detail_href}}</td>-->
             <td>{{item.item_detail_manufacturer_title}}</td>
             <!--                <td>{{item.item_detail_manufacturer_href}}</td>-->
-            <td>{% if item.item_detail_addinfo %}{{item.item_detail_addinfo}}{% else %}Empty{% endif %}</td>
+            <td>{% if item.item_detail_addinfo %}{{item.item_detail_addinfo}}{% else %}Null{% endif %}</td>
             <td>{{item.item_availablity_text}}</td>
             <td>{{item.item_availablity_price}}</td>
             <td>
                 {% if item.item_availablity_env %}
                 <img src="https://www.win-source.net{{item.item_availablity_env}}" style="width: 40px;height: 40px"/>
-                {% else %}Empty{% endif %}
+                {% else %}Null{% endif %}
             </td>
             <td>
                 {% if item.item_availablity_pdf %}
-                <a target="_blank" href="{{item.item_availablity_pdf}}">go for check</a>
-                {% else %}Empty{% endif %}
+                <a target="_blank" href="{{item.item_availablity_pdf}}">Check</a>
+                {% else %}Null{% endif %}
                 <!--                    {% if item.item_availablity_pdf %}{{item.item_availablity_pdf}}{% else %}无{% endif %}-->
             </td>
             <td>
@@ -157,18 +147,6 @@
     </ul>
     <!--    <div id="backup" onclick="backto()"></div>-->
 
-    <!-- 模态框 -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- 模态框头部 -->
-                <div class="modal-header">
-                    <h4 class="modal-title">产品咨询</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"></script>
