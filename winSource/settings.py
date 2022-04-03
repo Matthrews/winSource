@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR.joinpath('static')]
-STATIC_ROOT = 'static'
+STATIC_ROOT = 'collectstatic'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('upload')
