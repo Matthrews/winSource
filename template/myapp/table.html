@@ -81,7 +81,7 @@
 
             <h2>Submit RFQ</h2>
             <p>If you have a Request For Quote, use the form below to submit it.</p>
-            <form method="post" action="/table/" onsubmit="return preSubmit2(this)">
+            <form method="post" action="/form/" onsubmit="return preSubmit2(this)">
                 <input type="text" name="type" hidden value="rfq">
                 {% csrf_token %}
                 <div class="row">
