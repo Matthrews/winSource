@@ -27,9 +27,21 @@
       <div class="starter-template">
         <h1>提交成功！</h1>
         <p class="lead">
-          <a href="/">返回首页</a>
+          <a href="/" id="tip">返回首页【3】</a>
         </p>
       </div>
     </main>
   </body>
+  <script>
+
+    var count = 2
+    window.setInterval(function () {
+      document.querySelector('#tip').innerHTML = '返回首页【'+ count +'】'
+      count = count - 1
+    },1000)
+
+    window.setTimeout(function () {
+        window.location.href = "/table"
+    },3000)
+  </script>
 </html>

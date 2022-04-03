@@ -1,6 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.utils import formataddr
+from background_task import background
 
 my_sender = '1500548410@qq.com'  # 填写发信人的邮箱账号
 my_pass = 'kelifohlqplfjheh'  # 发件人邮箱授权码
@@ -8,7 +9,7 @@ my_pass = 'kelifohlqplfjheh'  # 发件人邮箱授权码
 my_user = '1010351486@qq.com'  # 收件人邮箱账号
 # my_user = '1500548410@qq.com'
 
-
+@background
 def sendmail(html):
     try:
         server = smtplib.SMTP_SSL("smtp.qq.com", 465)  # 发件人邮箱中的SMTP服务器
