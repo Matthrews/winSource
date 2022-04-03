@@ -46,7 +46,7 @@
         <div class="left">
             <h2>BOM Upload</h2>
             <p>If you have a Bill of Materials (BOM) for upload, use the form below to upload it.</p>
-            <form action="/table/" method="post" enctype="multipart/form-data" onsubmit="return preSubmit1(this)">
+            <form action="/form/" method="post" enctype="multipart/form-data" onsubmit="return preSubmit1(this)">
                 {% csrf_token %}
                 <input type="text" name="type" hidden value="bom">
                 <div class="col">
