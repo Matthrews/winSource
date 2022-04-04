@@ -17,7 +17,7 @@ class Index(View):
 
 def handleSearch(request):
     searchParam = request.GET.get("q")
-    pageSize = request.GET.get("pagesize", 30)
+    pageSize = request.GET.get("pagesize", 20)
     pageNumber = request.GET.get('pagenumber', 1)
     res = sensitive_sync_function(searchParam, pageSize, pageNumber)
     # return JsonResponse(res)
