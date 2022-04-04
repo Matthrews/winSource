@@ -1,0 +1,400 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        #footer {
+            background-color: #002060;
+            color: #ccc;
+        }
+
+        #footer .widgets_wrapper {
+            padding: 50px 0 40px;
+        }
+
+        a,
+        a:visited,
+        a:focus {
+            text-decoration: none;
+            outline: 0;
+        }
+
+        #footer a:hover {
+            color: rgba(0, 112, 192, 0.8);
+            text-decoration: underline;
+        }
+
+        #footer ul,
+        #footer li,
+        #footer li a {
+            color: #fff;
+        }
+
+        .widget_archive ul li a,
+        .widget_nav_menu ul li a {
+            display: block;
+            padding: 8px 0 9px 3px;
+        }
+
+        .column,
+        .columns {
+            float: left;
+            margin: 0 1% 40px;
+        }
+
+        .one.column {
+            width: 98%;
+        }
+
+        .one-fourth.column,
+        .four.columns {
+            width: 23%;
+        }
+
+        .widget_archive ul,
+        .widget_nav_menu ul {
+            list-style-type: square;
+            padding: 5px 10px 5px 30px;
+            background: rgba(0, 0, 0, .03);
+        }
+
+
+        .widget_archive ul li,
+        .widget_nav_menu ul li {
+            position: relative;
+        }
+
+        #footer .widgets_wrapper .column {
+            margin-bottom: 0;
+        }
+
+        #footer .widgets_wrapper .widget {
+            padding: 15px 0;
+            margin-bottom: 0;
+        }
+
+        #footer .widgets_wrapper .widget h4 {
+            font-size: 22px;
+            line-height: 26px;
+            font-weight: 400;
+            letter-spacing: 5px;
+        }
+
+        #footer .widgets_wrapper .widget_nav_menu ul {
+            color: #0070c0;
+        }
+
+        #gallery-1 {
+            margin: auto;
+        }
+
+        #gallery-1 .gallery-item {
+            float: left;
+            margin-top: 10px;
+            text-align: center;
+            width: 33%;
+        }
+
+        #gallery-1 img {
+            border: 2px solid #cfcfcf;
+        }
+
+        #gallery-1 .gallery-caption {
+            margin-left: 0;
+        }
+
+        .gallery .gallery-item img {
+            display: block;
+            line-height: 0;
+            max-width: 100%;
+            height: auto;
+            border: 0 !important;
+        }
+
+        .gallery .gallery-item {
+            overflow: hidden;
+            margin: 0 0 2.5% !important;
+        }
+
+        .gallery .gallery-item .gallery-icon {
+            border: 0;
+            width: 95%;
+            overflow: hidden;
+            line-height: 0;
+            margin-right: 2.5% !important;
+            margin-left: 2.5% !important;
+            padding: 0 !important;
+            position: relative;
+        }
+
+        .gallery-columns-3 .gallery-item:nth-of-type(3n+1) {
+            clear: both;
+        }
+
+        #footer .footer-copy {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #footer .footer-copy .one {
+            margin-bottom: 20px;
+            padding-top: 30px;
+            min-height: 33px;
+        }
+
+        #footer .footer-copy .social {
+            float: none;
+            margin: 0;
+        }
+
+        #footer .footer-copy .social li {
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        #footer .footer-copy .social li:last-child {
+            margin-right: 0;
+        }
+
+        #footer .footer-copy .social li a {
+            color: rgba(255, 255, 255, .3);
+            font-size: 15px;
+            font-style: italic;
+            line-height: 15px;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+
+        /* https://www.class-ic.com/wp-content/themes/betheme/css/base.css?ver=21.1.2 */
+        .icon-twitter:before {
+            content: '\f309'
+        }
+
+        .icon-twitter-circled:before {
+            content: '\f30a'
+        }
+
+        .icon-facebook:before {
+            content: '\f30c'
+        }
+
+        .icon-facebook-circled:before {
+            content: '\f30d'
+        }
+
+        .icon-facebook-squared:before {
+            content: '\f30e'
+        }
+
+        .icon-linkedin:before {
+            content: '\f318'
+        }
+
+        .icon-linkedin-circled:before {
+            content: '\f319'
+        }
+
+        .widget_archive ul li a,
+        .widget_nav_menu ul li a {
+            display: block;
+            padding: 8px 0 9px 3px;
+        }
+
+        .widget_archive ul li:after,
+        .widget_nav_menu ul li:after {
+            content: "";
+            display: block;
+            width: 70px;
+            border-width: 0 0 1px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, .1);
+            position: absolute;
+            left: -30px;
+            bottom: 0;
+        }
+
+        #footer .widget_nav_menu ul li:after {
+            border-color: rgba(255, 255, 255, .08);
+        }
+    </style>
+</head>
+
+<body>
+    <footer id="footer" class="clearfix">
+        <div class="widgets_wrapper">
+            <div class="container clearfix">
+                <div class="column one-fourth">
+                    <aside id="nav_menu-5" class="widget widget_nav_menu">
+                        <h4>About Us</h4>
+                        <div class="menu-about-us-container">
+                            <ul id="menu-about-us" class="menu">
+                                <li id="menu-item-3390"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3390"><a
+                                        href="https://www.class-ic.com/career-opportunities/">Careers</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="column one-fourth">
+                    <aside id="nav_menu-6" class="widget widget_nav_menu">
+                        <h4>Site Information</h4>
+                        <div class="menu-site-information-container">
+                            <ul id="menu-site-information" class="menu">
+                                <li id="menu-item-2738"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2738"><a
+                                        href="https://www.class-ic.com/privacy-policy-2/">Privacy Policy</a></li>
+                                <li id="menu-item-2740"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2740"><a
+                                        href="https://www.class-ic.com/terms-conditions/">Terms &amp; Conditions</a>
+                                </li>
+                                <li id="menu-item-2739"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2739"><a
+                                        href="https://www.class-ic.com/sitemap/">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="column one-fourth">
+                    <aside id="nav_menu-7" class="widget widget_nav_menu">
+                        <h4>Additional Resources</h4>
+                        <div class="menu-additional-resources-container">
+                            <ul id="menu-additional-resources" class="menu">
+                                <li id="menu-item-3520"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3520"><a
+                                        href="https://www.class-ic.com/upload-bill-of-materials/">Request a Quote</a>
+                                </li>
+                                <li id="menu-item-3521"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2916 current_page_item menu-item-3521">
+                                    <a href="https://www.class-ic.com/search/" aria-current="page">Search for Parts</a>
+                                </li>
+                                <li id="menu-item-3644"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3644"><a
+                                        href="/quality-documents/">Intranet</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="column one-fourth">
+                    <aside id="custom_html-4" class="widget_text widget widget_custom_html">
+                        <h4>Certifications</h4>
+                        <div class="textwidget custom-html-widget">
+                            <style type="text/css">
+                                #gallery-1 {
+                                    margin: auto;
+                                }
+
+                                #gallery-1 .gallery-item {
+                                    float: left;
+                                    margin-top: 10px;
+                                    text-align: center;
+                                    width: 33%;
+                                }
+
+                                #gallery-1 img {
+                                    border: 2px solid #cfcfcf;
+                                }
+
+                                #gallery-1 .gallery-caption {
+                                    margin-left: 0;
+                                }
+
+                                /* see gallery_shortcode() in wp-includes/media.php */
+                            </style>
+                            <div id="gallery-1" class="gallery galleryid-69 gallery-columns-3 gallery-size-full">
+                                <dl class="gallery-item">
+                                    <dt class="gallery-icon landscape">
+                                        <a href="/quality-certifications/"><img width="96" height="96"
+                                                src="https://www.class-ic.com/wp-content/uploads/2019/04/1-isa-bw.png"
+                                                class="attachment-full size-full" alt=""
+                                                srcset="https://www.class-ic.com/wp-content/uploads/2019/04/1-isa-bw.png 96w, https://www.class-ic.com/wp-content/uploads/2019/04/1-isa-bw-50x50.png 50w, https://www.class-ic.com/wp-content/uploads/2019/04/1-isa-bw-75x75.png 75w, https://www.class-ic.com/wp-content/uploads/2019/04/1-isa-bw-85x85.png 85w, https://www.class-ic.com/wp-content/uploads/2019/04/1-isa-bw-80x80.png 80w"
+                                                sizes="(max-width: 96px) 100vw, 96px"></a>
+                                    </dt>
+                                </dl>
+                                <dl class="gallery-item">
+                                    <dt class="gallery-icon landscape">
+                                        <a href="/quality-certifications/"><img width="96" height="96"
+                                                src="https://www.class-ic.com/wp-content/uploads/2019/04/2-esd-bw.png"
+                                                class="attachment-full size-full" alt=""
+                                                srcset="https://www.class-ic.com/wp-content/uploads/2019/04/2-esd-bw.png 96w, https://www.class-ic.com/wp-content/uploads/2019/04/2-esd-bw-50x50.png 50w, https://www.class-ic.com/wp-content/uploads/2019/04/2-esd-bw-75x75.png 75w, https://www.class-ic.com/wp-content/uploads/2019/04/2-esd-bw-85x85.png 85w, https://www.class-ic.com/wp-content/uploads/2019/04/2-esd-bw-80x80.png 80w"
+                                                sizes="(max-width: 96px) 100vw, 96px"></a>
+                                    </dt>
+                                </dl>
+                                <dl class="gallery-item">
+                                    <dt class="gallery-icon landscape">
+                                        <a href="/quality-certifications/"><img width="96" height="96"
+                                                src="https://www.class-ic.com/wp-content/uploads/2019/04/3-erai-bw.png"
+                                                class="attachment-full size-full" alt=""
+                                                srcset="https://www.class-ic.com/wp-content/uploads/2019/04/3-erai-bw.png 96w, https://www.class-ic.com/wp-content/uploads/2019/04/3-erai-bw-50x50.png 50w, https://www.class-ic.com/wp-content/uploads/2019/04/3-erai-bw-75x75.png 75w, https://www.class-ic.com/wp-content/uploads/2019/04/3-erai-bw-85x85.png 85w, https://www.class-ic.com/wp-content/uploads/2019/04/3-erai-bw-80x80.png 80w"
+                                                sizes="(max-width: 96px) 100vw, 96px"></a>
+                                    </dt>
+                                </dl><br style="clear: both">
+                                <dl class="gallery-item">
+                                    <dt class="gallery-icon landscape">
+                                        <a href="/quality-certifications/"><img width="96" height="96"
+                                                src="https://www.class-ic.com/wp-content/uploads/2019/04/4-gide-bw.png"
+                                                class="attachment-full size-full" alt=""
+                                                srcset="https://www.class-ic.com/wp-content/uploads/2019/04/4-gide-bw.png 96w, https://www.class-ic.com/wp-content/uploads/2019/04/4-gide-bw-50x50.png 50w, https://www.class-ic.com/wp-content/uploads/2019/04/4-gide-bw-75x75.png 75w, https://www.class-ic.com/wp-content/uploads/2019/04/4-gide-bw-85x85.png 85w, https://www.class-ic.com/wp-content/uploads/2019/04/4-gide-bw-80x80.png 80w"
+                                                sizes="(max-width: 96px) 100vw, 96px"></a>
+                                    </dt>
+                                </dl>
+                                <dl class="gallery-item">
+                                    <dt class="gallery-icon landscape">
+                                        <a href="/quality-certifications/"><img width="96" height="96"
+                                                src="https://www.class-ic.com/wp-content/uploads/2019/04/5-iaqg-bw.png"
+                                                class="attachment-full size-full" alt=""
+                                                srcset="https://www.class-ic.com/wp-content/uploads/2019/04/5-iaqg-bw.png 96w, https://www.class-ic.com/wp-content/uploads/2019/04/5-iaqg-bw-50x50.png 50w, https://www.class-ic.com/wp-content/uploads/2019/04/5-iaqg-bw-75x75.png 75w, https://www.class-ic.com/wp-content/uploads/2019/04/5-iaqg-bw-85x85.png 85w, https://www.class-ic.com/wp-content/uploads/2019/04/5-iaqg-bw-80x80.png 80w"
+                                                sizes="(max-width: 96px) 100vw, 96px"></a>
+                                    </dt>
+                                </dl>
+                                <dl class="gallery-item">
+                                    <dt class="gallery-icon landscape">
+                                        <a href="/quality-certifications/"><img width="96" height="96"
+                                                src="https://www.class-ic.com/wp-content/uploads/2019/04/6-itar-bw.png"
+                                                class="attachment-full size-full" alt=""
+                                                srcset="https://www.class-ic.com/wp-content/uploads/2019/04/6-itar-bw.png 96w, https://www.class-ic.com/wp-content/uploads/2019/04/6-itar-bw-50x50.png 50w, https://www.class-ic.com/wp-content/uploads/2019/04/6-itar-bw-75x75.png 75w, https://www.class-ic.com/wp-content/uploads/2019/04/6-itar-bw-85x85.png 85w, https://www.class-ic.com/wp-content/uploads/2019/04/6-itar-bw-80x80.png 80w"
+                                                sizes="(max-width: 96px) 100vw, 96px"></a>
+                                    </dt>
+                                </dl><br style="clear: both">
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <div class="container">
+                <div class="column one">
+
+
+                    <div class="copyright">
+                        © 2022 Classic Components. All Rights Reserved. </div>
+
+                    <ul class="social">
+                        <li class="facebook"><a target="_blank" href="https://www.facebook.com/ClassicComponentsHQ/"
+                                title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li class="twitter"><a target="_blank" href="https://twitter.com/classiccorp" title="Twitter"><i
+                                    class="fa fa-twitter"></i></a></li>
+                        <li class="linkedin"><a target="_blank"
+                                href="https://www.linkedin.com/company/classic-components/" title="LinkedIn"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    </footer>
+</body>
+
+</html>

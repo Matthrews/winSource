@@ -2,7 +2,7 @@ import cfscrape
 from lxml import etree
 
 
-def sensitive_sync_function(searchParam, pageSize, pageNumber):
+def sensitive_sync_function(searchParam, pageSize=20, pageNumber=1):
     result_dict = {}
     # 实例化一个create_scraper对象
     # scraper = cfscrape.create_scraper()
@@ -47,7 +47,7 @@ def sensitive_sync_function(searchParam, pageSize, pageNumber):
             item_detail_addinfo = item_d.xpath('./div[@class="add-info"]/a/div/text()')
         item_availablity = item.xpath('./div[@class="availablity"]')
         for item_a in item_availablity:
-            item_availablity_text = item_a.xpath('./div[@class="product-title"]/text()')
+            item_availablity_text = item_a.xpath('./div[@class="product-title"]/text()').replace("pieces","")
             item_availablity_price = item_a.xpath('./span/text()')
             item_availablity_env = item_a.xpath('./span[2]/span/img/@src')
             item_availablity_pdf = item_a.xpath('./span[2]/a/@href')
