@@ -64,6 +64,12 @@
             background: rgba(0, 0, 0, .03);
         }
 
+
+        .widget_archive ul li,
+        .widget_nav_menu ul li {
+            position: relative;
+        }
+
         #footer .widgets_wrapper .column {
             margin-bottom: 0;
         }
@@ -83,7 +89,6 @@
         #footer .widgets_wrapper .widget_nav_menu ul {
             color: #0070c0;
         }
-
 
         #gallery-1 {
             margin: auto;
@@ -196,6 +201,29 @@
 
         .icon-linkedin-circled:before {
             content: '\f319'
+        }
+
+        .widget_archive ul li a,
+        .widget_nav_menu ul li a {
+            display: block;
+            padding: 8px 0 9px 3px;
+        }
+
+        .widget_archive ul li:after,
+        .widget_nav_menu ul li:after {
+            content: "";
+            display: block;
+            width: 70px;
+            border-width: 0 0 1px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, .1);
+            position: absolute;
+            left: -30px;
+            bottom: 0;
+        }
+
+        #footer .widget_nav_menu ul li:after {
+            border-color: rgba(255, 255, 255, .08);
         }
     </style>
 </head>
