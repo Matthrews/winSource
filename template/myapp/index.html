@@ -226,7 +226,6 @@
         }
 
 
-
         #backup {
             width: 50px;
             height: 50px;
@@ -255,14 +254,14 @@
                 <img class="logo" src="https://www.attcomp.com/static/img/logo-sm.png" height="42px" alt="logo">
                 <input type="search" class="form-control" id="value" placeholder="Part search..." name="q">
                 <button type="submit" class="btn btn-primary" onclick="doSearch()">Search</button>
-                <a type="button" class="btn btn-primary upload-btn" href="/table/" target="_blank">Upoad B.O.M</a>
+                <a type="button" class="btn btn-primary upload-btn" href="/form/" target="_blank">Upoad B.O.M</a>
             </div>
         </div>
 
         <!-- Search Results -->
         <div class="search-result-list">
             <table class="table table-hover caption-top">
-                <caption>Search results for {{q}}</caption>
+                <caption>Search results for {{q}}：</caption>
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -284,19 +283,19 @@
                         <!--                <td>{{item.item_detail_href}}</td>-->
                         <td>{{item.item_detail_manufacturer_title}}</td>
                         <!--                <td>{{item.item_detail_manufacturer_href}}</td>-->
-                        <td>{% if item.item_detail_addinfo %}{{item.item_detail_addinfo}}{% else %}Empty{% endif %}</td>
+                        <td>{% if item.item_detail_addinfo %}{{item.item_detail_addinfo}}{% else %}Null{% endif %}</td>
                         <td>{{item.item_availablity_text}}</td>
                         <td>{{item.item_availablity_price}}</td>
                         <td>
                             {% if item.item_availablity_env %}
                             <img src="https://www.win-source.net{{item.item_availablity_env}}"
                                 style="object-fit: cover; height: 40px" />
-                            {% else %}Empty{% endif %}
+                            {% else %}Null{% endif %}
                         </td>
                         <td>
                             {% if item.item_availablity_pdf %}
-                            <a target="_blank" href="{{item.item_availablity_pdf}}">go for check</a>
-                            {% else %}Empty{% endif %}
+                            <a target="_blank" href="{{item.item_availablity_pdf}}">check</a>
+                            {% else %}Null{% endif %}
                         </td>
                         <td>
                             <img src="{{item.picture}}" alt="" style="object-fit: cover; height:64px">
