@@ -56,7 +56,7 @@ class Table(View):
             '''
         else:
             file = request.FILES.get("file")
-            file_name = f"{time.time()}-{file.name}"
+            file_name = f"{time.time()}-{str(file.name).replace(' ','')}"
             tmp_path = BASE_DIR.joinpath("upload").joinpath(file_name)
             f = open(tmp_path, 'wb')
             for line in file.chunks():
@@ -82,4 +82,4 @@ class Table(View):
         # sendmail(html)
         print(data)
         # return HttpResponse(data)
-        return render(request, 'myapp/result.html',context={"data":data})
+        return render(request, 'myapp/result.html', context={"data": data})
