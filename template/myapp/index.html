@@ -118,11 +118,12 @@
             position: absolute;
         }
 
-        .home-wrapper {
-            position: relative;
-            min-width: 100%;
-            padding: 0;
-        }
+        /*.home-wrapper {*/
+            /*position: relative;*/
+            /*min-width: 100%;*/
+            /*padding: 0;*/
+            /*margin: auto;*/
+        /*}*/
 
         h3 {
             margin: 20px;
@@ -181,7 +182,7 @@
         .search-result-list,
         .pagination-wrapper {
             position: relative;
-            margin: 0 calc(50vw - 600px);
+            /*margin: 0 calc(50vw - 600px);*/
             max-width: 1200px;
             background-color: #fff;
         }
@@ -202,7 +203,9 @@
             letter-spacing: 5px;
             padding: 15px 0;
         }
-
+        table {
+            width: 100%;
+        }
         tr th,
         td {
             text-align: center;
@@ -225,18 +228,6 @@
             margin-bottom: 40px;
         }
 
-
-        #backup {
-            width: 50px;
-            height: 50px;
-            display: inline;
-            border-radius: 50%;
-            background-color: #0D88C1;
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-        }
-
         #spinner {
             position: fixed;
             top: 50vh;
@@ -246,6 +237,7 @@
 </head>
 
 <body>
+
     <div class="container home-wrapper">
         {% include 'myapp/top.html' %}
 
@@ -300,11 +292,6 @@
                         <td>
                             <img src="{{item.picture}}" alt="" style="object-fit: cover; height:64px">
                         </td>
-                        <!--            <td>-->
-                        <!--                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal">咨询-->
-                        <!--                </button>-->
-                        <!--                <a>前去咨询</a>-->
-                        <!--            </td>-->
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -312,8 +299,7 @@
         </div>
 
         <!-- Pagination -->
-        {% if res.data_list.length %}
-        <nav class="pagination-wrapper">
+        <div class="pagination-wrapper">
             <ul class="pagination">
                 {% if res.pager_dict.preview_pager %}
                 <li class="page-item"><a class="page-link"
@@ -326,34 +312,17 @@
                 </li>
 
                 {% if res.pager_dict.next_pager %}
-                <li class="page-item"><a class="page-link"
-                        href="/search/?q={{q}}&pagenumber={{res.pager_dict.next_pager}}">Next Page</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="/search/?q={{q}}&pagenumber={{res.pager_dict.next_pager}}">Next Page</a>
+                </li>
                 {% endif %}
 
                 {% if res.pager_dict.last_pager %}
-                <li class="page-item"><a class="page-link"
-                        href="/search/?q={{q}}&pagenumber={{res.pager_dict.last_pager}}">Last Page</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="/search/?q={{q}}&pagenumber={{res.pager_dict.last_pager}}">Last Page</a>
+                </li>
                 {% endif %}
             </ul>
-        </nav>
-        {% endif %}
-
-        <!-- Backtop -->
-        <!-- <div id="backup" onclick="backto()"></div> -->
-
-        {% include 'myapp/footer.html' %}
-
-        <!-- Modal -->
-        <div class="modal" id="myModal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <!-- 模态框头部 -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">产品咨询</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Loading Spinner -->
@@ -368,11 +337,12 @@
             <div></div>
         </div>
 
+        {% include 'myapp/footer.html' %}
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script>
         function doSearch() {
             var spinnerElement = document.getElementById("spinner");
@@ -389,5 +359,4 @@
         }
     </script>
 </body>
-
 </html>

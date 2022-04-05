@@ -5,17 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!-- <link rel="stylesheet" href="{% static 'css/animations.css'%}" /> -->
-    <!-- <link rel="stylesheet" href="{% static 'css/base_extend.css'%}" /> -->
-    <!-- <link rel="stylesheet" href="/static/css/animations.css" /> -->
-    <!-- <link rel="stylesheet" href="/static/css/base_extend.css" /> -->
     <style>
-        /* base_extend */
-        /* TODO 发布时替换base_extend.css */
-        .w-38 {
-            width: 38% !important;
-        }
-
         header>.navbar {
             position: absolute;
             top: 0;
@@ -33,19 +23,12 @@
             animation: fade-in-and-out 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite both;
         }
 
-
         .navbar-nav .nav-item .nav-link {
             padding: 15px 20px;
         }
 
         .navbar-nav .nav-item .nav-link::after {
             display: none;
-        }
-
-        .navbar-brand.logo {
-            min-width: 240px;
-            text-align: center;
-            padding: 1rem 2rem;
         }
 
         @-webkit-keyframes fade-in-and-out {
