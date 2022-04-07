@@ -36,13 +36,15 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp'
+    'myapp',
+    'background_task',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +126,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR.joinpath('static')]
+STATIC_ROOT = BASE_DIR.joinpath('collectstatic')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('upload')
