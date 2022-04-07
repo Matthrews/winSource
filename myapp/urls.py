@@ -10,7 +10,7 @@ app_name = "myapp"
 urlpatterns = [
     path('', Index.as_view()),
     path('table/', Table.as_view(), name="table"),
-    path('aboutus/', AboutUs.as_view(), name="aboutus"),
+    path('about_us/', AboutUs.as_view(), name="aboutus"),
     path('search/', handleSearch, name="search"),
     re_path(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT})
 ]

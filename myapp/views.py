@@ -82,9 +82,9 @@ class Table(View):
         # sendmail(html)
         print(data)
         # return HttpResponse(data)
-        return render(request, 'myapp/result.html',context={"data":data})
+        return render(request, 'myapp/upload_result.html',context={"data":data})
 
 
 class AboutUs(View): 
     def get(self, request):
-        return render(request, template_name='myapp/aboutus.html')
+        return render(request, template_name='myapp/about_us.html')
