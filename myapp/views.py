@@ -21,7 +21,7 @@ def handleSearch(request):
     pageNumber = request.GET.get('pagenumber', 1)
     res = sensitive_sync_function(searchParam, pageSize, pageNumber)
     # return JsonResponse(res)
-    return render(request, template_name='myapp/index.html', context={'q': searchParam, 'res': res})
+    return render(request, template_name='myapp/search.html', context={'q': searchParam, 'res': res})
 
 
 class Table(View):
@@ -82,4 +82,9 @@ class Table(View):
         # sendmail(html)
         print(data)
         # return HttpResponse(data)
-        return render(request, 'myapp/result.html', context={"data": data})
+        return render(request, 'myapp/upload_result.html',context={"data":data})
+
+
+class AboutUs(View): 
+    def get(self, request):
+        return render(request, template_name='myapp/about_us.html')
