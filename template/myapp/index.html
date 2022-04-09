@@ -1,9 +1,10 @@
 {% extends 'myapp/layout.html' %}
-
+{% load static %}
 {% block custom_style %}
     <style>
     .home-cover {
-        background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");
+        /*background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");*/
+        background-image: url("{% static 'img/parts2-cropped.png' %}");
         background-size: cover;
     }
 

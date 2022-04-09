@@ -19,7 +19,7 @@ def handleSearch(request):
     searchParam = request.GET.get("q")
     pageSize = request.GET.get("pagesize", 20)
     pageNumber = request.GET.get('pagenumber', 1)
-    res = sensitive_sync_function(searchParam, pageSize, pageNumber)
+    res = sensitive_sync_function(searchParam, pageSize=pageSize, pageNumber=pageNumber)
     # return JsonResponse(res)
     return render(request, template_name='myapp/index.html', context={'q': searchParam, 'res': res})
 
