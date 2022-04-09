@@ -19,7 +19,6 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animations.css' %}">
     <title>{% block title %}{% endblock %}</title>
     <style>
         .cover {
@@ -62,6 +61,13 @@
             background-color: var(--bs-primary);
             border-color: var(--bs-primary);
         }
+
+        #spinner {
+            position: fixed;
+            top: 70vh;
+            left: 50vw;
+            color: var(--bs-primary);
+        }
     </style>
     {% block custom_style %}{% endblock %}
 </head>
@@ -92,15 +98,10 @@
     </div>
 
     <!-- Loading Spinner -->
-    <div class="loader-inner ball-spin-fade-loader" id="spinner" hidden>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div id="spinner" class="d-none d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
         crossorigin="anonymous"></script>

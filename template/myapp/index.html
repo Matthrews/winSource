@@ -1,6 +1,7 @@
 {% extends 'myapp/layout.html' %}
+
 {% block custom_style %}
-<style>
+    <style>
     .home-cover {
         background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");
         background-size: cover;
@@ -321,15 +322,13 @@
         right: 20px;
         bottom: 20px;
     }
-
-    #spinner {
-        position: fixed;
-        top: 50vh;
-        left: 50vw;
-    }
 </style>
 {% endblock %}
-{% block title %}Classic Components – Electronic Components Distributor{% endblock %}
+
+{% block title %}
+    Classic Components – Electronic Components Distributor
+{% endblock %}
+
 {% block content %}
 <div class="cover home-cover">
     {% if q %}
@@ -351,10 +350,8 @@
         </div>
     </div>
 
-<!--    {{ res.data_list }}-->
-
     {% if res.data_list %}
-    <div class="container result-wrapper">
+        <div class="container result-wrapper">
         <!-- Search Results -->
         <div class="search-result-list">
             <table class="table table-hover caption-top">
@@ -397,11 +394,6 @@
                         <td>
                             <img src="{{item.picture}}" alt="" style="object-fit: cover; height:64px">
                         </td>
-                        <!--            <td>-->
-                        <!--                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal">咨询-->
-                        <!--                </button>-->
-                        <!--                <a>前去咨询</a>-->
-                        <!--            </td>-->
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -872,13 +864,15 @@
             </div>
         </div>
     {% endif %}
-
 </div>
 <script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.min.js" crossorigin="anonymous"></script>
 <script>
     new WOW().init();
 </script>
 <script>
+    window.onload = function () {
+        document.body.classList.remove("opacity-75");
+    };
     function doSearch() {
         var spinnerElement = document.getElementById("spinner");
         var searchElement = document.getElementById("value");
@@ -887,10 +881,12 @@
         }
 
         var searchValue = searchElement.value.trim();
-        spinnerElement.toggleAttribute("hidden");
+        document.body.classList.add("opacity-75");
+        spinnerElement.classList.remove("d-none");
         if (/([a-zA-Z0-9]{1,11})/.test(searchValue)) {
             document.location.href = `/search?q=${searchValue}`
         }
     }
 </script>
-{% endblock %}
+
+{% endblock content %}
