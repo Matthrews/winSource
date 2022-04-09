@@ -1,80 +1,67 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="zh-CN">
+{% extends 'myapp/layout.html' %}
+{% block custom_style %}
+<style>
+    .aboutus-wrapper {
+        position: relative;
+        margin: 0 calc(50vw - 600px);
+        max-width: 1200px;
+        background-color: #fff;
+        padding-top: 30px;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description"
-        content="Welcome and thank you for choosing Classic Components, among the world’s largest Independent Distributors of electronic components serving technology companies worldwide. For over 30 years, Classic has been providing its customers with innovative supply chain solutions and programs that support productivity, enhance profitability, and minimize risk exposure due to material imbalances and unpredictable supply/demand fluctuations in the electronics distribution industry.">
-    <meta name="keywords"
-        content="classic, classic components, component/components, electronic/electronics, distributor, independent, broker, as9210, supply, chain, semiconductor, quality">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="robots" content="max-image-preview:large">
-    <link rel="shortcut icon" href="https://www.attcomp.com/static/img/logo-sm.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://www.attcomp.com/static/img/logo-sm.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
-    <title>Classic Components History</title>
+    .aboutus-wrapper p {
+        margin: 0 0 15px;
+        font-size: 18px;
+        color: #626262;
+    }
 
-    <style>
-        .aboutus-wrapper {
-            position: relative;
-            margin: 0 calc(50vw - 600px);
-            max-width: 1200px;
-            background-color: #fff;
-            padding-top: 30px;
-        }
-
-        .aboutus-wrapper p {
-            margin: 0 0 15px;
-            font-size: 18px;
-            color: #626262;
-        }
-    </style>
-</head>
-
-<body>
-    {% include 'myapp/top.html' %}
-    <div class="container aboutus-wrapper">
-        <p>
-            Attcomp Limited is an experienced independent distributor since 2006, Which is committed to provide
-            comprehensive electronic components supply chain solutions for Original Equipment Manufacturers (OEM),
-            Original Brand Manufacturers (OBM), Electronic Manufacturer Service (EMS) providers ,design company and
-            graduate school .
-        </p>
-
-        <p>
-            Headquarters in Hong Kong with the sales team and warehouse , branch in shenzhen with the sales team
-            ,warehouse, finance and QC department. The two teams integrate resources and have complementary
-            advantages .
-            Hong Kong team can make sure all parcel can be delivery to customers easier and more faster ; shenzhen
-            team
-            can offer bigger QTY ready warehouse stock . The same mission is offer more effective service and best
-            solution to our customers!
-        </p>
-
-        <p>
-            Quality and responsibility are on the first position of our company principle, they are the soul of
-            enterprise survival, competition and development. We have our own quality test department with
-            inspection
-            equipment. We are sincerely and honest ,no fake no copy here, original new only!
-        </p>
-
-        <p>
-            This is Attcomp! We cherish every trust from customers! Your most trustworthy electronic components
-            supplier!
-        </p>
-
-        <p>
-            We specialize in original integrated circuit , welcome your daily RFQs!
-        </p>
+    .aboutus-cover {
+        background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/about-us-cropped.png");
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+<div class="cover aboutus-cover">
+    <div class="container">
+        <div class="row align-items-center">
+            <h1 class="title">About Us</h1>
+        </div>
     </div>
+</div>
+<div class="container aboutus-wrapper">
+    <p>
+        Attcomp Limited is an experienced independent distributor since 2006, Which is committed to provide
+        comprehensive electronic components supply chain solutions for Original Equipment Manufacturers (OEM),
+        Original Brand Manufacturers (OBM), Electronic Manufacturer Service (EMS) providers ,design company and
+        graduate school .
+    </p>
 
-    {% include 'myapp/footer.html' %}
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        crossorigin="anonymous"></script>
-</body>
+    <p>
+        Headquarters in Hong Kong with the sales team and warehouse , branch in shenzhen with the sales team
+        ,warehouse, finance and QC department. The two teams integrate resources and have complementary
+        advantages .
+        Hong Kong team can make sure all parcel can be delivery to customers easier and more faster ; shenzhen
+        team
+        can offer bigger QTY ready warehouse stock . The same mission is offer more effective service and best
+        solution to our customers!
+    </p>
 
-</html>
+    <p>
+        Quality and responsibility are on the first position of our company principle, they are the soul of
+        enterprise survival, competition and development. We have our own quality test department with
+        inspection
+        equipment. We are sincerely and honest ,no fake no copy here, original new only!
+    </p>
+
+    <p>
+        This is Attcomp! We cherish every trust from customers! Your most trustworthy electronic components
+        supplier!
+    </p>
+
+    <p>
+        We specialize in original integrated circuit , welcome your daily RFQs!
+    </p>
+</div>
+{% endblock %}
