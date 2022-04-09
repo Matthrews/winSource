@@ -2,7 +2,7 @@ import cfscrape
 from lxml import etree
 
 
-def sensitive_sync_function(searchParam, pageSize=20, pageNumber=1):
+def sensitive_sync_function(searchParam, pageSize=30, pageNumber=1):
     result_dict = {}
     # 实例化一个create_scraper对象
     # scraper = cfscrape.create_scraper()
