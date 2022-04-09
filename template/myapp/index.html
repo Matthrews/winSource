@@ -321,12 +321,6 @@
         right: 20px;
         bottom: 20px;
     }
-
-    #spinner {
-        position: fixed;
-        top: 50vh;
-        left: 50vw;
-    }
 </style>
 {% endblock %}
 {% block title %}Classic Components – Electronic Components Distributor{% endblock %}
@@ -351,7 +345,7 @@
         </div>
     </div>
 
-    {% if res.data_list.length %}
+    {% if res.data_list|length %}
     <div class="container result-wrapper">
         <!-- Search Results -->
         <div class="search-result-list">
@@ -407,7 +401,7 @@
         </div>
 
         <!-- Pagination -->
-        {% if res.data_list.length %}
+        {% if res.data_list|length %}
         <nav class="pagination-wrapper">
             <ul class="pagination">
                 {% if res.pager_dict.preview_pager %}
@@ -880,6 +874,9 @@
     new WOW().init();
 </script>
 <script>
+    window.onload = function () {
+        document.body.classList.remove("opacity-75");
+    };
     function doSearch() {
         var spinnerElement = document.getElementById("spinner");
         var searchElement = document.getElementById("value");
@@ -888,7 +885,8 @@
         }
 
         var searchValue = searchElement.value.trim();
-        spinnerElement.toggleAttribute("hidden");
+        document.body.classList.add("opacity-75");
+        spinnerElement.classList.remove("d-none");
         if (/([a-zA-Z0-9]{1,11})/.test(searchValue)) {
             document.location.href = `/search?q=${searchValue}`
         }
