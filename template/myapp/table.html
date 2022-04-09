@@ -64,28 +64,22 @@
             <div class="left one-second column columns">
                 <h2>BOM Upload</h2>
                 <p>If you have a Bill of Materials (BOM) for upload, use the form below to upload it.</p>
-                <form class="needs-validation" novalidate action="/table/" method="post" enctype="multipart/form-data"
-                    onsubmit="return preSubmit1(this)">
+                <form  action="/table/" method="post" enctype="multipart/form-data" onsubmit="return preSubmit1(this)"  name="myform">
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="firstName" class="form-label">
                             <span>First name</span>
                             <span class="hs-form-required">*</span>
                         </label>
-                        <input type="text" class="form-control" id="firstName" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                        <input type="text" class="form-control" name="firstName" required>
                     </div>
+
                     <div class="mb-3">
                         <label for="lastName" class="form-label">
                             <span>Last name</span>
                             <span class="hs-form-required">*</span>
                         </label>
-                        <input type="text" class="form-control" id="lastName" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                        <input type="text" class="form-control" name="lastName" required>
                     </div>
 
                     <div class="mb-3">
@@ -93,13 +87,7 @@
                             <span>Company Email</span>
                             <span class="hs-form-required">*</span>
                         </label>
-                        <input type="text" class="form-control" id="email" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please choose a username.
-                        </div>
+                        <input type="email" class="form-control" name="email" required>
                     </div>
 
                     <div class="mb-3">
@@ -107,13 +95,7 @@
                             <span>Phone number</span>
                             <span class="hs-form-required">*</span>
                         </label>
-                        <input type="text" class="form-control" id="phone" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please choose a phone number.
-                        </div>
+                        <input type="text" class="form-control" name="phone" required>
                     </div>
 
                     <div class="mb-3">
@@ -121,23 +103,14 @@
                             <span>File Upload</span>
                             <span class="hs-form-required">*</span>
                         </label>
-                        <input type="file" class="form-control" name="file" id="file" required>
-                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                        <input type="file" class="form-control" name="file" name="file" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="message" class="form-label">
                             <span>Message</span>
-                            <span class="hs-form-required">*</span>
                         </label>
-                        <textarea class="form-control" id="message" placeholder="Required example textarea"
-                            required></textarea>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please choose a phone number.
-                        </div>
+                        <textarea class="form-control" name="message" placeholder="Required  textarea"></textarea>
                     </div>
 
                     <div class="mb-3">
@@ -147,7 +120,6 @@
             </div>
 
             <div class="right one-second column columns">
-
                 <h2>Submit RFQ</h2>
                 <p>If you have a Request For Quote, use the form below to submit it.</p>
                 <form method="post" action="/table/" onsubmit="return preSubmit2(this)">
@@ -211,7 +183,6 @@
                         </div>
                         <div class="col">
                             <label for="targetPrice">
-
                                 <span>Target Price</span>
                             </label>
                             <input type="text" class="form-control" name="targetPrice">
@@ -235,13 +206,18 @@
         </div>
         {% include 'myapp/footer.html' %}
     </div>
+</body>
     <script src="https://cdn.bootcss.com/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
     <script>
         function preSubmit1(form) {
             let formData = new FormData(form);
-            console.log("formData", formData);
+            console.log(form)
+            console.log(formData)
+
+            // console.log("formData", formData);
             // < !--利用fromData对象的get方法获取表单数据-->
             let firstName = formData.get('firstName');
             if (! /([A-Za-z.]{3,20})/.test(firstName)) {
@@ -351,38 +327,9 @@
 
             console.log(firstName, lastName, email, phone, partNumber, manufacturer, quantity, targetPrice, dateCode, additionalInformation)
 
-            // formData['csrfmiddlewaretoken'] = $('[name="csrfmiddlewaretoken"]').val();
-            // formData.append('type', 'rfq')
-            // console.log(formData)
-
-            // $.ajax({
-            //     url: "{% url 'myapp:table' %}",
-            //     data: formData,
-            //     type: "post",
-            //     dataType: "json", //jsonp会把请求类型强制转换为get请求
-            //     contentType: "application/x-www-form-urlencoded",
-            //     //contentType: application/x-www-form-urlencoded(默认)  multipart/form-data(用于文件上传) application/json(PHP后台无法使用$_POST接收到数据)
-            //     processData: false,
-            //     async: true, //异步请求
-            //     cache: false, //是否缓存
-            //     beforeSend: function() {
-            //         // 可添加请求加载等待效果
-            //     },
-            //
-            //     success: function(data) {
-            //         // 请求成功
-            //         console.log(data)
-            //     },
-            //
-            //     error: function(jqXHR, textStatus, errorThrown){
-            //         // 请求失败
-            //         console.log(textStatus,errorThrown)
-            //     }
-            //     });
             return true
         }
 
     </script>
-</body>
 
 </html>

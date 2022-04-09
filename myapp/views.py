@@ -79,7 +79,7 @@ class Table(View):
             '''
 
         # 给他人时候这个发邮件的需要开启
-        # sendmail(html)
+        sendmail(html)
         print(data)
         # return HttpResponse(data)
         return render(request, 'myapp/upload_result.html',context={"data":data})

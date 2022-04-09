@@ -951,6 +951,7 @@
         new WOW().init();
     </script>
     <script>
+
         function doSearch() {
             var spinnerElement = document.getElementById("spinner");
             var searchElement = document.getElementById("value");
@@ -959,7 +960,7 @@
             }
 
             var searchValue = searchElement.value.trim();
-            spinnerElement.toggleAttribute("hidden");
+            // spinnerElement.toggleAttribute("hidden");
             if (/([a-zA-Z0-9]{1,11})/.test(searchValue)) {
                 window.open(`/search?q=${searchValue}`, "_blank")
             }
