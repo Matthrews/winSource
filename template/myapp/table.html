@@ -43,6 +43,10 @@
         margin: 18px 0;
     }
 
+    form .row {
+        min-width: 600px;
+    }
+
     form label {
         line-height: 20px;
         margin-bottom: 4px;
@@ -153,7 +157,7 @@
 
         <div class="right one-second column columns">
 
-<div class="right one-second column columns">
+            <div class="right one-second column columns">
                 <h2>Submit RFQ</h2>
                 <p>If you have a Request For Quote, use the form below to submit it.</p>
                 <form method="post" action="/table/" onsubmit="return preSubmit2(this)">
@@ -237,125 +241,125 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+        </div>
+        <script>
+            function preSubmit1(form) {
+                let formData = new FormData(form);
+                console.log(form)
+                console.log(formData)
+
+                // console.log("formData", formData);
+                // < !--利用fromData对象的get方法获取表单数据-->
+                let firstName = formData.get('firstName');
+                if (! /([A-Za-z.]{3,20})/.test(firstName)) {
+                    alert("first name format is wrong!")
+                    return false
+                }
+
+                let lastName = formData.get('lastName');
+                if (! /([A-Za-z.]{3,20})/.test(lastName)) {
+                    alert("last tname format is wrong!")
+                    return false
+                }
+
+                let email = formData.get('email');
+                let emailreg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+                if (!emailreg.test(email)) {
+                    alert("email format is wrong！")
+                    return false
+                }
+
+                // 可有可无
+                let phone = formData.get('phone');
+                if (phone.length > 0 && phone.trim() === '') { alert("phone format is wrong！"); return false }
+                if (phone.trim().length > 0) {
+                    if (! /([0-9]{6,20})/.test(phone)) {
+                        alert("phone format is wrong！");
+                        return false
+                    }
+                }
+
+                let file = formData.get('file');
+                if (file.size > 10 * 1024 * 1024) {
+                    alert("file too large!must smaller than 10MB")
+                    return false
+                }
+
+                // 可有可无
+                let message = formData.get('message');
+                if (message.length > 0 && message.trim() === '') { alert("message format is wrong！"); return false }
+
+
+                console.log(firstName, lastName, email, phone, file, message)
+                return true
+            }
+
+
+            function preSubmit2(form) {
+                let formData = new FormData(form);
+
+                // < !--利用fromData对象的get方法获取表单数据-->
+                let firstName = formData.get('firstName');
+                if (! /([A-Za-z]{3,20})/.test(firstName)) {
+                    alert("first name format is wrong!")
+                    return false
+                }
+
+                let lastName = formData.get('lastName');
+                if (! /([A-Za-z]{3,20})/.test(lastName)) {
+                    alert("last tname format is wrong!")
+                    return false
+                }
+
+                let email = formData.get('email');
+                let emailreg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+                if (!emailreg.test(email)) {
+                    alert("email format is wrong！")
+                    return false
+                }
+
+                // 可有可无
+                let phone = formData.get('phone');
+                if (phone.length > 0 && phone.trim() === '') { alert("phone format is wrong！"); return false }
+                if (phone.length > 0) {
+                    if (! /([0-9]{6,20})/.test(phone)) {
+                        alert("phone format is wrong！");
+                        return false
+                    }
+                }
+
+                let partNumber = formData.get('partNumber');
+                if (! /([0-9]{3,20})/.test(partNumber)) {
+                    alert("partNumber format is wrong！");
+                    return false
+                }
+
+                let manufacturer = formData.get('manufacturer');
+                if (! /([A-Za-z0-9]{0,20})/.test(manufacturer)) {
+                    alert("manufacturer format is wrong！");
+                    return false
+                }
+
+                // 可有可无
+                let quantity = formData.get('quantity');
+                if (quantity.length > 0 && quantity.trim() === '') { alert("quantity format is wrong！"); return false }
+
+                // 可有可无
+                let targetPrice = formData.get('targetPrice');
+                if (targetPrice.length > 0 && targetPrice.trim() === '') { alert("targetPrice format is wrong！"); return false }
+
+                // 可有可无
+                let dateCode = formData.get('dateCode');
+                if (dateCode.length > 0 && dateCode.trim() === '') { alert("datecode format is wrong！"); return false }
+
+                // 可有可无
+                let additionalInformation = formData.get('additionalInformation');
+                if (additionalInformation.length > 0 && additionalInformation.trim() === '') { alert("additionalInformation format is wrong！"); return false }
+
+                console.log(firstName, lastName, email, phone, partNumber, manufacturer, quantity, targetPrice, dateCode, additionalInformation)
+
+                return true
+            }
+        </script>
     </div>
-    <script>
-        function preSubmit1(form) {
-            let formData = new FormData(form);
-            console.log(form)
-            console.log(formData)
-
-            // console.log("formData", formData);
-            // < !--利用fromData对象的get方法获取表单数据-->
-            let firstName = formData.get('firstName');
-            if (! /([A-Za-z.]{3,20})/.test(firstName)) {
-                alert("first name format is wrong!")
-                return false
-            }
-
-            let lastName = formData.get('lastName');
-            if (! /([A-Za-z.]{3,20})/.test(lastName)) {
-                alert("last tname format is wrong!")
-                return false
-            }
-
-            let email = formData.get('email');
-            let emailreg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
-            if (!emailreg.test(email)) {
-                alert("email format is wrong！")
-                return false
-            }
-
-            // 可有可无
-            let phone = formData.get('phone');
-            if (phone.length > 0 && phone.trim() === '') { alert("phone format is wrong！"); return false }
-            if (phone.trim().length > 0) {
-                if (! /([0-9]{6,20})/.test(phone)) {
-                    alert("phone format is wrong！");
-                    return false
-                }
-            }
-
-            let file = formData.get('file');
-            if (file.size > 10 * 1024 * 1024) {
-                alert("file too large!must smaller than 10MB")
-                return false
-            }
-
-            // 可有可无
-            let message = formData.get('message');
-            if (message.length > 0 && message.trim() === '') { alert("message format is wrong！"); return false }
-
-
-            console.log(firstName, lastName, email, phone, file, message)
-            return true
-        }
-
-
-        function preSubmit2(form) {
-            let formData = new FormData(form);
-
-            // < !--利用fromData对象的get方法获取表单数据-->
-            let firstName = formData.get('firstName');
-            if (! /([A-Za-z]{3,20})/.test(firstName)) {
-                alert("first name format is wrong!")
-                return false
-            }
-
-            let lastName = formData.get('lastName');
-            if (! /([A-Za-z]{3,20})/.test(lastName)) {
-                alert("last tname format is wrong!")
-                return false
-            }
-
-            let email = formData.get('email');
-            let emailreg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
-            if (!emailreg.test(email)) {
-                alert("email format is wrong！")
-                return false
-            }
-
-            // 可有可无
-            let phone = formData.get('phone');
-            if (phone.length > 0 && phone.trim() === '') { alert("phone format is wrong！"); return false }
-            if (phone.length > 0) {
-                if (! /([0-9]{6,20})/.test(phone)) {
-                    alert("phone format is wrong！");
-                    return false
-                }
-            }
-
-            let partNumber = formData.get('partNumber');
-            if (! /([0-9]{3,20})/.test(partNumber)) {
-                alert("partNumber format is wrong！");
-                return false
-            }
-
-            let manufacturer = formData.get('manufacturer');
-            if (! /([A-Za-z0-9]{0,20})/.test(manufacturer)) {
-                alert("manufacturer format is wrong！");
-                return false
-            }
-
-            // 可有可无
-            let quantity = formData.get('quantity');
-            if (quantity.length > 0 && quantity.trim() === '') { alert("quantity format is wrong！"); return false }
-
-            // 可有可无
-            let targetPrice = formData.get('targetPrice');
-            if (targetPrice.length > 0 && targetPrice.trim() === '') { alert("targetPrice format is wrong！"); return false }
-
-            // 可有可无
-            let dateCode = formData.get('dateCode');
-            if (dateCode.length > 0 && dateCode.trim() === '') { alert("datecode format is wrong！"); return false }
-
-            // 可有可无
-            let additionalInformation = formData.get('additionalInformation');
-            if (additionalInformation.length > 0 && additionalInformation.trim() === '') { alert("additionalInformation format is wrong！"); return false }
-
-            console.log(firstName, lastName, email, phone, partNumber, manufacturer, quantity, targetPrice, dateCode, additionalInformation)
-
-            return true
-        }
-    </script>
-</div>
-{% endblock %}
+    {% endblock %}
