@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-irw5p6(3k&8d=1)(9mkamx-1-63$mlq&yjj2i*a@nq@tk6&=z3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if "Windows" in platform.system():
+if platform.system() in ["Windows", "Darwin"]:
     DEBUG = True
     Domain = "http://127.0.0.1:8000/"
 else:

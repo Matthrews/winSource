@@ -1,199 +1,164 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="zh-CN">
+<style>
+    .navbar-brand {
+        margin: 0 32px;
+    }
+    .navbar {
+        position: absolute;
+        top: 0;
+        height: 90px;
+        width: 100%;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.8) !important;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        header>.navbar {
-            position: absolute;
-            top: 0;
-            height: 90px;
-            width: 100%;
-            z-index: 1;
-            background-color: rgba(255, 255, 255, 0.8) !important;
+    .navbar-nav .nav-item .nav-link {
+        padding: 15px 24px;
+    }
+
+    .navbar-nav .nav-item .nav-link::after {
+        display: none;
+    }
+
+    header .cover {
+        background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");
+        background-size: cover;
+        /* -webkit-animation: fade-in-and-out 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite both; */
+        /* animation: fade-in-and-out 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite both; */
+    }
+
+    @-webkit-keyframes fade-in-and-out {
+        0% {
+            opacity: 1;
         }
 
-        header .cover {
-            height: 400px;
-            background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");
-            background-size: cover;
-            -webkit-animation: fade-in-and-out 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite both;
-            animation: fade-in-and-out 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite both;
+        25% {
+            opacity: 0.25;
         }
 
-        .navbar-nav .nav-item .nav-link {
-            padding: 15px 20px;
+        50% {
+            opacity: 0.5;
         }
 
-        .navbar-nav .nav-item .nav-link::after {
-            display: none;
+        75% {
+            opacity: 0.75;
         }
 
-        #navbarSupportedContent{
-            display: flex;
-            justify-content: center;
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in-and-out {
+        0% {
+            opacity: 1;
         }
 
-        @-webkit-keyframes fade-in-and-out {
-            0% {
-                opacity: 1;
-            }
-
-            25% {
-                opacity: 0.25;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-
-            75% {
-                opacity: 0.75;
-            }
-
-            100% {
-                opacity: 1;
-            }
+        25% {
+            opacity: 0.25;
         }
 
-        @keyframes fade-in-and-out {
-            0% {
-                opacity: 1;
-            }
-
-            25% {
-                opacity: 0.25;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-
-            75% {
-                opacity: 0.75;
-            }
-
-            100% {
-                opacity: 1;
-            }
+        50% {
+            opacity: 0.5;
         }
-    </style>
-</head>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
-            <div class="container-fluid px-0">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav justify-content-end w-38 mb-2 mb-lg-0">
-                        <ul class="navbar-nav justify-content-start w-38 mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/about_us/">ABOUT US</a>
-                            </li>
-                        </ul>
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                ABOUT US
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">History</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Management</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Ethics & Compliance</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Careers</a></li>
-                            </ul>
-                        </li> -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                QUALITY
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Strategic Facilities</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Inspenction & Testing</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Counterfeit Avoidance</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                SERVICES
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Shortages</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Cost Savings / PPV</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">We Buy and Sell Excess & Surplus Inventory</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Supply Chain and Procurement</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Value Added Services</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Line Card</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+        75% {
+            opacity: 0.75;
+        }
 
-                    <a class="navbar-brand nav-link logo active" href="/" title="Classic Components" data-height="60"
-                        data-padding="15" class="retina"><img class="logo-main scale-with-grid"
-                            src="https://www.attcomp.com/static/img/logo-sm.png"
-                            data-retina="https://www.class-ic.com/wp-content/uploads/2019/04/logo-two-color-367x116.png"
-                            data-height="58" alt="Classic Components Logo" data-no-retina="" style="max-height: 48px;">
-                    </a>
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
 
-                    <ul class="navbar-nav justify-content-start w-38 mb-2 mb-lg-0">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+        <div class="container-fluid px-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-end w-38 mb-2 mb-lg-0">
+                    <ul class="navbar-nav justify-content-start mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">CERTIFICATIONS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                CONTACT
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Locations Worldwide</a></li>
-                            </ul>
+                            <a class="nav-link" href="/about_us/">ABOUT US</a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="cover"></div>
-    </header>
-</body>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            QUALITY
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Strategic Facilities</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Inspenction & Testing</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Counterfeit Avoidance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            SERVICES
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Shortages</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cost Savings / PPV</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">We Buy and Sell Excess & Surplus Inventory</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Supply Chain and Procurement</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Value Added Services</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Line Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
-</html>
+                <a class="navbar-brand nav-link logo active" href="/" title="Classic Components" data-height="60"
+                    data-padding="15" class="retina"><img class="logo-main scale-with-grid"
+                        src="https://www.attcomp.com/static/img/logo-sm.png"
+                        data-retina="https://www.class-ic.com/wp-content/uploads/2019/04/logo-two-color-367x116.png"
+                        data-height="58" alt="Classic Components Logo" data-no-retina="" style="max-height: 48px;">
+                </a>
+
+                <ul class="navbar-nav justify-content-start w-38 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CERTIFICATIONS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            CONTACT
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Locations Worldwide</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>

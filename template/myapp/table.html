@@ -1,125 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'myapp/layout.html' %}
+{% block custom_style %}
+<style>
+    .upload-cover {
+        background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");
+        background-size: cover;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <title>Upload Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
-    <style>
-        .content {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            max-width: 1200px;
-            padding-top: 40px;
-        }
+    .content {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding-top: 40px;
+    }
 
-        .content>div {
-            width: 40%;
-        }
+    .content>div {
+        width: 40%;
+    }
 
-        .content>div h2 {
-            font-size: 28px;
-            line-height: 28px;
-            font-weight: 900;
-            letter-spacing: 5px;
-            color: #444;
-            margin-bottom: 15px;
-        }
+    .content>div h2 {
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 900;
+        letter-spacing: 5px;
+        color: #444;
+        margin-bottom: 15px;
+    }
 
-        .content>div p {
-            color: #626262;
-            margin: 0 0 15px;
-            padding: 0;
-        }
+    .content>div p {
+        color: #626262;
+        margin: 0 0 15px;
+        padding: 0;
+    }
 
-        .one-second.column {
-            width: 48%;
-            float: left;
-            margin: 0 1% 40px;
-        }
+    .one-second.column {
+        width: 48%;
+        float: left;
+        margin: 0 1% 40px;
+    }
 
-        form>div {
-            margin: 18px 0;
-        }
+    form>div {
+        margin: 18px 0;
+    }
 
-        form label {
-            line-height: 20px;
-            margin-bottom: 4px;
-            color: #0070c0;
-        }
+    form label {
+        line-height: 20px;
+        margin-bottom: 4px;
+        color: #0070c0;
+    }
 
-        .hs-form-required {
-            color: red;
-            vertical-align: middle;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="upload-wrapper">
-        {% include 'myapp/top.html' %}
-        <div class="content">
-            <div class="left one-second column columns">
-                <h2>BOM Upload</h2>
-                <p>If you have a Bill of Materials (BOM) for upload, use the form below to upload it.</p>
-                <form  action="/table/" method="post" enctype="multipart/form-data" onsubmit="return preSubmit1(this)"  name="myform">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="firstName" class="form-label">
-                            <span>First name</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="text" class="form-control" name="firstName" required>
+    .hs-form-required {
+        color: red;
+        vertical-align: middle;
+    }
+</style>
+{% endblock %}
+{% block title %}Submit Request For Quote – Classic Components{% endblock %}
+{% block content %}
+<div class="cover upload-cover">
+    <div class="container">
+        <div class="row align-items-center">
+            <h1 class="title">Submit Request For Quote</h1>
+        </div>
+    </div>
+</div>
+<div class="upload-wrapper">
+    <div class="content">
+        <div class="left one-second column columns">
+            <h2>BOM Upload</h2>
+            <p>If you have a Bill of Materials (BOM) for upload, use the form below to upload it.</p>
+            <form class="needs-validation" novalidate action="/table/" method="post" enctype="multipart/form-data"
+                onsubmit="return preSubmit1(this)">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">
+                        <span>First name</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="firstName" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
-
-                    <div class="mb-3">
-                        <label for="lastName" class="form-label">
-                            <span>Last name</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="text" class="form-control" name="lastName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">
+                        <span>Last name</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="lastName" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="email" class="form-label">
-                            <span>Company Email</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="email" class="form-control" name="email" required>
+                <div class="mb-3">
+                    <label for="email" class="form-label">
+                        <span>Company Email</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="email" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
-
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">
-                            <span>Phone number</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="text" class="form-control" name="phone" required>
+                    <div class="invalid-feedback">
+                        Please choose a username.
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="file" class="form-label">
-                            <span>File Upload</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="file" class="form-control" name="file" name="file" required>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">
+                        <span>Phone number</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="phone" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
-
-                    <div class="mb-3">
-                        <label for="message" class="form-label">
-                            <span>Message</span>
-                        </label>
-                        <textarea class="form-control" name="message" placeholder="Required  textarea"></textarea>
+                    <div class="invalid-feedback">
+                        Please choose a phone number.
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                <div class="mb-3">
+                    <label for="file" class="form-label">
+                        <span>File Upload</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="file" class="form-control" name="file" id="file" required>
+                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">
+                        <span>Message</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <textarea class="form-control" id="message" placeholder="Required example textarea"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
-                </form>
-            </div>
+                    <div class="invalid-feedback">
+                        Please choose a phone number.
+                    </div>
+                </div>
 
-            <div class="right one-second column columns">
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="right one-second column columns">
+
+<div class="right one-second column columns">
                 <h2>Submit RFQ</h2>
                 <p>If you have a Request For Quote, use the form below to submit it.</p>
                 <form method="post" action="/table/" onsubmit="return preSubmit2(this)">
@@ -203,14 +237,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-        </div>
-        {% include 'myapp/footer.html' %}
     </div>
-</body>
-    <script src="https://cdn.bootcss.com/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-
     <script>
         function preSubmit1(form) {
             let formData = new FormData(form);
@@ -329,7 +356,6 @@
 
             return true
         }
-
     </script>
-
-</html>
+</div>
+{% endblock %}
