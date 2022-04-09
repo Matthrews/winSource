@@ -153,93 +153,98 @@
 
         <div class="right one-second column columns">
 
-            <h2>Submit RFQ</h2>
-            <p>If you have a Request For Quote, use the form below to submit it.</p>
-            <form method="post" action="/table/" onsubmit="return preSubmit2(this)">
-                <input type="text" name="type" hidden value="rfq">
-                {% csrf_token %}
-                <div class="row">
-                    <div class="col">
-                        <label for="firstName">
-                            <span>First name</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="text" class="form-control" name="firstName" minlength="3" maxlength="20" required>
+<div class="right one-second column columns">
+                <h2>Submit RFQ</h2>
+                <p>If you have a Request For Quote, use the form below to submit it.</p>
+                <form method="post" action="/table/" onsubmit="return preSubmit2(this)">
+                    <input type="text" name="type" hidden value="rfq">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col">
+                            <label for="firstName">
+                                <span>First name</span>
+                                <span class="hs-form-required">*</span>
+                            </label>
+                            <input type="text" class="form-control" name="firstName" minlength="3" maxlength="20"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label for="lastName">
+                                <span>Last name</span>
+                                <span class="hs-form-required">*</span>
+                            </label>
+                            <input type="text" class="form-control" name="lastName" minlength="3" maxlength="20"
+                                required>
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="lastName">
-                            <span>Last name</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="text" class="form-control" name="lastName" minlength="3" maxlength="20" required>
+                    <div class="row">
+                        <div class="col">
+                            <label for="email">
+                                <span>Your Email</span>
+                                <span class="hs-form-required">*</span>
+                            </label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="col">
+                            <label for="phone">
+                                <span>Phone number</span>
+                            </label>
+                            <input type="tel" class="form-control" name="phone">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="email">
-                            <span>Your Email</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="email" class="form-control" name="email" required>
+                    <div class="row">
+                        <div class="col">
+                            <label for="partNumber">
+                                <span>Part Number</span>
+                                <span class="hs-form-required">*</span>
+                            </label>
+                            <input type="text" class="form-control" name="partNumber" required>
+                        </div>
+                        <div class="col">
+                            <label for="manufacturer">
+                                <span>Manufacturer</span>
+                                <span class="hs-form-required">*</span>
+                            </label>
+                            <input type="text" class="form-control" name="manufacturer" required>
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="phone">
-                            <span>Phone number</span>
-                        </label>
-                        <input type="tel" class="form-control" name="phone">
+                    <div class="row">
+                        <div class="col">
+                            <label for="quantity">
+                                <span>Quantity</span>
+                            </label>
+                            <input type="text" class="form-control" name="quantity">
+                        </div>
+                        <div class="col">
+                            <label for="targetPrice">
+                                <span>Target Price</span>
+                            </label>
+                            <input type="text" class="form-control" name="targetPrice">
+                        </div>
+                        <div class="col">
+                            <label for="dateCode">
+                                <span>Date Code</span>
+                            </label>
+                            <input type="text" class="form-control" name="dateCode">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="partNumber">
-                            <span>Part Number</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="text" class="form-control" name="partNumber" required>
+                    <div class="row">
+                        <div class="col">
+                            <label for="additionalInformation">Additional Information</label>
+                            <input type="text" class="form-control" name="additionalInformation">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="manufacturer">
-                            <span>Manufacturer</span>
-                            <span class="hs-form-required">*</span>
-                        </label>
-                        <input type="text" class="form-control" name="manufacturer" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="quantity">
-                            <span>Quantity</span>
-                        </label>
-                        <input type="text" class="form-control" name="quantity">
-                    </div>
-                    <div class="col">
-                        <label for="targetPrice">
-
-                            <span>Target Price</span>
-                        </label>
-                        <input type="text" class="form-control" name="targetPrice">
-                    </div>
-                    <div class="col">
-                        <label for="dateCode">
-                            <span>Date Code</span>
-                        </label>
-                        <input type="text" class="form-control" name="dateCode">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="additionalInformation">Additional Information</label>
-                        <input type="text" class="form-control" name="additionalInformation">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
     </div>
     <script>
         function preSubmit1(form) {
             let formData = new FormData(form);
-            console.log("formData", formData);
+            console.log(form)
+            console.log(formData)
+
+            // console.log("formData", formData);
             // < !--利用fromData对象的get方法获取表单数据-->
             let firstName = formData.get('firstName');
             if (! /([A-Za-z.]{3,20})/.test(firstName)) {
@@ -349,37 +354,8 @@
 
             console.log(firstName, lastName, email, phone, partNumber, manufacturer, quantity, targetPrice, dateCode, additionalInformation)
 
-            // formData['csrfmiddlewaretoken'] = $('[name="csrfmiddlewaretoken"]').val();
-            // formData.append('type', 'rfq')
-            // console.log(formData)
-
-            // $.ajax({
-            //     url: "{% url 'myapp:table' %}",
-            //     data: formData,
-            //     type: "post",
-            //     dataType: "json", //jsonp会把请求类型强制转换为get请求
-            //     contentType: "application/x-www-form-urlencoded",
-            //     //contentType: application/x-www-form-urlencoded(默认)  multipart/form-data(用于文件上传) application/json(PHP后台无法使用$_POST接收到数据)
-            //     processData: false,
-            //     async: true, //异步请求
-            //     cache: false, //是否缓存
-            //     beforeSend: function() {
-            //         // 可添加请求加载等待效果
-            //     },
-            //
-            //     success: function(data) {
-            //         // 请求成功
-            //         console.log(data)
-            //     },
-            //
-            //     error: function(jqXHR, textStatus, errorThrown){
-            //         // 请求失败
-            //         console.log(textStatus,errorThrown)
-            //     }
-            //     });
             return true
         }
-
     </script>
 </div>
 {% endblock %}
