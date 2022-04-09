@@ -1,0 +1,9 @@
+/* Global Style Overides */
+:root {
+  --bs-primary: #0093d5;
+  --bs-secondary: #14b6ad;
+}
+
+.w-38 {
+  width: 38% !important;
+}
