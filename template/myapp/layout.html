@@ -43,7 +43,23 @@
 
         .btn-primary,
         .btn-primary:hover,
+        .btn-primary:focus,
         .btn-primary:active {
+            color: #fff;
+            background-color: var(--bs-primary);
+            border-color: currentColor;
+            box-shadow: 0 0 0 .25rem rgba(49, 132, 253, .5);
+        }
+
+        .btn-outline-primary {
+            color: var(--bs-primary);
+            border-color: currentColor;
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-primary:active,
+        .btn-outline-primary:focus,
+        .btn-outline-primary.active {
             color: #fff;
             background-color: var(--bs-primary);
             border-color: var(--bs-primary);
