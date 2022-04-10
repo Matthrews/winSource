@@ -85,6 +85,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                        Please input the correct firstName.
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="lastName" class="form-label">
@@ -94,6 +97,9 @@
                     <input type="text" class="form-control" name="lastName" value="" required>
                     <div class="valid-feedback">
                         Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please input the correct lastName.
                     </div>
                 </div>
 
@@ -131,7 +137,12 @@
                         <span class="hs-form-required">*</span>
                     </label>
                     <input type="file" class="form-control" name="file" id="file" required>
-                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Example invalid form file feedback
+                    </div>
                 </div>
 
                 <div class="mb-3">
@@ -145,7 +156,7 @@
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
-                        Please choose a phone number.
+                        Looks no good!
                     </div>
                 </div>
 
@@ -171,6 +182,12 @@
                             </label>
                             <input type="text" class="form-control" name="firstName" minlength="3" maxlength="20"
                                 required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                         <div class="col">
                             <label for="lastName">
@@ -179,6 +196,12 @@
                             </label>
                             <input type="text" class="form-control" name="lastName" minlength="3" maxlength="20"
                                 required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -188,12 +211,24 @@
                                 <span class="hs-form-required">*</span>
                             </label>
                             <input type="email" class="form-control" name="email" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                         <div class="col">
                             <label for="phone">
                                 <span>Phone number</span>
                             </label>
                             <input type="tel" class="form-control" name="phone">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -203,6 +238,12 @@
                                 <span class="hs-form-required">*</span>
                             </label>
                             <input type="text" class="form-control" name="partNumber" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                         <div class="col">
                             <label for="manufacturer">
@@ -210,6 +251,12 @@
                                 <span class="hs-form-required">*</span>
                             </label>
                             <input type="text" class="form-control" name="manufacturer" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -218,24 +265,48 @@
                                 <span>Quantity</span>
                             </label>
                             <input type="text" class="form-control" name="quantity">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                         <div class="col">
                             <label for="targetPrice">
                                 <span>Target Price</span>
                             </label>
                             <input type="text" class="form-control" name="targetPrice">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                         <div class="col">
                             <label for="dateCode">
                                 <span>Date Code</span>
                             </label>
                             <input type="text" class="form-control" name="dateCode">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label for="additionalInformation">Additional Information</label>
                             <input type="text" class="form-control" name="additionalInformation">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks no good!
+                            </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

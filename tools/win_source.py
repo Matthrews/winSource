@@ -13,14 +13,20 @@ def sensitive_sync_function(searchParam, pageSize, pageNumber):
         f"https://www.win-source.net/search?q={searchParam}&pagesize={pageSize}&pagenumber={pageNumber}").text
     # print(web_data)
     tree = etree.HTML(web_data)
-    pager_list = tree.xpath('//div[@class="pager"]/ul/li/a/@href')
-    current_pager = tree.xpath('//div[@class="pager"]/ul/li[@class="current-page"]/span/text()')[0]
+    # pager_list = tree.xpath('//div[@class="pager"]/ul/li/a/@href')
+
+    try:
+        current_pager = tree.xpath('//div[@class="pager"]/ul/li[@class="current-page"]/span/text()')[0]
+    except:
+        current_pager = None
+
     try:
         last_pager = tree.xpath('//div[@class="pager"]/ul/li[@class="last-page"]/a/text()')[0]
     except:
         last_pager = None
     # print(current_pager,last_pager)
     preview_pager = int(current_pager) - 1 if int(current_pager) > 1 else None
+
     try:
         next_pager = int(current_pager) + 1 if int(current_pager) < int(last_pager) else None
     except:
