@@ -9,6 +9,7 @@ from .views import *
 app_name = "myapp"
 urlpatterns = [
     path('', Index.as_view()),
+    # path('table/', Table.as_view(), name="table"),
     path('table/', Table.as_view(), name="table"),
     path('about_us/', AboutUs.as_view(), name="aboutus"),
     path('search/', handleSearch, name="search"),

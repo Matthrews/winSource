@@ -4,15 +4,14 @@ from lxml import etree
 
 def sensitive_sync_function(searchParam, pageSize, pageNumber):
     result_dict = {}
-    # 实例化一个create_scraper对象
-    # scraper = cfscrape.create_scraper()
-    # 请求报错，可以加上时延
+    # 实例化一个create_scraper对象,请求报错，可以加上时延
     scraper = cfscrape.create_scraper(delay=10)
     # 获取网页源代码
     web_data = scraper.get(
         f"https://www.win-source.net/search?q={searchParam}&pagesize={pageSize}&pagenumber={pageNumber}").text
     # print(web_data)
     tree = etree.HTML(web_data)
+
     # pager_list = tree.xpath('//div[@class="pager"]/ul/li/a/@href')
 
     try:
@@ -24,18 +23,23 @@ def sensitive_sync_function(searchParam, pageSize, pageNumber):
         last_pager = tree.xpath('//div[@class="pager"]/ul/li[@class="last-page"]/a/text()')[0]
     except:
         last_pager = None
+
     # print(current_pager,last_pager)
-    preview_pager = int(current_pager) - 1 if int(current_pager) > 1 else None
+
+    try:
+        preview_pager = int(current_pager) - 1 if int(current_pager) > 1 else None
+    except:
+        preview_pager = None
 
     try:
         next_pager = int(current_pager) + 1 if int(current_pager) < int(last_pager) else None
     except:
         next_pager = 2
-    print(preview_pager, current_pager, next_pager, last_pager)
-    # result_dict['pager_list'] = [currenr_pager,last_pager]
+
     result_dict['pager_dict'] = {"preview_pager": preview_pager, "current_pager": current_pager,
                                  "next_pager": next_pager,
                                  "last_pager": last_pager}
+
     print(result_dict['pager_dict'])
 
     try:
@@ -80,6 +84,7 @@ def sensitive_sync_function(searchParam, pageSize, pageNumber):
     except:
         result_dict['data_list'] = []
 
+    print(result_dict)
     return result_dict
 
 
