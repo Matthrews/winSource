@@ -129,14 +129,31 @@
         width: 100%;
     }
 
+    .result-wrapper .title {
+        color: #444;
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 900;
+        letter-spacing: 4px;
+        padding-top: 32px;
+        padding-bottom: 16px;
+    }
+
     .search-result-list,
-    .pagination-wrapper,
     .feature-wrapper,
     .product-wrapper {
         position: relative;
         margin: 0 calc(50vw - 600px);
         max-width: 1200px;
         background-color: #fff;
+    }
+
+    .search-result-list {
+        border: 1px solid #D3DAE6;
+        border-radius: 6px 6px 0 0;
+        margin: 0;
+        padding: 16px;
+        margin-bottom: 32px;
     }
 
     .product-wrapper {
@@ -281,21 +298,8 @@
         line-height: 0;
     }
 
-    .search-result-list {
-        min-height: 200px;
-    }
-
     .search-result-list table {
         color: #626262;
-    }
-
-    .search-result-list table.caption-top caption {
-        color: #444;
-        font-size: 28px;
-        line-height: 28px;
-        font-weight: 900;
-        letter-spacing: 5px;
-        padding: 15px 0;
     }
 
     table tr {
@@ -320,16 +324,12 @@
         box-shadow: inset 0px 4px 3px -2px rgba(0, 0, 0, .04);
     }
 
+    .table>:not(:first-child) {
+        border-top: none;
+    }
+
     .table>:not(caption)>*>* {
         text-align: center;
-    }
-
-    .table>:not(:first-child) {
-        border: 1px solid #D3DAE6;
-    }
-
-    .pagination-wrapper {
-        margin-bottom: 40px;
     }
 
     .empty-wrapper {
@@ -381,9 +381,9 @@ Classic Components – Electronic Components Distributor
     {% if q and res.data_list %}
     <div class="container result-wrapper">
         <!-- Search Results -->
+        <p class="title">Search results for {{q}}</p>
         <div class="search-result-list">
             <table class="table table-hover caption-top">
-                <caption>Search results for {{q}}</caption>
                 <thead>
                     <tr>
                         <th scope="col">Index</th>
@@ -416,7 +416,7 @@ Classic Components – Electronic Components Distributor
                         </td>
                         <td>
                             {% if item.item_availablity_pdf %}
-                            <a target="_blank" href="{{item.item_availablity_pdf}}">go for check</a>
+                            <a target="_blank" href="{{item.item_availablity_pdf}}">Report</a>
                             {% else %}Empty{% endif %}
                         </td>
                         <td>
@@ -426,33 +426,35 @@ Classic Components – Electronic Components Distributor
                     {% endfor %}
                 </tbody>
             </table>
+            <!-- Pagination -->
+            {% if res.data_list %}
+            <nav class="pagination-wrapper">
+                <ul class="pagination">
+                    {% if res.pager_dict.preview_pager %}
+                    <li class="page-item"><a class="page-link"
+                            href="/search/?q={{q}}&pagenumber={{res.pager_dict.preview_pager}}">Preview Page</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:void(0);">Current
+                            Page【{{res.pager_dict.current_pager}}】</a>
+                    </li>
+
+                    {% if res.pager_dict.next_pager %}
+                    <li class="page-item"><a class="page-link"
+                            href="/search/?q={{q}}&pagenumber={{res.pager_dict.next_pager}}">Next Page</a></li>
+                    {% endif %}
+
+                    {% if res.pager_dict.last_pager %}
+                    <li class="page-item"><a class="page-link"
+                            href="/search/?q={{q}}&pagenumber={{res.pager_dict.last_pager}}">Last Page</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
         </div>
-        <!-- Pagination -->
-        {% if res.data_list %}
-        <nav class="pagination-wrapper">
-            <ul class="pagination">
-                {% if res.pager_dict.preview_pager %}
-                <li class="page-item"><a class="page-link"
-                        href="/search/?q={{q}}&pagenumber={{res.pager_dict.preview_pager}}">Preview Page</a>
-                </li>
-                {% endif %}
 
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0);">Current Page【{{res.pager_dict.current_pager}}】</a>
-                </li>
-
-                {% if res.pager_dict.next_pager %}
-                <li class="page-item"><a class="page-link"
-                        href="/search/?q={{q}}&pagenumber={{res.pager_dict.next_pager}}">Next Page</a></li>
-                {% endif %}
-
-                {% if res.pager_dict.last_pager %}
-                <li class="page-item"><a class="page-link"
-                        href="/search/?q={{q}}&pagenumber={{res.pager_dict.last_pager}}">Last Page</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-        {% endif %}
     </div>
     {% elif q and not res.data_list %}
     <div class="empty-wrapper">
