@@ -1,8 +1,9 @@
 {% extends 'myapp/layout.html' %}
+{% load static %}
 {% block custom_style %}
 <style>
     .upload-cover {
-        background-image: url("https://www.class-ic.com/wp-content/uploads/2019/04/parts2-cropped.png");
+        background-image: url("{% static 'img/inqury.png' %}");
         background-size: cover;
     }
 
@@ -27,7 +28,7 @@
         margin-bottom: 15px;
     }
 
-    .content>div p {
+    .content div p {
         color: #626262;
         margin: 0 0 15px;
         padding: 0;
@@ -73,20 +74,20 @@
         <div class="left one-second column columns">
             <h2>BOM Upload</h2>
             <p>If you have a Bill of Materials (BOM) for upload, use the form below to upload it.</p>
-            <form class="needs-validation" novalidate action="/table/" method="post" enctype="multipart/form-data"
-                onsubmit="return preSubmit1(this)">
+            <form class="needs-validation" novalidate action="/table/" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="firstName" class="form-label">
                         <span>First name</span>
                         <span class="hs-form-required">*</span>
                     </label>
-                    <input type="text" class="form-control" name="firstName" value="" required>
+                    <input type="text" class="form-control" name="firstName" value="" required
+                        pattern="([A-Za-z.]{3,20})">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
-                        Please input the correct firstName.
+                        Please input the required firstName, containing 3 to 30 letters.
                     </div>
                 </div>
                 <div class="mb-3">
@@ -94,12 +95,13 @@
                         <span>Last name</span>
                         <span class="hs-form-required">*</span>
                     </label>
-                    <input type="text" class="form-control" name="lastName" value="" required>
+                    <input type="text" class="form-control" name="lastName" value="" required
+                        pattern="([A-Za-z.]{3,20})">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
-                        Please input the correct lastName.
+                        Please input the required lastName, containing 3 to 30 letters.
                     </div>
                 </div>
 
@@ -108,12 +110,13 @@
                         <span>Company Email</span>
                         <span class="hs-form-required">*</span>
                     </label>
-                    <input type="email" class="form-control" name="email" value="" required>
+                    <input type="email" class="form-control" name="email" value="" required
+                        pattern="^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
-                        Please choose a username.
+                        Please input a company email with valid format.
                     </div>
                 </div>
 
@@ -122,12 +125,12 @@
                         <span>Phone number</span>
                         <span class="hs-form-required">*</span>
                     </label>
-                    <input type="text" class="form-control" name="phone" value="" required>
+                    <input type="text" class="form-control" name="phone" value="" required pattern="([0-9]{6,20})">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
-                        Please choose a phone number.
+                        Please input a phone number with valid format.
                     </div>
                 </div>
 
@@ -136,27 +139,22 @@
                         <span>File Upload</span>
                         <span class="hs-form-required">*</span>
                     </label>
-                    <input type="file" class="form-control" name="file" id="file" required>
+                    <input type="file" class="form-control" name="file" id="file" required size="10 * 1024 * 1024">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
-                        Example invalid form file feedback
+                        Please choose a valid file, less than 10MB.
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="message" class="form-label">
                         <span>Message</span>
-                        <span class="hs-form-required">*</span>
                     </label>
-                    <textarea class="form-control" name="message" placeholder="Required example textarea"
-                        required></textarea>
+                    <textarea class="form-control" name="message" placeholder=""></textarea>
                     <div class="valid-feedback">
                         Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Looks no good!
                     </div>
                 </div>
 
@@ -167,270 +165,166 @@
         </div>
 
         <div class="right one-second column columns">
-
-            <div class="right one-second column columns">
-                <h2>Submit RFQ</h2>
-                <p>If you have a Request For Quote, use the form below to submit it.</p>
-                <form method="post" action="/table/" onsubmit="return preSubmit2(this)">
-                    <input type="text" name="type" hidden value="rfq">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col">
-                            <label for="firstName">
-                                <span>First name</span>
-                                <span class="hs-form-required">*</span>
-                            </label>
-                            <input type="text" class="form-control" name="firstName" minlength="3" maxlength="20"
-                                required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+            <h2>Submit RFQ</h2>
+            <p>If you have a Request For Quote, use the form below to submit it.</p>
+            <form class="needs-validation" novalidate action="/table/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <label for="firstName">
+                            <span>First name</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="firstName" minlength="3" maxlength="20" required
+                            pattern="([A-Za-z.]{3,20})">
+                        <div class="valid-feedback">
+                            Looks good!
                         </div>
-                        <div class="col">
-                            <label for="lastName">
-                                <span>Last name</span>
-                                <span class="hs-form-required">*</span>
-                            </label>
-                            <input type="text" class="form-control" name="lastName" minlength="3" maxlength="20"
-                                required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                        <div class="invalid-feedback">
+                            Please input the required firstName, containing 3 to 30 letters.
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="email">
-                                <span>Your Email</span>
-                                <span class="hs-form-required">*</span>
-                            </label>
-                            <input type="email" class="form-control" name="email" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                    <div class="col">
+                        <label for="lastName">
+                            <span>Last name</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="lastName" minlength="3" maxlength="20" required
+                            pattern="([A-Za-z.]{3,20})">
+                        <div class="valid-feedback">
+                            Looks good!
                         </div>
-                        <div class="col">
-                            <label for="phone">
-                                <span>Phone number</span>
-                            </label>
-                            <input type="tel" class="form-control" name="phone">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                        <div class="invalid-feedback">
+                            Please input the required lastName, containing 3 to 30 letters.
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="partNumber">
-                                <span>Part Number</span>
-                                <span class="hs-form-required">*</span>
-                            </label>
-                            <input type="text" class="form-control" name="partNumber" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="email">
+                            <span>Your Email</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="email" class="form-control" name="email" required
+                            pattern="^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$">
+                        <div class="valid-feedback">
+                            Looks good!
                         </div>
-                        <div class="col">
-                            <label for="manufacturer">
-                                <span>Manufacturer</span>
-                                <span class="hs-form-required">*</span>
-                            </label>
-                            <input type="text" class="form-control" name="manufacturer" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                        <div class="invalid-feedback">
+                            Please input a personal email with valid format.
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="quantity">
-                                <span>Quantity</span>
-                            </label>
-                            <input type="text" class="form-control" name="quantity">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                    <div class="col">
+                        <label for="phone">
+                            <span>Phone number</span>
+                        </label>
+                        <input type="tel" class="form-control" name="phone">
+                        <div class="valid-feedback">
+                            Looks good!
                         </div>
-                        <div class="col">
-                            <label for="targetPrice">
-                                <span>Target Price</span>
-                            </label>
-                            <input type="text" class="form-control" name="targetPrice">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
-                        </div>
-                        <div class="col">
-                            <label for="dateCode">
-                                <span>Date Code</span>
-                            </label>
-                            <input type="text" class="form-control" name="dateCode">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                        <div class="invalid-feedback">
+                            Please input a phone number.
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="additionalInformation">Additional Information</label>
-                            <input type="text" class="form-control" name="additionalInformation">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Looks no good!
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="partNumber">
+                            <span>Part Number</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="partNumber" required pattern="([0-9]{3,20})">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input the required part number, containing 3 to 20 numbers.
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+                    <div class="col">
+                        <label for="manufacturer">
+                            <span>Manufacturer</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="manufacturer" required
+                            pattern="([A-Za-z0-9]{0,20})">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input the required manufacturer, containing less than 20 letters or numbers.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="quantity">
+                            <span>Quantity</span>
+                        </label>
+                        <input type="text" class="form-control" name="quantity">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input quantity.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="targetPrice">
+                            <span>Target Price</span>
+                        </label>
+                        <input type="text" class="form-control" name="targetPrice">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input target price.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="dateCode">
+                            <span>Date Code</span>
+                        </label>
+                        <input type="text" class="form-control" name="dateCode">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input a date.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="additionalInformation">Additional Information</label>
+                        <textarea class="form-control" name="additionalInformation" placeholder=""></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
         <script>
-            function preSubmit1(form) {
-                let formData = new FormData(form);
-                console.log(form)
-                console.log(formData)
+            window.onload = function () {
+                var slice = Array.prototype.slice;
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll('.needs-validation')
 
-                // console.log("formData", formData);
-                // < !--利用fromData对象的get方法获取表单数据-->
-                let firstName = formData.get('firstName');
-                if (! /([A-Za-z.]{3,20})/.test(firstName)) {
-                    alert("first name format is wrong!")
-                    return false
-                }
-
-                let lastName = formData.get('lastName');
-                if (! /([A-Za-z.]{3,20})/.test(lastName)) {
-                    alert("last tname format is wrong!")
-                    return false
-                }
-
-                let email = formData.get('email');
-                let emailreg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
-                if (!emailreg.test(email)) {
-                    alert("email format is wrong！")
-                    return false
-                }
-
-                // 可有可无
-                let phone = formData.get('phone');
-                if (phone.length > 0 && phone.trim() === '') { alert("phone format is wrong！"); return false }
-                if (phone.trim().length > 0) {
-                    if (! /([0-9]{6,20})/.test(phone)) {
-                        alert("phone format is wrong！");
-                        return false
-                    }
-                }
-
-                let file = formData.get('file');
-                if (file.size > 10 * 1024 * 1024) {
-                    alert("file too large!must smaller than 10MB")
-                    return false
-                }
-
-                // 可有可无
-                let message = formData.get('message');
-                if (message.length > 0 && message.trim() === '') { alert("message format is wrong！"); return false }
-
-
-                console.log(firstName, lastName, email, phone, file, message)
-                return true
-            }
-
-
-            function preSubmit2(form) {
-                let formData = new FormData(form);
-
-                // < !--利用fromData对象的get方法获取表单数据-->
-                let firstName = formData.get('firstName');
-                if (! /([A-Za-z]{3,20})/.test(firstName)) {
-                    alert("first name format is wrong!")
-                    return false
-                }
-
-                let lastName = formData.get('lastName');
-                if (! /([A-Za-z]{3,20})/.test(lastName)) {
-                    alert("last tname format is wrong!")
-                    return false
-                }
-
-                let email = formData.get('email');
-                let emailreg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
-                if (!emailreg.test(email)) {
-                    alert("email format is wrong！")
-                    return false
-                }
-
-                // 可有可无
-                let phone = formData.get('phone');
-                if (phone.length > 0 && phone.trim() === '') { alert("phone format is wrong！"); return false }
-                if (phone.length > 0) {
-                    if (! /([0-9]{6,20})/.test(phone)) {
-                        alert("phone format is wrong！");
-                        return false
-                    }
-                }
-
-                let partNumber = formData.get('partNumber');
-                if (! /([0-9]{3,20})/.test(partNumber)) {
-                    alert("partNumber format is wrong！");
-                    return false
-                }
-
-                let manufacturer = formData.get('manufacturer');
-                if (! /([A-Za-z0-9]{0,20})/.test(manufacturer)) {
-                    alert("manufacturer format is wrong！");
-                    return false
-                }
-
-                // 可有可无
-                let quantity = formData.get('quantity');
-                if (quantity.length > 0 && quantity.trim() === '') { alert("quantity format is wrong！"); return false }
-
-                // 可有可无
-                let targetPrice = formData.get('targetPrice');
-                if (targetPrice.length > 0 && targetPrice.trim() === '') { alert("targetPrice format is wrong！"); return false }
-
-                // 可有可无
-                let dateCode = formData.get('dateCode');
-                if (dateCode.length > 0 && dateCode.trim() === '') { alert("datecode format is wrong！"); return false }
-
-                // 可有可无
-                let additionalInformation = formData.get('additionalInformation');
-                if (additionalInformation.length > 0 && additionalInformation.trim() === '') { alert("additionalInformation format is wrong！"); return false }
-
-                console.log(firstName, lastName, email, phone, partNumber, manufacturer, quantity, targetPrice, dateCode, additionalInformation)
-
-                return true
+                // Loop over them and prevent submission
+                slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
             }
         </script>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}

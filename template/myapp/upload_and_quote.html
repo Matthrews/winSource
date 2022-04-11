@@ -1,0 +1,558 @@
+{% extends 'myapp/layout.html' %}
+{% load static %}
+{% block custom_style %}
+<style>
+    .upload-cover {
+        height: 90px;
+        background-image: url("{% static 'img/parts2-cropped.png' %}");
+        /* background-image: url("{% static 'img/inqury.png' %}"); */
+        background-size: cover;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    #upload-tab:checked~.upload-tab-wrapper {
+        display: block;
+    }
+
+    #quote-tab:checked~.quote-tab-wrapper {
+        display: block;
+    }
+
+    #upload-tab:checked~.tab-nav label[for="upload-tab"] {
+        background-color: var(--bs-secondary);
+        border-radius: 4px 0 0 4px;
+        color: #fff;
+    }
+
+    #quote-tab:checked~.tab-nav label[for="quote-tab"] {
+        background-color: var(--bs-secondary);
+        border-radius: 0 4px 4px 0;
+        color: #fff;
+    }
+
+    .tab-wrapper {
+        position: relative;
+    }
+
+    .tab-nav {
+        position: absolute;
+        right: calc(20% + 32px);
+        top: 52px;
+        z-index: 2;
+    }
+
+    .tab-nav>span {
+        border-right: 4px solid #0d6efd;
+    }
+
+    .upload-quote-wrapper {
+        display: none;
+        height: 0;
+    }
+
+    .upload-quote-wrapper .container {
+        padding-top: 80px;
+        margin-left: 60px;
+    }
+
+    .upload-quote-wrapper .container h1 {
+        font-size: 60px;
+        line-height: 64px;
+        font-weight: 700;
+        margin-bottom: 32px;
+        color: var(--bs-secondary);
+    }
+
+    .upload-quote-wrapper .container p {
+        color: #626262;
+        font-size: 20px;
+        line-height: 32px;
+        margin: 0;
+    }
+
+    .upload-quote-wrapper .tab-content {
+        position: absolute;
+        right: 20%;
+        top: 40px;
+        width: 644px;
+        background-color: #fff;
+        box-shadow: 0 5px 29px 3px rgba(0, 0, 0, .08);
+        border-radius: 8px;
+        color: #333e49;
+        padding: 44px 32px 16px;
+        z-index: 1;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding-top: 40px;
+    }
+
+    .content>div {
+        width: 40%;
+    }
+
+    .content>div h2 {
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 900;
+        letter-spacing: 5px;
+        color: #444;
+        margin-bottom: 15px;
+    }
+
+    .content div p {
+        color: #626262;
+        margin: 0 0 15px;
+        padding: 0;
+    }
+
+    .one-second.column {
+        width: 48%;
+        float: left;
+        margin: 0 1% 40px;
+    }
+
+    form>div {
+        margin: 16px 0;
+    }
+
+    form .row {
+        min-width: 600px;
+    }
+
+    form label {
+        line-height: 20px;
+        margin-bottom: 4px;
+        color: #0070c0;
+    }
+
+    .hs-form-required {
+        color: red;
+        vertical-align: middle;
+    }
+
+    .footer-cover .slot-1 {
+        height: 300px;
+        background-color: var(--bs-white);
+    }
+
+    .footer-cover .slot-2 {
+        height: 430px;
+        background-color: var(--bs-dark);
+    }
+
+    .styles__font-weight-bold___1uRc3 {
+        color: #fff;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 32px;
+        font-weight: 700;
+    }
+
+    .styles__margin-b-xl___rPfDj {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        margin-bottom: 40px;
+    }
+
+    .styles__list-icons___24bfp {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        list-style: none;
+    }
+
+    .styles__flex-holder___1yLDh.styles__flex-holder-top___3quv1 {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        display: flex;
+        align-items: start;
+        padding-bottom: 30px;
+    }
+
+    .styles__list-checkmarked-margin-md___e-YWU li span,
+    .styles__list-checkmarked___3qOAR li span,
+    .styles__list-icons-no-margin-b-to-md___uhhdX li span,
+    .styles__list-icons-no-margin-t___3dH1z li span,
+    .styles__list-icons___24bfp li span {
+        color: #fff;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 100%;
+        max-width: 24px;
+        height: 100%;
+        max-height: 24px;
+    }
+
+    .styles__list-checkmarked-margin-md___e-YWU li p,
+    .styles__list-checkmarked___3qOAR li p,
+    .styles__list-icons-no-margin-b-to-md___uhhdX li p,
+    .styles__list-icons-no-margin-t___3dH1z li p,
+    .styles__list-icons___24bfp li p {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 400;
+        padding-left: 16px;
+        margin-bottom: 0;
+    }
+</style>
+{% endblock %}
+{% block title %}Submit Request For Quote{% endblock %}
+{% block content %}
+<div class="cover upload-cover"></div>
+<div class="tab-wrapper">
+    <input type="radio" id="upload-tab" name="tabs" checked="checked"></input>
+    <input type="radio" id="quote-tab" name="tabs"></input>
+
+    <div class="d-flex tab-nav">
+        <label style="cursor: pointer;" class="nav-link" for="upload-tab">
+            <i class="fa fa-upload" style="padding-right: 4px;color: currentColor;" aria-hidden="true"></i>
+            <span>Upload</span>
+        </label>
+        <span></span>
+        <label style="cursor: pointer;" class="nav-link" for="quote-tab">
+            <i class="fa fa fa-comments" style="padding-right: 4px;color: currentColor;" aria-hidden="true"></i>
+            <span>Quote</span>
+        </label>
+    </div>
+
+    <div class="upload-quote-wrapper upload-tab-wrapper">
+        <div class="container">
+            <h1 class="wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">BOM Upload</h1>
+            <p style="max-width: 540px;">If you have a Bill of Materials (BOM) for upload, use this form to upload it.
+            </p>
+        </div>
+        <div class="tab-content">
+            <!-- <p class="text-end">
+                Want to have a Request For Quote directly?
+            </p> -->
+            <form class="needs-validation" novalidate action="/table/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">
+                        <span>First name</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="text" class="form-control" name="firstName" value="" required
+                        pattern="([A-Za-z.]{3,20})"
+                        title="Please input the required firstName, containing 3 to 30 letters.">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please input the required firstName, containing 3 to 30 letters.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">
+                        <span>Last name</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="text" class="form-control" name="lastName" value="" required
+                        pattern="([A-Za-z.]{3,20})"
+                        title="Please input the required lastName, containing 3 to 30 letters.">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please input the required lastName, containing 3 to 30 letters.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">
+                        <span>Company Email</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="email" class="form-control" name="email" value="" required
+                        pattern="^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$"
+                        title="Please input a company email with valid format.">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please input a company email with valid format.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">
+                        <span>Phone number</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="text" class="form-control" name="phone" value="" required pattern="([0-9]{6,20})"
+                        title="Please input a phone number with valid format.">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please input a phone number with valid format.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="file" class="form-label">
+                        <span>File Upload</span>
+                        <span class="hs-form-required">*</span>
+                    </label>
+                    <input type="file" class="form-control" name="file" id="file" required size="10 * 1024 * 1024"
+                        title="Please choose a valid file, less than 10MB.">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a valid file, less than 10MB.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">
+                        <span>Message</span>
+                    </label>
+                    <textarea class="form-control" name="message" placeholder=""></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3 text-center">
+                    <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="upload-quote-wrapper quote-tab-wrapper">
+        <div class="container">
+            <h1 class="wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">Submit RFQ</h1>
+            <p style="max-width: 540px;">
+                If you have a Request For Quote, use this form to submit it.
+            </p>
+        </div>
+        <div class="tab-content">
+            <!-- <p class="text-end">
+                Back to upload Bill of Materials (BOM)?
+            </p> -->
+            <form class="needs-validation" novalidate action="/table/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row" style="margin-top: 16px;">
+                    <div class="col">
+                        <label for="firstName">
+                            <span>First name</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="firstName" minlength="3" maxlength="20" required
+                            pattern="([A-Za-z.]{3,20})">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input the required firstName, containing 3 to 30 letters.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="lastName">
+                            <span>Last name</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="lastName" minlength="3" maxlength="20" required
+                            pattern="([A-Za-z.]{3,20})">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input the required lastName, containing 3 to 30 letters.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="email">
+                            <span>Your Email</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="email" class="form-control" name="email" required
+                            pattern="^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input a personal email with valid format.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="phone">
+                            <span>Phone number</span>
+                        </label>
+                        <input type="tel" class="form-control" name="phone">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input a phone number.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="partNumber">
+                            <span>Part Number</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="partNumber" required pattern="([0-9]{3,20})">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input the required part number, containing 3 to 20 numbers.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="manufacturer">
+                            <span>Manufacturer</span>
+                            <span class="hs-form-required">*</span>
+                        </label>
+                        <input type="text" class="form-control" name="manufacturer" required
+                            pattern="([A-Za-z0-9]{0,20})">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input the required manufacturer, containing less than 20 letters or numbers.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="quantity">
+                            <span>Quantity</span>
+                        </label>
+                        <input type="text" class="form-control" name="quantity">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input quantity.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="targetPrice">
+                            <span>Target Price</span>
+                        </label>
+                        <input type="text" class="form-control" name="targetPrice">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input target price.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="dateCode">
+                            <span>Date Code</span>
+                        </label>
+                        <input type="text" class="form-control" name="dateCode">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please input a date.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="additionalInformation">Additional Information</label>
+                        <textarea class="form-control" name="additionalInformation" placeholder=""></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 text-center">
+                    <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer-cover">
+    <div class="slot-1"></div>
+    <img src="{% static 'img/square.svg'%}" alt="Square">
+    <div class="slot-2" style="padding-left: 60px;">
+        <p class="styles__font-weight-bold___1uRc3">With ATTCOMP, &puncsp; you can:</p>
+        <div class="styles__margin-b-xl___rPfDj">
+            <ul class="styles__list-icons___24bfp">
+                <li class="styles__flex-holder___1yLDh styles__flex-holder-top___3quv1"><span><svg width="22"
+                            height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9H1V1H9V6" stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M21 6H6V21H21V6Z" stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
+                        </svg></span>
+                    <p>Post your job with one-click to 200+ job boards</p>
+                </li>
+                <li class="styles__flex-holder___1yLDh styles__flex-holder-top___3quv1"><span><svg width="26"
+                            height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.05 3L16.1 9.36L23 10.42L17.97 15.33L19.11 22.32L12.95 18.99L6.75 22.24L7.97 15.27L3 10.3L9.92 9.32L13.05 3Z"
+                                stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
+                        </svg></span>
+                    <p>Fill your pipeline with qualified candidates</p>
+                </li>
+                <li class="styles__flex-holder___1yLDh styles__flex-holder-top___3quv1"><span><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                            <path
+                                d="M1.707 4.65l1.5 1.5 3-3.5m3 3h14m-21.5 7l1.5 1.5 3-3.5m3 3h14m-21.5 7l1.5 1.5 3-3.5m3 3h14"
+                                fill="none" fill-rule="evenodd" stroke="#FFF" stroke-width="2"></path>
+                        </svg></span>
+                    <p>Schedule interviews, collaborate with teammates, make offers and more</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var slice = Array.prototype.slice;
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    }
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.min.js" crossorigin="anonymous"></script>
+<script>
+    new WOW().init();
+</script>
+{% endblock %}

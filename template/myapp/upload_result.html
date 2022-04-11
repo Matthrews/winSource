@@ -1,16 +1,22 @@
 {% extends 'myapp/layout.html' %}
 {% block custom_style %}
 <style type="text/css">
-  .container {}
+  .container {
+    margin-top: 90px;
+  }
 
   .container .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
   }
 
+  .container .starter-template h1 {
+    color: #444;
+  }
+
   .container .starter-template .lead {
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-size: 0.8rem;
+    font-weight: normal;
   }
 </style>
 {% endblock %}
@@ -32,7 +38,7 @@
   }, 1000)
 
   window.setTimeout(function () {
-    window.location.href = "/table"
+    window.location.href = "/"
   }, 3000)
 </script>
 {% endblock %}
