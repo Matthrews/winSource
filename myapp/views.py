@@ -88,3 +88,7 @@ class Table(View):
 class AboutUs(View): 
     def get(self, request):
         return render(request, template_name='myapp/about_us.html')
+
+class UploadAndQuote(View): 
+    def get(self, request):
+        return render(request, template_name='myapp/upload_and_quote.html')
