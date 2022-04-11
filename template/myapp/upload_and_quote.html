@@ -39,7 +39,7 @@
 
     .tab-nav {
         position: absolute;
-        right: calc(20% + 32px);
+        left: calc(5% + 632px + 368px);
         top: 52px;
         z-index: 2;
     }
@@ -75,7 +75,7 @@
 
     .upload-quote-wrapper .tab-content {
         position: absolute;
-        right: 20%;
+        left: calc(5% + 600px);
         top: 40px;
         width: 644px;
         background-color: #fff;
@@ -188,13 +188,7 @@
     .styles__list-icons-no-margin-t___3dH1z li span,
     .styles__list-icons___24bfp li span {
         color: #fff;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        width: 100%;
         max-width: 24px;
-        height: 100%;
         max-height: 24px;
     }
 
@@ -204,16 +198,32 @@
     .styles__list-icons-no-margin-t___3dH1z li p,
     .styles__list-icons___24bfp li p {
         color: #fff;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font: inherit;
-        vertical-align: baseline;
         font-size: 20px;
         line-height: 32px;
         font-weight: 400;
         padding-left: 16px;
         margin-bottom: 0;
+        max-width: 580px;
+    }
+
+    @media (min-width: 1400px) {
+        .upload-quote-wrapper .tab-content {
+            right: 20%;
+            left: auto;
+        }
+
+        .tab-nav {
+            right: calc(20% + 32px);
+            left: auto;
+        }
+
+        .styles__list-checkmarked-margin-md___e-YWU li p,
+        .styles__list-checkmarked___3qOAR li p,
+        .styles__list-icons-no-margin-b-to-md___uhhdX li p,
+        .styles__list-icons-no-margin-t___3dH1z li p,
+        .styles__list-icons___24bfp li p {
+            max-width: fit-content;
+        }
     }
 </style>
 {% endblock %}
@@ -501,7 +511,7 @@
 <div class="footer-cover">
     <div class="slot-1"></div>
     <img src="{% static 'img/square.svg'%}" alt="Square">
-    <div class="slot-2" style="padding-left: 60px;">
+    <div class="slot-2" style="padding-left: 60px; border-bottom: 1px solid #fff;">
         <p class="styles__font-weight-bold___1uRc3">With ATTCOMP, &puncsp; you can:</p>
         <div class="styles__margin-b-xl___rPfDj">
             <ul class="styles__list-icons___24bfp">
