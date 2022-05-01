@@ -1,4 +1,5 @@
 {% extends 'myapp/layout.html' %}
+{% load static %}
 {% block custom_style %}
 <style>
     .aboutus-wrapper {
@@ -32,7 +33,7 @@
 </div>
 <div class="container aboutus-wrapper">
     <div class="float-start me-5 my-2">
-        <img src="https://www.attcomp.com/static/img/logo-sm.png" height="120" alt="logo">
+        <img src="{% static 'logo/logo_horizantal_dark.svg' %}" height="120" alt="logo">
     </div>
     <p>
         Attcomp Limited is an experienced independent distributor since 2006, Which is committed to provide
