@@ -3,7 +3,7 @@
 {% block custom_style %}
 <style>
     .home-cover {
-        background-image: url("{% static 'img/parts2-cropped.png' %}");
+        background-image: url("{% static 'img/home_cover.png' %}");
         background-size: cover;
     }
 
@@ -18,8 +18,15 @@
     }
 
     .search-container {
-        background-color: var(--bs-primary);
-        color: var(--bs-body-bg);
+        margin: 0 auto;
+        padding: 9px 0;
+        max-width: 860px;
+        border: 1px solid #EBEBEB;
+        border-radius: 4px;
+        transform: translateY(-50%);
+        background: var(--bs-body-bg);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1;
     }
 
     .search-container .search-bar-wrap {
@@ -29,13 +36,10 @@
     }
 
     .search-container .search-bar-wrap input[type="search"] {
-        border: 2px solid var(--bs-primary);
+        width: 360px;
         padding: 8px 10px;
-        width: 280px;
-        background-color: #ffffff5c;
-        vertical-align: middle;
         margin: 5px 16px 5px 0;
-        color: var(--bs-body-bg);
+        border: 2px solid var(--bs-primary);
         box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02);
     }
 
@@ -66,9 +70,6 @@
     }
 
     .feature-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
         color: #626262;
     }
 
@@ -157,8 +158,12 @@
 
     .product-wrapper {
         position: relative;
-        padding-top: 100px;
-        margin-bottom: 32px;
+        margin-top: 80px;
+        margin-bottom: 15px;
+        padding-top: 32px;
+        background: #f0f4f3;
+        border-top: 6px solid #ffc107;
+        border-radius: 8px 8px 0 0;
     }
 
     .product-wrapper .subCopy {
@@ -167,14 +172,13 @@
         line-height: 60%;
         color: #444;
         font-style: normal;
-        text-transform: uppercase;
         text-align: center;
     }
 
     .product-wrapper .subtit {
         color: #444;
         font-size: 24px;
-        margin-bottom: 72px;
+        margin-bottom: 48px;
         text-transform: uppercase;
         text-align: center;
     }
@@ -354,6 +358,35 @@
         right: 20px;
         bottom: 20px;
     }
+
+    .fea-title {
+        font-size: 48px;
+        color: var(--bs-gray-800)
+    }
+
+    .shadow-f1 {
+        box-shadow: var(--bs-decor1) 0px 12px 20px -12px;
+    }
+
+    .title-f1 {
+        color: var(--bs-decor1);
+    }
+
+    .shadow-f2 {
+        box-shadow: var(--bs-decor2) 0px 12px 20px -12px;
+    }
+
+    .title-f2 {
+        color: var(--bs-decor2);
+    }
+
+    .shadow-f3 {
+        box-shadow: var(--bs-primary) 0px 12px 20px -12px;
+    }
+
+    .title-f3 {
+        color: var(--bs-primary);
+    }
 </style>
 {% endblock %}
 
@@ -376,7 +409,7 @@ Classic Components – Electronic Components Distributor
     <div class="search-container">
         <div class="search-bar-wrap">
             <img class="logo me-3" onclick="document.location.href = '/';"
-                src="https://www.attcomp.com/static/img/logo-sm.png" height="42px" alt="logo">
+                src="{% static 'logo/logo_single_brand.svg' %}" height="42" alt="ATTCOMP Logo">
             <input type="search" class="form-control" id="value" placeholder="Part search..." name="q">
             <button type="submit" class="btn btn-primary" onclick="doSearch()">
                 <i class="fa fa-search" style="margin-right: 4px;"></i>
@@ -414,7 +447,8 @@ Classic Components – Electronic Components Distributor
                         <th scope="row">{{forloop.counter}}</th>
                         <td>{{item.item_detail_title}}</td>
                         <td>{{item.item_detail_manufacturer_title}}</td>
-                        <td title="{{item.item_detail_addinfo}}">{% if item.item_detail_addinfo %}{{item.item_detail_addinfo}}{% else %}Empty{% endif %}</td>
+                        <td title="{{item.item_detail_addinfo}}">
+                            {% if item.item_detail_addinfo%}{{item.item_detail_addinfo}}{% else %}Empty{% endif %}</td>
                         <td>{{item.item_availablity_text}}</td>
                         <td>{{item.item_availablity_price}}</td>
                         <td>
@@ -489,47 +523,82 @@ Classic Components – Electronic Components Distributor
         <p>5. Search by Manufacturer</p>
     </div>
     {% else %}
+    <!-- LOGO区 -->
+    <!-- <div class="d-flex justify-content-center flex-row bd-highlight my-3">
+        <div class="p-2 bd-highlight bg-dark shadow rounded">
+            <img src="{% static 'logo/logo_horizantal_light_backup.svg' %}" alt="logo_horizantal_light" height="150">
+        </div>
+        <div class="p-2 bd-highlight bg-light bg-light shadow rounded">
+            <img src="{% static 'logo/logo_horizantal_dark_backup.svg' %}" alt="logo_horizantal_dark" height="150">
+        </div>
+        <div class="p-2 bd-highlight shadow rounded">
+            <img src="{% static 'logo/logo_single_brand_backup.svg' %}" alt="logo_single_brand" height="150">
+        </div>
+        <div class="p-2 bd-highlight bg-dark shadow rounded">
+            <img src="{% static 'logo/logo_vertical_light_backup.svg' %}" alt="logo_vertical_light" height="150">
+        </div>
+        <div class="p-2 bd-highlight bg-light shadow rounded">
+            <img src="{% static 'logo/logo_vertical_dark_backup.svg' %}" alt="logo_vertical_dark" height="150">
+        </div>
+    </div> -->
     <!-- Features -->
-    <div class="feature-wrapper">
-        <div class="column mcb-column mcb-item-avp66bw3k one-third column_visual">
-            <p><a href="#"><img class="aligncenter wp-image-3405 size-medium"
-                        src="https://www.class-ic.com/wp-content/uploads/2019/04/shortages-tr-289x300.png"
-                        alt="Shortages" width="289" height="300"></a></p>
-            <h2 style="text-align: center;"><a
-                    href="https://www.class-ic.com/shortages-and-production-support/">SHORTAGES</a></h2>
-            <hr>
-            <p>Classic can eliminate your electronic component shortage concerns. We have access to a broad array of
-                allocated components via our extensive network of global partners and regionalized distribution
-                points. Classic Components will resolve stockouts / shortages to keep your production running.</p>
+    <h1 class="text-uppercase text-center font-monospace fw-bold mt-4 fea-title">Our advantages</h1>
+    <div class="feature-wrapper d-flex flex-row align-items-center shadow-f1 rounded bg-1"
+        style="border-bottom-left-radius: 35px!important;">
+        <div class="d-flex bd-highlight me-4">
+            <a href="#">
+                <img class="aligncenter wp-image-3405 size-medium" src="{% static 'img/box_1200px_radius.png' %}"
+                    alt="Diversity" width="280">
+            </a>
         </div>
-        <div class="column mcb-column mcb-item-90j82dxw5 one-third column_visual">
-            <p><a href="#"><img class="aligncenter wp-image-3406 size-medium"
-                        src="https://www.class-ic.com/wp-content/uploads/2019/04/cost-reduction-tr-300x300.png"
-                        alt="Cost Reduction" width="300" height="300"></a></p>
-            <h2 style="text-align: center;"><a href="https://www.class-ic.com/material-cost-reduction/"
-                    data-wplink-edit="true">COST SAVINGS</a></h2>
+        <div class="bd-highlight flex-grow-1 pe-4">
+            <h2 class="text-uppercase title-f1">Zero-concerns of lacks</h2>
             <hr>
-            <p>We are experts in achieving verified results for improved purchase price variance. Classic Components
-                will leverage our considerable buying power and comprehensive international organization of high
-                quality sources to meet your most aggressive cost targets.</p>
-        </div>
-        <div class="column mcb-column mcb-item-f4blwswy2 one-third column_visual">
-            <p><a href="#"><img class="aligncenter wp-image-3404 size-medium"
-                        src="https://www.class-ic.com/wp-content/uploads/2019/04/excess-tr-300x300.png" alt="Excess"
-                        width="300" height="300"></a></p>
-            <h2 style="text-align: center;"><a href="https://www.class-ic.com/excess-inventory/">EXCESS</a></h2>
-            <hr>
-            <p style="text-align: left;">The Classic team is exceptionally skilled at getting the highest value for
-                your excess electronic components. We will employ our network of international partners along with
-                our unparalleled digital marketing group to realize the best results for your excess inventory.</p>
+            <p class="mt-4">Attcomp can eliminate your electronic component lack concerns. Our Components will resolve
+                stockouts/shortages to keep your production running.We have access to a broad collection of allocated
+                components via our extensive network of global partners and regionalized distribution points.
+            </p>
         </div>
     </div>
+
+    <div class="feature-wrapper d-flex flex-row align-items-center shadow-f2 rounded my-4 bg-2"
+        style="border-bottom-right-radius: 35px!important;">
+        <div class="bd-highlight flex-grow-1 ps-4">
+            <h2 class="text-uppercase title-f2">Most competitive price</h2>
+            <hr>
+            <p class="mt-4">We are experts in fulfilling verified results for improved purchase price variance.
+                Attcomp's components will leverage our considerable buying power and the comprehensive international
+                organization of high-quality sources to meet your most aggressive cost targets.
+            </p>
+        </div>
+        <div class="d-flex bd-highlight ms-4">
+            <a href="#">
+                <img class="aligncenter wp-image-3405 size-medium" src="{% static 'img/turnover_1200px_radius.png' %}"
+                    alt="Cost" width="280">
+            </a>
+        </div>
+    </div>
+
+    <div class="feature-wrapper d-flex flex-row align-items-center shadow-f3 rounded bg-3"
+        style="border-bottom-left-radius: 35px!important;">
+        <div class="d-flex bd-highlight me-4">
+            <a href="#">
+                <img class="aligncenter wp-image-3405 size-medium" src="{% static 'img/global_1200px_radius.png' %}"
+                    alt="Turnover" width="280">
+            </a>
+        </div>
+        <div class="bd-highlight flex-grow-1 pe-4">
+            <h2 class="text-uppercase title-f3">Efficient inventory turnover</h2>
+            <hr>
+            <p class="mt-4">The Attcomp team is quite experienced in getting the highest value for
+                your spare electronic components. We will employ our network of international partners and our
+                unparalleled digital marketing group to realize the best results for your excess inventory.</p>
+        </div>
+    </div>
+
     <!-- Products  -->
     <div class="product-wrapper">
-        <h2 class="subCopy wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-            style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            product
-        </h2>
+        <h2 class="subCopy font-monospace">PRODUCTS</h2>
         <p class="subtit wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
             style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
             Main Products: integrated&nbsp; circuit , Capacitor, Inductor, Relay, LCD, Module etc.
@@ -863,59 +932,11 @@ Classic Components – Electronic Components Distributor
             <!-- NXP -->
             <div class="tab-pane fade show " id="pills-p7" role="tabpanel" aria-labelledby="pills-p7-tab">
                 <h2 style="color: var(--bs-body-bg);">暂无NXP相关描述</h2>
-                <!-- <div class="typeimg active in"><img class="pro_type_img"
-                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313930812.png"
-                            alt="ON&nbsp;semiconductor"></div>
-
-
-                    <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                        <li>
-                            <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                                genuine parts, supporting franchised agency source ! No worry to work with us!<br></p>
-                        </li>
-                        <li>
-                            <p><br></p>
-                        </li>
-                        <li>
-                            <p>ON Semiconductor is the premier supplier of high performance silicon solutions for energy
-                                efficient electronic products. The company's product portfolio includes power and signal
-                                management, logic, discrete and custom devices to help customers solve their unique
-                                design challenges in automotive, communications, computer, consumer electronics,
-                                industrial, LED lighting, medical, military/aerospace and power applications. Fast and
-                                cost-effective.</p>
-                        </li>
-                    </ul>
-                    <div class="pro-list">
-                    </div> -->
             </div>
 
             <!-- ST -->
             <div class="tab-pane fade show " id="pills-p8" role="tabpanel" aria-labelledby="pills-p8-tab">
                 <h2 style="color: var(--bs-body-bg);">暂无ST相关描述</h2>
-                <!-- <div class="typeimg active in"><img class="pro_type_img"
-                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313930812.png"
-                            alt="ON&nbsp;semiconductor"></div>
-
-
-                    <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                        <li>
-                            <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                                genuine parts, supporting franchised agency source ! No worry to work with us!<br></p>
-                        </li>
-                        <li>
-                            <p><br></p>
-                        </li>
-                        <li>
-                            <p>ON Semiconductor is the premier supplier of high performance silicon solutions for energy
-                                efficient electronic products. The company's product portfolio includes power and signal
-                                management, logic, discrete and custom devices to help customers solve their unique
-                                design challenges in automotive, communications, computer, consumer electronics,
-                                industrial, LED lighting, medical, military/aerospace and power applications. Fast and
-                                cost-effective.</p>
-                        </li>
-                    </ul>
-                    <div class="pro-list">
-                    </div> -->
             </div>
         </div>
     </div>
