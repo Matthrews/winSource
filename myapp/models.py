@@ -8,7 +8,7 @@ class Product(models.Model):
 
     PartNo = models.CharField(verbose_name="产品名称", max_length=32, db_column='item_detail_title',
                               unique=True)  # item_detail_title
-    Manufacture = models.CharField(verbose_name="制造商", max_length=32,
+    Manufacture = models.CharField(verbose_name="制造商", max_length=128,
                                    db_column='item_detail_manufacturer_title')  # item_detail_manufacturer_title
     Catalog = models.CharField(verbose_name="目录", max_length=128, default=None, blank=True, null=True)
     Description = models.CharField(verbose_name="详情", max_length=512,
