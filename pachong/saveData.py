@@ -53,9 +53,11 @@ def save_data(data):
 try:
     searchParam = sys.argv[1]  # 'a' 第一个参数
     pagenumber = int(sys.argv[2])  # 1   第二个参数
+    duration = int(sys.argv[3])
 except:
     searchParam = input("输入搜索参数：")  # 第一个参数
     pagenumber = input("输入从第几页开始：")  # 第二个参数
+    duration = input("输入间隔时间：")
 
 while True:
     print(f"当前爬取的链接搜索参数是{searchParam}，页码是第{pagenumber}页")
@@ -67,4 +69,4 @@ while True:
     save_data(data['data_list'])
     # 把页码设置为下一页
     pagenumber = data['next_page']
-    time.sleep(240)
+    time.sleep(duration)
