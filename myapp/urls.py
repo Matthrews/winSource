@@ -13,5 +13,7 @@ urlpatterns = [
     path('upload_and_quote/', UploadAndQuote.as_view(), name="upload_and_quote"),
     path('about_us/', AboutUs.as_view(), name="aboutus"),
     path('search/', handleSearch, name="search"),
-    re_path(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT})
+    re_path(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
+    path('product/', ProductView.as_view(), name="product"),
+
 ]

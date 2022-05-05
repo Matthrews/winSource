@@ -4,10 +4,14 @@ import time
 
 from django.shortcuts import render
 from django.views import View
+from django_filters.views import FilterView
 
-from tools.win_source import *
 from tools.emailSend import sendmail
+from tools.win_source import *
 from winSource.settings import BASE_DIR, Domain
+# filters.py定义了用哪些字段对模型进行过滤
+from .filters import ProductFilter
+from .models import Product
 
 
 class Index(View):
@@ -15,13 +19,6 @@ class Index(View):
         return render(request, template_name='myapp/index.html')
 
 
-def handleSearch(request):
-    searchParam = request.GET.get("q")
-    pageSize = request.GET.get("pagesize", 20)
-    pageNumber = request.GET.get('pagenumber', 1)
-    res = sensitive_sync_function(searchParam, pageSize=pageSize, pageNumber=pageNumber)
-    # return JsonResponse(res)
-    return render(request, template_name='myapp/index.html', context={'q': searchParam, 'res': res})
 
 
 class Table(View):
@@ -56,7 +53,7 @@ class Table(View):
             '''
         else:
             file = request.FILES.get("file")
-            file_name = f"{time.time()}-{str(file.name).replace(' ','')}"
+            file_name = f"{time.time()}-{str(file.name).replace(' ', '')}"
             tmp_path = BASE_DIR.joinpath("upload").joinpath(file_name)
             f = open(tmp_path, 'wb')
             for line in file.chunks():
@@ -82,13 +79,47 @@ class Table(View):
         sendmail(html)
         print(data)
         # return HttpResponse(data)
-        return render(request, 'myapp/upload_result.html',context={"data":data})
+        return render(request, 'myapp/upload_result.html', context={"data": data})
 
 
-class AboutUs(View): 
+class AboutUs(View):
     def get(self, request):
         return render(request, template_name='myapp/about_us.html')
 
-class UploadAndQuote(View): 
+
+class UploadAndQuote(View):
     def get(self, request):
         return render(request, template_name='myapp/upload_and_quote.html')
+
+
+
+def handleSearch(request):
+    searchParam = request.GET.get("q")
+    pageSize = request.GET.get("pagesize", 20)
+    pageNumber = request.GET.get('pagenumber', 1)
+    res = sensitive_sync_function(searchParam, pageSize=pageSize, pageNumber=pageNumber)
+    # return JsonResponse(res)
+    return render(request, template_name='myapp/index.html', context={'q': searchParam, 'res': res})
+
+
+class ProductView(FilterView):
+    filter = None
+    model = Product
+    # 使用ProductFilter过滤
+    filter_class = ProductFilter
+    template_name = 'myapp/product.html'
+
+    # 获取过滤后的查询集
+    def get_queryset(self, **kwargs):
+        qs = Product.objects.all().order_by('-id')
+        self.filter = self.filter_class(self.request.GET, queryset=qs)
+        # print(self.filter.qs)
+        # return self.filter.qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['res'] = self.filter.qs
+        context['q'] = 'haha'
+
+        print(context)
+        return context
