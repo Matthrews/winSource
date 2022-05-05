@@ -84,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': '127.0.0.1' if platform.system() in ["Windows", "Darwin"] else 'django.chuanyun101.com',
-        'NAME': 'winSourcedb',
+        'NAME': 'winsourcedb',
         "PORT": 3306,
         'USER': 'root',
         "PASSWORD": "qq1788lover",
