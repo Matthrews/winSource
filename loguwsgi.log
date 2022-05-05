@@ -1,0 +1,992 @@
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Apr 29 07:39:14 2022] ***
+compiled with version: 11.2.0 on 29 April 2022 07:34:31
+os: Linux-5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022
+nodename: aiyun45981254123
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/winSource
+writing pidfile to piduwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/winSource
+your processes number limit is 3768
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8885 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.7 (default, Sep 10 2021, 14:59:43)  [GCC 11.2.0]
+Python main interpreter initialized at 0x55d6fca9f7e0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+Traceback (most recent call last):
+  File "winSource/wsgi.py", line 12, in <module>
+    from django.core.wsgi import get_wsgi_application
+ModuleNotFoundError: No module named 'django'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3266)
+spawned uWSGI worker 1 (pid: 3267, cores: 2)
+spawned uWSGI worker 2 (pid: 3268, cores: 2)
+spawned uWSGI worker 3 (pid: 3269, cores: 2)
+spawned uWSGI worker 4 (pid: 3270, cores: 2)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Apr 29 08:10:58 2022] ***
+compiled with version: 11.2.0 on 29 April 2022 07:34:31
+os: Linux-5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022
+nodename: aiyun45981254123
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/winSource
+writing pidfile to piduwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/winSource
+your processes number limit is 3768
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8885 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33129 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.7 (default, Sep 10 2021, 14:59:43)  [GCC 11.2.0]
+Python main interpreter initialized at 0x55f1cb7bc7f0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55f1cb7bc7f0 pid: 3656 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3656)
+spawned uWSGI worker 1 (pid: 3657, cores: 2)
+spawned uWSGI worker 2 (pid: 3658, cores: 2)
+spawned uWSGI worker 3 (pid: 3659, cores: 2)
+spawned uWSGI worker 4 (pid: 3660, cores: 2)
+spawned uWSGI http 1 (pid: 3661)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 556, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 598, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./winSource/urls.py", line 21, in <module>
+    path('', include('myapp.urls',namespace="myapp"))
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./myapp/urls.py", line 7, in <module>
+    from .views import *
+  File "/home/winSource/./myapp/views.py", line 8, in <module>
+    from tools.win_source import *
+  File "/home/winSource/./tools/win_source.py", line 1, in <module>
+    import cfscrape
+ModuleNotFoundError: No module named 'cfscrape'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 152, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 611, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./winSource/urls.py", line 21, in <module>
+    path('', include('myapp.urls',namespace="myapp"))
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./myapp/urls.py", line 7, in <module>
+    from .views import *
+  File "/home/winSource/./myapp/views.py", line 8, in <module>
+    from tools.win_source import *
+  File "/home/winSource/./tools/win_source.py", line 1, in <module>
+    import cfscrape
+ModuleNotFoundError: No module named 'cfscrape'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 152, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 611, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./winSource/urls.py", line 21, in <module>
+    path('', include('myapp.urls',namespace="myapp"))
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./myapp/urls.py", line 7, in <module>
+    from .views import *
+  File "/home/winSource/./myapp/views.py", line 8, in <module>
+    from tools.win_source import *
+  File "/home/winSource/./tools/win_source.py", line 1, in <module>
+    import cfscrape
+ModuleNotFoundError: No module named 'cfscrape'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 152, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 611, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./winSource/urls.py", line 21, in <module>
+    path('', include('myapp.urls',namespace="myapp"))
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./myapp/urls.py", line 7, in <module>
+    from .views import *
+  File "/home/winSource/./myapp/views.py", line 8, in <module>
+    from tools.win_source import *
+  File "/home/winSource/./tools/win_source.py", line 1, in <module>
+    import cfscrape
+ModuleNotFoundError: No module named 'cfscrape'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 152, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 611, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./winSource/urls.py", line 21, in <module>
+    path('', include('myapp.urls',namespace="myapp"))
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./myapp/urls.py", line 7, in <module>
+    from .views import *
+  File "/home/winSource/./myapp/views.py", line 8, in <module>
+    from tools.win_source import *
+  File "/home/winSource/./tools/win_source.py", line 1, in <module>
+    import cfscrape
+ModuleNotFoundError: No module named 'cfscrape'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 152, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 611, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./winSource/urls.py", line 21, in <module>
+    path('', include('myapp.urls',namespace="myapp"))
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./myapp/urls.py", line 7, in <module>
+    from .views import *
+  File "/home/winSource/./myapp/views.py", line 8, in <module>
+    from tools.win_source import *
+  File "/home/winSource/./tools/win_source.py", line 1, in <module>
+    import cfscrape
+ModuleNotFoundError: No module named 'cfscrape'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.9/dist-packages/django/core/handlers/exception.py", line 152, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 611, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/usr/local/lib/python3.9/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./winSource/urls.py", line 21, in <module>
+    path('', include('myapp.urls',namespace="myapp"))
+  File "/usr/local/lib/python3.9/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/winSource/./myapp/urls.py", line 7, in <module>
+    from .views import *
+  File "/home/winSource/./myapp/views.py", line 8, in <module>
+    from tools.win_source import *
+  File "/home/winSource/./tools/win_source.py", line 1, in <module>
+    import cfscrape
+ModuleNotFoundError: No module named 'cfscrape'
+[pid: 3657|app: 0|req: 1/1] 127.0.0.1 () {54 vars in 1024 bytes} [Fri Apr 29 08:11:14 2022] GET / => generated 0 bytes in 427 msecs (HTTP/1.0 500) 0 headers in 0 bytes (0 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 3661)
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Apr 29 08:13:11 2022] ***
+compiled with version: 11.2.0 on 29 April 2022 07:34:31
+os: Linux-5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022
+nodename: aiyun45981254123
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/winSource
+writing pidfile to piduwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/winSource
+your processes number limit is 3768
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8885 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33425 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.7 (default, Sep 10 2021, 14:59:43)  [GCC 11.2.0]
+Python main interpreter initialized at 0x55e45995c7f0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55e45995c7f0 pid: 3708 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3708)
+spawned uWSGI worker 1 (pid: 3711, cores: 2)
+spawned uWSGI worker 2 (pid: 3712, cores: 2)
+spawned uWSGI worker 3 (pid: 3713, cores: 2)
+spawned uWSGI worker 4 (pid: 3717, cores: 2)
+spawned uWSGI http 1 (pid: 3719)
+[pid: 3717|app: 0|req: 1/1] 127.0.0.1 () {54 vars in 1024 bytes} [Fri Apr 29 08:13:19 2022] GET / => generated 62126 bytes in 513 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 3719)
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Apr 29 08:14:41 2022] ***
+compiled with version: 11.2.0 on 29 April 2022 07:34:31
+os: Linux-5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022
+nodename: aiyun45981254123
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/winSource
+writing pidfile to piduwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/winSource
+your processes number limit is 3768
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+building mime-types dictionary from file /etc/mime.types...1476 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8885 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:35601 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.7 (default, Sep 10 2021, 14:59:43)  [GCC 11.2.0]
+Python main interpreter initialized at 0x55ebba72b900
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55ebba72b900 pid: 3741 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3741)
+spawned uWSGI worker 1 (pid: 3742, cores: 2)
+spawned uWSGI worker 2 (pid: 3743, cores: 2)
+spawned uWSGI worker 3 (pid: 3744, cores: 2)
+spawned uWSGI worker 4 (pid: 3745, cores: 2)
+spawned uWSGI http 1 (pid: 3746)
+[pid: 3743|app: 0|req: 1/1] 127.0.0.1 () {54 vars in 1024 bytes} [Fri Apr 29 08:14:46 2022] GET / => generated 62126 bytes in 557 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 3746)
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Apr 29 08:17:27 2022] ***
+compiled with version: 11.2.0 on 29 April 2022 07:34:31
+os: Linux-5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022
+nodename: aiyun45981254123
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/winSource
+writing pidfile to piduwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/winSource
+your processes number limit is 3768
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+building mime-types dictionary from file /etc/mime.types...1476 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8885 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:40207 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.7 (default, Sep 10 2021, 14:59:43)  [GCC 11.2.0]
+Python main interpreter initialized at 0x559d16404900
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x559d16404900 pid: 3830 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3830)
+spawned uWSGI worker 1 (pid: 3833, cores: 2)
+spawned uWSGI worker 2 (pid: 3834, cores: 2)
+spawned uWSGI worker 3 (pid: 3835, cores: 2)
+spawned uWSGI worker 4 (pid: 3836, cores: 2)
+spawned uWSGI http 1 (pid: 3837)
+[pid: 3834|app: 0|req: 1/1] 127.0.0.1 () {30 vars in 440 bytes} [Fri Apr 29 08:17:33 2022] GET / => generated 62126 bytes in 330 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 2/2] 127.0.0.1 () {56 vars in 1046 bytes} [Fri Apr 29 08:17:46 2022] GET / => generated 62126 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 3/3] 127.0.0.1 () {44 vars in 734 bytes} [Fri Apr 29 08:17:46 2022] GET /bootstrap.min.css.map => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 4/4] 127.0.0.1 () {52 vars in 999 bytes} [Fri Apr 29 08:27:06 2022] GET / => generated 62126 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 5/5] 127.0.0.1 () {30 vars in 464 bytes} [Fri Apr 29 08:28:55 2022] GET / => generated 62126 bytes in 19 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 6/6] 127.0.0.1 () {30 vars in 393 bytes} [Fri Apr 29 08:31:11 2022] GET / => generated 62126 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 7/7] 127.0.0.1 () {30 vars in 442 bytes} [Fri Apr 29 08:37:12 2022] GET / => generated 62126 bytes in 16 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 8/8] 127.0.0.1 () {30 vars in 393 bytes} [Fri Apr 29 10:05:50 2022] GET / => generated 62126 bytes in 14 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 9/9] 111.13.63.182 () {28 vars in 300 bytes} [Fri Apr 29 15:03:53 2022] GET / => generated 62126 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[uwsgi-http key: 45.11.92.182 client_addr: 111.13.63.182 client_port: 42674] hr_write(): Connection reset by peer [plugins/http/http.c line 565]
+[pid: 3834|app: 0|req: 10/10] 146.70.52.115 () {26 vars in 353 bytes} [Fri Apr 29 16:37:34 2022] GET http://www.proxy-listen.de/azenv.php => generated 179 bytes in 11 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 11/11] 127.0.0.1 () {30 vars in 440 bytes} [Fri Apr 29 17:50:04 2022] GET / => generated 62126 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 12/12] 127.0.0.1 () {32 vars in 465 bytes} [Sat Apr 30 00:23:32 2022] GET /robots.txt => generated 179 bytes in 27 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 13/13] 127.0.0.1 () {38 vars in 792 bytes} [Sat Apr 30 00:23:32 2022] GET /form/ => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 14/14] 127.0.0.1 () {36 vars in 727 bytes} [Sat Apr 30 01:53:32 2022] GET / => generated 62126 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 15/15] 127.0.0.1 () {32 vars in 438 bytes} [Sat Apr 30 03:27:45 2022] GET /robots.txt => generated 179 bytes in 12 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 16/16] 127.0.0.1 () {32 vars in 418 bytes} [Sat Apr 30 03:27:47 2022] GET / => generated 62126 bytes in 14 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 17/17] 119.90.42.82 () {28 vars in 377 bytes} [Sat Apr 30 04:13:31 2022] GET / => generated 62126 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 18/18] 119.90.42.82 () {28 vars in 399 bytes} [Sat Apr 30 04:13:48 2022] GET //robots.txt => generated 179 bytes in 22 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 3836|app: 0|req: 2/19] 119.90.42.82 () {28 vars in 401 bytes} [Sat Apr 30 04:13:48 2022] GET //sitemap.xml => generated 179 bytes in 668 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 3836|app: 0|req: 2/20] 119.90.42.82 () {28 vars in 427 bytes} [Sat Apr 30 04:13:48 2022] GET //.well-known/security.txt => generated 179 bytes in 685 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3836|app: 0|req: 3/21] 127.0.0.1 () {32 vars in 452 bytes} [Sat Apr 30 05:44:17 2022] GET /upload_and_quote/ => generated 48364 bytes in 28 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 19/22] 127.0.0.1 () {38 vars in 792 bytes} [Sat Apr 30 08:39:58 2022] GET /form/ => generated 179 bytes in 17 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 20/23] 127.0.0.1 () {50 vars in 945 bytes} [Sat Apr 30 09:03:29 2022] GET / => generated 62126 bytes in 16 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 21/24] 146.70.52.108 () {26 vars in 351 bytes} [Sat Apr 30 10:04:17 2022] GET http://www.cknuckles.com/cgi/env.cgi => generated 179 bytes in 10 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 22/25] 127.0.0.1 () {38 vars in 782 bytes} [Sat Apr 30 10:54:58 2022] GET / => generated 62126 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3835|app: 0|req: 1/26] 127.0.0.1 () {32 vars in 485 bytes} [Sat Apr 30 12:09:23 2022] GET / => generated 62126 bytes in 537 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3835|app: 0|req: 2/27] 127.0.0.1 () {38 vars in 782 bytes} [Sat Apr 30 12:13:06 2022] GET / => generated 62126 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3833|app: 0|req: 1/28] 146.70.52.195 () {26 vars in 366 bytes} [Sat Apr 30 13:41:51 2022] GET http://users.ugent.be/~bfdwever/start/env.cgi => generated 179 bytes in 554 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3833|app: 0|req: 2/29] 127.0.0.1 () {32 vars in 485 bytes} [Sat Apr 30 14:18:59 2022] GET / => generated 62126 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 23/30] 127.0.0.1 () {32 vars in 533 bytes} [Sat Apr 30 14:37:07 2022] GET /.well-known/security.txt => generated 179 bytes in 14 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 24/31] 127.0.0.1 () {32 vars in 465 bytes} [Sat Apr 30 14:54:58 2022] GET /robots.txt => generated 179 bytes in 10 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 25/32] 127.0.0.1 () {34 vars in 556 bytes} [Sat Apr 30 14:54:59 2022] GET / => generated 62126 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[uwsgi-http key:  client_addr: 43.129.35.207 client_port: 4297] hr_read(): Connection reset by peer [plugins/http/http.c line 918]
+[pid: 3834|app: 0|req: 26/33] 43.129.35.207 () {28 vars in 304 bytes} [Sat Apr 30 15:37:29 2022] GET / => generated 62126 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+[uwsgi-http key: 45.11.92.182:8885 client_addr: 43.129.35.207 client_port: 5679] hr_write(): Connection reset by peer [plugins/http/http.c line 565]
+[pid: 3834|app: 0|req: 27/34] 209.141.51.222 () {42 vars in 736 bytes} [Sat Apr 30 15:37:41 2022] GET / => generated 62126 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 28/35] 111.7.100.19 () {34 vars in 636 bytes} [Sat Apr 30 15:37:43 2022] GET / => generated 62126 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 29/36] 8.31.2.62 () {42 vars in 728 bytes} [Sat Apr 30 15:37:46 2022] GET / => generated 62126 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 30/37] 209.141.42.155 () {42 vars in 736 bytes} [Sat Apr 30 15:37:49 2022] GET / => generated 62126 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 31/38] 211.95.50.5 () {34 vars in 632 bytes} [Sat Apr 30 15:37:51 2022] GET / => generated 62126 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 32/39] 209.141.51.222 () {42 vars in 740 bytes} [Sat Apr 30 15:37:54 2022] GET / => generated 62126 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 33/40] 211.95.50.8 () {34 vars in 635 bytes} [Sat Apr 30 15:37:56 2022] GET / => generated 62126 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 34/41] 209.141.36.112 () {42 vars in 762 bytes} [Sat Apr 30 15:38:04 2022] GET /favicon.ico => generated 179 bytes in 5 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 3836|app: 0|req: 4/42] 94.102.61.4 () {30 vars in 434 bytes} [Sat Apr 30 18:21:43 2022] GET / => generated 62126 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3836|app: 0|req: 5/43] 94.102.61.4 () {32 vars in 380 bytes} [Sat Apr 30 18:31:23 2022] GET / => generated 62126 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 35/44] 127.0.0.1 () {38 vars in 792 bytes} [Sat Apr 30 18:37:12 2022] GET /form/ => generated 179 bytes in 12 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 36/45] 127.0.0.1 () {38 vars in 800 bytes} [Sat Apr 30 18:59:41 2022] GET /about_us/ => generated 29091 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 37/46] 127.0.0.1 () {38 vars in 782 bytes} [Sat Apr 30 20:54:58 2022] GET / => generated 62126 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 38/47] 127.0.0.1 () {38 vars in 782 bytes} [Sat Apr 30 21:39:58 2022] GET / => generated 62126 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 39/48] 127.0.0.1 () {34 vars in 461 bytes} [Sun May  1 01:59:26 2022] GET / => generated 62126 bytes in 31 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 40/49] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 07:45:07 2022] GET / => generated 62126 bytes in 24 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 41/50] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 07:45:11 2022] GET / => generated 62126 bytes in 13 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 42/51] 127.0.0.1 () {32 vars in 465 bytes} [Sun May  1 07:47:55 2022] GET /robots.txt => generated 179 bytes in 17 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 43/52] 127.0.0.1 () {38 vars in 792 bytes} [Sun May  1 07:47:55 2022] GET /form/ => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 44/53] 127.0.0.1 () {38 vars in 800 bytes} [Sun May  1 08:32:55 2022] GET /about_us/ => generated 29091 bytes in 17 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 45/54] 127.0.0.1 () {38 vars in 816 bytes} [Sun May  1 09:17:55 2022] GET /upload_and_quote/ => generated 48364 bytes in 34 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 46/55] 127.0.0.1 () {34 vars in 461 bytes} [Sun May  1 09:40:33 2022] GET / => generated 62126 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 47/56] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 09:42:22 2022] GET / => generated 62126 bytes in 31 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 48/57] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 09:44:58 2022] GET / => generated 62126 bytes in 16 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 49/58] 146.70.52.59 () {26 vars in 339 bytes} [Sun May  1 10:02:37 2022] GET http://www.wfuchs.de/azenv.php => generated 179 bytes in 10 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 3834|app: 0|req: 50/59] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 10:07:39 2022] GET / => generated 62126 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 51/60] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 10:07:42 2022] GET / => generated 62126 bytes in 3 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3836|app: 0|req: 6/61] 127.0.0.1 () {54 vars in 996 bytes} [Sun May  1 10:07:47 2022] GET / => generated 62126 bytes in 13 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 3836|app: 0|req: 7/62] 127.0.0.1 () {54 vars in 996 bytes} [Sun May  1 10:08:04 2022] GET / => generated 62126 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 3834|app: 0|req: 52/63] 127.0.0.1 () {54 vars in 1016 bytes} [Sun May  1 10:15:07 2022] GET / => generated 62126 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 3837)
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Sun May  1 10:18:33 2022] ***
+compiled with version: 11.2.0 on 29 April 2022 07:34:31
+os: Linux-5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022
+nodename: aiyun45981254123
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/winSource
+writing pidfile to piduwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/winSource
+your processes number limit is 3768
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+building mime-types dictionary from file /etc/mime.types...1476 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8885 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:44069 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.7 (default, Sep 10 2021, 14:59:43)  [GCC 11.2.0]
+Python main interpreter initialized at 0x560d1bfc28f0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x560d1bfc28f0 pid: 39679 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 39679)
+spawned uWSGI worker 1 (pid: 39680, cores: 2)
+spawned uWSGI worker 2 (pid: 39681, cores: 2)
+spawned uWSGI worker 3 (pid: 39682, cores: 2)
+spawned uWSGI worker 4 (pid: 39683, cores: 2)
+spawned uWSGI http 1 (pid: 39684)
+[pid: 39682|app: 0|req: 1/1] 127.0.0.1 () {54 vars in 1023 bytes} [Sun May  1 10:18:48 2022] GET / => generated 60578 bytes in 471 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 39684)
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Sun May  1 10:19:55 2022] ***
+compiled with version: 11.2.0 on 29 April 2022 07:34:31
+os: Linux-5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022
+nodename: aiyun45981254123
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/winSource
+writing pidfile to piduwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/winSource
+your processes number limit is 3768
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+building mime-types dictionary from file /etc/mime.types...1476 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8885 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:34547 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.7 (default, Sep 10 2021, 14:59:43)  [GCC 11.2.0]
+Python main interpreter initialized at 0x5646004e38f0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5646004e38f0 pid: 39726 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 39726)
+spawned uWSGI worker 1 (pid: 39727, cores: 2)
+spawned uWSGI worker 2 (pid: 39728, cores: 2)
+spawned uWSGI worker 3 (pid: 39729, cores: 2)
+spawned uWSGI worker 4 (pid: 39730, cores: 2)
+spawned uWSGI http 1 (pid: 39731)
+[pid: 39727|app: 0|req: 1/1] 127.0.0.1 () {54 vars in 1023 bytes} [Sun May  1 10:20:01 2022] GET / => generated 60578 bytes in 588 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 2/2] 127.0.0.1 () {54 vars in 997 bytes} [Sun May  1 10:21:42 2022] GET / => generated 60578 bytes in 26 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 3/3] 127.0.0.1 () {52 vars in 1009 bytes} [Sun May  1 10:29:23 2022] GET /about_us/ => generated 28856 bytes in 31 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 4/4] 127.0.0.1 () {52 vars in 993 bytes} [Sun May  1 10:29:38 2022] GET /about_us/ => generated 28856 bytes in 12 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 5/5] 127.0.0.1 () {52 vars in 1018 bytes} [Sun May  1 10:29:42 2022] GET /about_us/ => generated 28856 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 6/6] 127.0.0.1 () {52 vars in 1018 bytes} [Sun May  1 10:29:43 2022] GET /about_us/ => generated 28856 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 7/7] 127.0.0.1 () {52 vars in 1000 bytes} [Sun May  1 10:29:57 2022] GET / => generated 60578 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 8/8] 127.0.0.1 () {52 vars in 1025 bytes} [Sun May  1 10:29:59 2022] GET /upload_and_quote/ => generated 48134 bytes in 27 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 9/9] 127.0.0.1 () {52 vars in 975 bytes} [Sun May  1 10:53:57 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 10/10] 127.0.0.1 () {44 vars in 780 bytes} [Sun May  1 10:54:12 2022] GET / => generated 60578 bytes in 24 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 665 bytes} [Sun May  1 10:54:22 2022] GET / => generated 60578 bytes in 31 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 12/12] 127.0.0.1 () {44 vars in 781 bytes} [Sun May  1 10:55:37 2022] GET / => generated 60578 bytes in 39 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 13/13] 127.0.0.1 () {46 vars in 812 bytes} [Sun May  1 10:55:47 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 14/14] 127.0.0.1 () {46 vars in 796 bytes} [Sun May  1 10:55:49 2022] GET / => generated 60578 bytes in 13 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 15/15] 127.0.0.1 () {46 vars in 797 bytes} [Sun May  1 10:55:59 2022] GET / => generated 60578 bytes in 32 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 16/16] 127.0.0.1 () {46 vars in 813 bytes} [Sun May  1 10:56:42 2022] GET / => generated 60578 bytes in 17 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39729|app: 0|req: 1/17] 127.0.0.1 () {40 vars in 747 bytes} [Sun May  1 10:57:44 2022] GET / => generated 60578 bytes in 635 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39729|app: 0|req: 2/18] 127.0.0.1 () {46 vars in 1061 bytes} [Sun May  1 12:43:36 2022] GET / => generated 60578 bytes in 33 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39729|app: 0|req: 3/19] 127.0.0.1 () {46 vars in 871 bytes} [Sun May  1 12:44:18 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39729|app: 0|req: 4/20] 127.0.0.1 () {46 vars in 871 bytes} [Sun May  1 12:45:09 2022] GET / => generated 60578 bytes in 21 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 17/21] 127.0.0.1 () {44 vars in 766 bytes} [Sun May  1 12:51:45 2022] GET / => generated 60578 bytes in 28 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 18/22] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 13:02:41 2022] GET / => generated 60578 bytes in 27 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 19/23] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 13:02:47 2022] GET / => generated 60578 bytes in 13 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 20/24] 127.0.0.1 () {50 vars in 945 bytes} [Sun May  1 13:02:56 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 21/25] 146.70.52.122 () {26 vars in 352 bytes} [Sun May  1 13:02:59 2022] GET http://mojeip.net.pl/asdfa/azenv.php => generated 179 bytes in 15 msecs (HTTP/1.1 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 22/26] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 13:03:08 2022] GET / => generated 60578 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 23/27] 127.0.0.1 () {52 vars in 1019 bytes} [Sun May  1 13:03:21 2022] GET /search?q=react => generated 0 bytes in 10 msecs (HTTP/1.0 301) 5 headers in 184 bytes (1 switches on core 0)
+{'preview_pager': None, 'current_pager': None, 'next_pager': 2, 'last_pager': None}
+{'pager_dict': {'preview_pager': None, 'current_pager': None, 'next_pager': 2, 'last_pager': None}, 'data_list': []}
+[pid: 39727|app: 0|req: 24/28] 127.0.0.1 () {52 vars in 1021 bytes} [Sun May  1 13:03:21 2022] GET /search/?q=react => generated 37888 bytes in 1232 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 25/29] 127.0.0.1 () {52 vars in 1026 bytes} [Sun May  1 13:03:34 2022] GET /search?q=c => generated 0 bytes in 6 msecs (HTTP/1.0 301) 5 headers in 180 bytes (1 switches on core 0)
+{'preview_pager': None, 'current_pager': '1', 'next_pager': 2, 'last_pager': '6601'}
+{'pager_dict': {'preview_pager': None, 'current_pager': '1', 'next_pager': 2, 'last_pager': '6601'}, 'data_list': [{'item_detail_title': 'UCC28180D', 'item_detail_href': '/texas-instruments-ucc28180d.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC PFC CTRLR CCM 250KHZ 8SOIC\n', 'item_availablity_text': '\n36000  ', 'item_availablity_price': 'Need more? Email Us', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fucc28180', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'INA186A2IDCKR', 'item_detail_href': '/texas-instruments-ina186a2idckr.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC CURR SENSE 1 CIRCUIT SC70-6\n', 'item_availablity_text': '\n11871  ', 'item_availablity_price': 'Lowest to $13.936', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fina186', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DS90C189TWRTDRQ1', 'item_detail_href': '/texas-instruments-ds90c189twrtdrq1.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nFERT FOR NEW HALB\n', 'item_availablity_text': '\n22931  ', 'item_availablity_price': 'Lowest to $58.065', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fds90c189-q1', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DRV5053CAEDBZRQ1', 'item_detail_href': '/texas-instruments-drv5053caedbzrq1.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nSENSOR HALL ANALOG SOT23-3\n', 'item_availablity_text': '\n14472  ', 'item_availablity_price': 'Lowest to $27.871', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdrv5053-q1', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DP83TC811SWRNDTQ1', 'item_detail_href': '/texas-instruments-dp83tc811swrndtq1.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC TXRX FULL/HALF 4/4 36VQFN\n', 'item_availablity_text': '\n4800  ', 'item_availablity_price': 'Lowest to $92.904', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': None, 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DCR010505U/1KG4', 'item_detail_href': '/texas-instruments-dcr010505u1kg4.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nDC DC CONVERTER 5V 1W\n', 'item_availablity_text': '\n83000  ', 'item_availablity_price': 'Lowest to $81.291', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdcr010503', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC8803IDBR', 'item_detail_href': '/texas-instruments-dac8803idbr.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 14BIT A-OUT 28SSOP\n', 'item_availablity_text': '\n250  ', 'item_availablity_price': 'Lowest to $34.839', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac8803', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC8760IPWP', 'item_detail_href': '/texas-instruments-dac8760ipwp.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 16BIT V OR A-OUT 24HTSSOP\n', 'item_availablity_text': '\n45000  ', 'item_availablity_price': 'Lowest to $34.839', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac8760', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC80502DRXT', 'item_detail_href': '/texas-instruments-dac80502drxt.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nDUAL CHANNEL DAC 16BIT\n', 'item_availablity_text': '\n3000  ', 'item_availablity_price': 'Lowest to $65.033', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac80502', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC7565ICPW', 'item_detail_href': '/texas-instruments-dac7565icpw.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 12BIT V-OUT 16TSSOP\n', 'item_availablity_text': '\n7000  ', 'item_availablity_price': 'Lowest to $9.291', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac7565', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC7562TDGSR', 'item_detail_href': '/texas-instruments-dac7562tdgsr.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 12BIT V-OUT 10VSSOP\n', 'item_availablity_text': '\n4000  ', 'item_availablity_price': 'Lowest to $46.452', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac7563t', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC38RF85IAAV', 'item_detail_href': '/texas-instruments-dac38rf85iaav.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 14BIT V-OUT 144FCBGA\n', 'item_availablity_text': '\n2  ', 'item_availablity_price': 'Lowest to $150.968', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac38rf85', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC38RF83IAAV', 'item_detail_href': '/texas-instruments-dac38rf83iaav.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 2 DIFF 144FCBGA\n', 'item_availablity_text': '\n2000  ', 'item_availablity_price': 'Lowest to $197.420', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac38rf83', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC108S085CISQ', 'item_detail_href': '/texas-instruments-dac108s085cisq.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 10BIT V-OUT 16WQFN\n', 'item_availablity_text': '\n100000  ', 'item_availablity_price': 'Lowest to $34.839', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac108s085', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC104S085QIMM/NOPB', 'item_detail_href': '/texas-instruments-dac104s085qimmnopb.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 10BIT V-OUT 10VSSOP\n', 'item_availablity_text': '\n45000  ', 'item_availablity_price': 'Lowest to $13.936', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac104s085-q1', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC102S085CIMM', 'item_detail_href': '/texas-instruments-dac102s085cimm.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 10BIT V-OUT 10VSSOP\n', 'item_availablity_text': '\n6500  ', 'item_availablity_price': 'Lowest to $3.484', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac102s085', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC088S085CIMTX', 'item_detail_href': '/texas-instruments-dac088s085cimtx.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 8BIT V-OUT 16TSSOP\n', 'item_availablity_text': '\n50000  ', 'item_availablity_price': 'Lowest to $11.149', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac088s085', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC081S101CIMM/NOPB', 'item_detail_href': '/texas-instruments-dac081s101cimmnopb.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 8BIT V-OUT 8VSSOP\n', 'item_availablity_text': '\n9000  ', 'item_availablity_price': 'Lowest to $2.788', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac081s101', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'DAC0808LCMX', 'item_detail_href': '/texas-instruments-dac0808lcmx.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DAC 8BIT A-OUT 16SOIC\n', 'item_availablity_text': '\n35000  ', 'item_availablity_price': 'Lowest to $1.626', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdac0808', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD95492QVMT', 'item_detail_href': '/texas-instruments-csd95492qvmt.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nCSD95492QVMT\n', 'item_availablity_text': '\n40000  ', 'item_availablity_price': 'Lowest to $139.355', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd95492qvm', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD95378BQ5MC', 'item_detail_href': '/texas-instruments-csd95378bq5mc.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC SYNC BUCK NEXFET 12SON\n', 'item_availablity_text': '\n13000  ', 'item_availablity_price': 'Lowest to $92.904', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd95378bq5mc', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD87501LT', 'item_detail_href': '/texas-instruments-csd87501lt.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET 2N-CH 30V 10PICOSTAR\n', 'item_availablity_text': '\n45000  ', 'item_availablity_price': 'Lowest to $5.807', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd87501l', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD87381PT', 'item_detail_href': '/texas-instruments-csd87381pt.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET 2N-CH 30V 15A 5PTAB\n', 'item_availablity_text': '\n100000  ', 'item_availablity_price': 'Lowest to $1.394', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd87381p', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD86350Q5DT', 'item_detail_href': '/texas-instruments-csd86350q5dt.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\n25V POWERBLOCK N CH MOSFET\n', 'item_availablity_text': '\n75000  ', 'item_availablity_price': 'Lowest to $23.226', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd86350q5d', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD25485F5', 'item_detail_href': '/texas-instruments-csd25485f5.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET P-CH 20V 3.2A 3PICOSTAR\n', 'item_availablity_text': '\n104956  ', 'item_availablity_price': 'Lowest to $0.697', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd25485f5', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD25211W1015', 'item_detail_href': '/texas-instruments-csd25211w1015.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET P-CH 20V 3.2A 6DSBGA\n', 'item_availablity_text': '\n140338  ', 'item_availablity_price': 'Lowest to $0.604', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd25211w1015', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD18536KTTT', 'item_detail_href': '/texas-instruments-csd18536kttt.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET N-CH 60V 200A/349A DDPAK\n', 'item_availablity_text': '\n7500  ', 'item_availablity_price': 'Lowest to $41.807', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd18536ktt', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD18511Q5A', 'item_detail_href': '/texas-instruments-csd18511q5a.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET N-CH 40V 159A 8VSON\n', 'item_availablity_text': '\n97187  ', 'item_availablity_price': 'Lowest to $2.555', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd18511q5a', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD17382F4T', 'item_detail_href': '/texas-instruments-csd17382f4t.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET N-CH 30V 2.3A 3PICOSTAR\n', 'item_availablity_text': '\n69626  ', 'item_availablity_price': 'Lowest to $3.484', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd17382f4', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CSD13385F5', 'item_detail_href': '/texas-instruments-csd13385f5.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nMOSFET N-CH 12V 4.3A 3PICOSTAR\n', 'item_availablity_text': '\n299709  ', 'item_availablity_price': 'Lowest to $2.091', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcsd13385f5', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CLVTH162245MDLREP', 'item_detail_href': '/texas-instruments-clvth162245mdlrep.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC TXRX NON-INVERT 3.6V 48SSOP\n', 'item_availablity_text': '\n500  ', 'item_availablity_price': 'Lowest to $3.717', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvth162245-ep', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CLC011BCQ/NOPB', 'item_detail_href': '/texas-instruments-clc011bcqnopb.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DECODER VIDEO SER DIG 28-PLCC\n', 'item_availablity_text': '\n794  ', 'item_availablity_price': 'Lowest to $23.226', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': None, 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CDCVF310PW', 'item_detail_href': '/texas-instruments-cdcvf310pw.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC CLK BUF 1:10 200MHZ 24TSSOP\n', 'item_availablity_text': '\n600  ', 'item_availablity_price': 'Lowest to $5.807', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcdcvf310', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CDCUN1208LPRHBR', 'item_detail_href': '/texas-instruments-cdcun1208lprhbr.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC CLK BUFFER 2:8 400MHZ 32QFN\n', 'item_availablity_text': '\n1442  ', 'item_availablity_price': 'Lowest to $15.097', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcdcun1208lp', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CDCLVP111VF', 'item_detail_href': '/texas-instruments-cdclvp111vf.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC CLK BUFFER 2:10 3.5GHZ 32LQFP\n', 'item_availablity_text': '\n6767  ', 'item_availablity_price': 'Lowest to $8.129', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcdclvp111', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD74HCT74M', 'item_detail_href': '/texas-instruments-cd74hct74m.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC FF D-TYPE DUAL 1BIT 14SOIC\n', 'item_availablity_text': '\n25937  ', 'item_availablity_price': 'Lowest to $0.697', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd74hc74', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD74HCT4316M96G4', 'item_detail_href': '/texas-instruments-cd74hct4316m96g4.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC SWITCH QUAD 1X2 16SOIC\n', 'item_availablity_text': '\n7822  ', 'item_availablity_price': 'Lowest to $0.465', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://rocelec.widen.net/view/pdf/motwunxh7v/schs212d.pdf?t.download=true&u=5oefqw', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD74HCT373M96', 'item_detail_href': '/texas-instruments-cd74hct373m96.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC OCT TRNSP LATCH HS 3ST 20SOIC\n', 'item_availablity_text': '\n1195  ', 'item_availablity_price': 'Lowest to $1.162', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd74hct373', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD74HCT153M', 'item_detail_href': '/texas-instruments-cd74hct153m.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MULTIPLEXER 2 X 4:1 16SOIC\n', 'item_availablity_text': '\n9912  ', 'item_availablity_price': 'Lowest to $0.581', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd74hc153', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD74HC4024PW', 'item_detail_href': '/texas-instruments-cd74hc4024pw.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC 7-STAGE BIN RIP CNTR 14TSSOP\n', 'item_availablity_text': '\n19775  ', 'item_availablity_price': 'Lowest to $0.581', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd74hc4024', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD74AC541M', 'item_detail_href': '/texas-instruments-cd74ac541m.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC BUF NON-INVERT 5.5V 20SOIC\n', 'item_availablity_text': '\n2160  ', 'item_availablity_price': 'Lowest to $13.936', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd74act540', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4518BM', 'item_detail_href': '/texas-instruments-cd4518bm.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC DUAL BCD UP-COUNTER 16-SOIC\n', 'item_availablity_text': '\n39250  ', 'item_availablity_price': 'Lowest to $0.233', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4518b', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4504BPW', 'item_detail_href': '/texas-instruments-cd4504bpw.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC TRNSLTR UNIDIR 16TSSOP\n', 'item_availablity_text': '\n124506  ', 'item_availablity_price': 'Lowest to $0.349', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4504b', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4099BM', 'item_detail_href': '/texas-instruments-cd4099bm.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC 8BIT ADDRESSABL LATCH 16-SOIC\n', 'item_availablity_text': '\n58045  ', 'item_availablity_price': 'Lowest to $0.337', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4099b', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4097BM', 'item_detail_href': '/texas-instruments-cd4097bm.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MUX/DEMUX DUAL 1X8 24SOIC\n', 'item_availablity_text': '\n13330  ', 'item_availablity_price': 'Lowest to $0.558', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4067b', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4067BPW', 'item_detail_href': '/texas-instruments-cd4067bpw.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MUX/DEMUX 1X16 24TSSOP\n', 'item_availablity_text': '\n58014  ', 'item_availablity_price': 'Lowest to $1.162', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4067b', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4053BQM96Q1', 'item_detail_href': '/texas-instruments-cd4053bqm96q1.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MUX/DEMUX TRIPLE 2X1 16SOIC\n', 'item_availablity_text': '\n70865  ', 'item_availablity_price': 'Lowest to $0.883', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4053b-q1', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4053BQM96G4Q1', 'item_detail_href': '/texas-instruments-cd4053bqm96g4q1.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MUX/DEMUX TRIPLE 2X1 16SOIC\n', 'item_availablity_text': '\n57415  ', 'item_availablity_price': 'Lowest to $2.323', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4053b-q1', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4053BM96G3', 'item_detail_href': '/texas-instruments-cd4053bm96g3.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MUX/DEMUX TRIPLE 2X1 16SOIC\n', 'item_availablity_text': '\n810864  ', 'item_availablity_price': 'Lowest to $0.233', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4051b', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'CD4050BPWR', 'item_detail_href': '/texas-instruments-cd4050bpwr.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC BUFFER NON-INVERT 18V 16TSSOP\n', 'item_availablity_text': '\n51516  ', 'item_availablity_price': 'Lowest to $0.465', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4050b', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}]}
+[pid: 39730|app: 0|req: 1/30] 127.0.0.1 () {52 vars in 1028 bytes} [Sun May  1 13:03:34 2022] GET /search/?q=c => generated 109844 bytes in 4558 msecs (HTTP/1.0 200) 4 headers in 146 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 26/31] 127.0.0.1 () {30 vars in 332 bytes} [Sun May  1 13:04:19 2022] GET / => generated 60578 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 27/32] 127.0.0.1 () {42 vars in 772 bytes} [Sun May  1 13:07:48 2022] GET / => generated 60578 bytes in 27 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 28/33] 127.0.0.1 () {50 vars in 945 bytes} [Sun May  1 13:22:23 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 2/34] 127.0.0.1 () {44 vars in 797 bytes} [Sun May  1 13:39:50 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 29/35] 127.0.0.1 () {46 vars in 797 bytes} [Sun May  1 13:48:42 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 30/36] 127.0.0.1 () {44 vars in 766 bytes} [Sun May  1 13:48:51 2022] GET / => generated 60578 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 31/37] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 13:52:02 2022] GET / => generated 60578 bytes in 41 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 32/38] 127.0.0.1 () {46 vars in 871 bytes} [Sun May  1 14:20:08 2022] GET / => generated 60578 bytes in 24 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 33/39] 127.0.0.1 () {50 vars in 945 bytes} [Sun May  1 14:20:33 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 34/40] 127.0.0.1 () {50 vars in 945 bytes} [Sun May  1 14:26:45 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 35/41] 127.0.0.1 () {52 vars in 976 bytes} [Sun May  1 14:26:49 2022] GET / => generated 60578 bytes in 6 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 3/42] 127.0.0.1 () {54 vars in 1017 bytes} [Sun May  1 17:11:03 2022] GET / => generated 60578 bytes in 21 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 36/43] 127.0.0.1 () {54 vars in 1024 bytes} [Sun May  1 17:11:14 2022] GET / => generated 60578 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 4/44] 127.0.0.1 () {52 vars in 1116 bytes} [Sun May  1 17:11:27 2022] GET / => generated 60578 bytes in 24 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 37/45] 127.0.0.1 () {52 vars in 1116 bytes} [Sun May  1 17:11:34 2022] GET / => generated 60578 bytes in 21 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 38/46] 127.0.0.1 () {52 vars in 993 bytes} [Sun May  1 17:11:43 2022] GET / => generated 60578 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 39/47] 127.0.0.1 () {56 vars in 1158 bytes} [Sun May  1 17:15:53 2022] GET / => generated 60578 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 40/48] 127.0.0.1 () {42 vars in 734 bytes} [Sun May  1 17:23:40 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 41/49] 127.0.0.1 () {56 vars in 1158 bytes} [Sun May  1 17:23:47 2022] GET / => generated 60578 bytes in 34 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 42/50] 127.0.0.1 () {54 vars in 1136 bytes} [Sun May  1 17:24:21 2022] GET / => generated 60578 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 43/51] 127.0.0.1 () {54 vars in 1129 bytes} [Sun May  1 17:25:09 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 44/52] 127.0.0.1 () {52 vars in 1105 bytes} [Sun May  1 17:25:10 2022] GET / => generated 60578 bytes in 13 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 45/53] 127.0.0.1 () {54 vars in 1136 bytes} [Sun May  1 17:25:14 2022] GET / => generated 60578 bytes in 28 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 46/54] 127.0.0.1 () {54 vars in 1136 bytes} [Sun May  1 17:25:19 2022] GET / => generated 60578 bytes in 5 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 5/55] 127.0.0.1 () {54 vars in 1136 bytes} [Sun May  1 17:25:26 2022] GET / => generated 60578 bytes in 26 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 6/56] 127.0.0.1 () {52 vars in 1105 bytes} [Sun May  1 17:25:33 2022] GET / => generated 60578 bytes in 19 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 47/57] 127.0.0.1 () {52 vars in 1105 bytes} [Sun May  1 17:25:53 2022] GET / => generated 60578 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 48/58] 127.0.0.1 () {28 vars in 359 bytes} [Sun May  1 17:27:37 2022] GET / => generated 60578 bytes in 40 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 49/59] 127.0.0.1 () {28 vars in 359 bytes} [Sun May  1 17:27:38 2022] GET / => generated 60578 bytes in 17 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 50/60] 127.0.0.1 () {28 vars in 359 bytes} [Sun May  1 17:28:09 2022] GET / => generated 60578 bytes in 26 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 51/61] 127.0.0.1 () {54 vars in 1136 bytes} [Sun May  1 17:29:31 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 52/62] 127.0.0.1 () {52 vars in 1105 bytes} [Sun May  1 17:29:37 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 53/63] 127.0.0.1 () {52 vars in 1105 bytes} [Sun May  1 17:29:44 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 54/64] 127.0.0.1 () {44 vars in 796 bytes} [Sun May  1 17:43:52 2022] GET / => generated 60578 bytes in 30 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 55/65] 127.0.0.1 () {46 vars in 827 bytes} [Sun May  1 17:44:12 2022] GET / => generated 60578 bytes in 34 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 56/66] 127.0.0.1 () {46 vars in 1057 bytes} [Sun May  1 17:44:48 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 57/67] 127.0.0.1 () {40 vars in 726 bytes} [Sun May  1 17:45:21 2022] GET / => generated 60578 bytes in 25 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 58/68] 127.0.0.1 () {40 vars in 726 bytes} [Sun May  1 17:45:33 2022] GET / => generated 60578 bytes in 26 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 59/69] 127.0.0.1 () {30 vars in 377 bytes} [Sun May  1 18:32:52 2022] GET / => generated 60578 bytes in 32 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 60/70] 127.0.0.1 () {34 vars in 507 bytes} [Sun May  1 19:56:23 2022] GET / => generated 60578 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 61/71] 127.0.0.1 () {34 vars in 620 bytes} [Sun May  1 19:56:25 2022] GET /favicon.ico => generated 179 bytes in 7 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 62/72] 127.0.0.1 () {34 vars in 632 bytes} [Sun May  1 19:56:34 2022] GET /mobile/login.html => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 63/73] 127.0.0.1 () {34 vars in 616 bytes} [Sun May  1 19:57:08 2022] GET /mtja.html => generated 179 bytes in 16 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 64/74] 127.0.0.1 () {34 vars in 620 bytes} [Sun May  1 19:57:23 2022] GET /js/a.script => generated 179 bytes in 7 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 65/75] 127.0.0.1 () {34 vars in 646 bytes} [Sun May  1 19:59:13 2022] GET /Public/Wchat/js/cvphp.js => generated 179 bytes in 13 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 66/76] 164.92.162.211 () {22 vars in 226 bytes} [Sun May  1 20:30:14 2022] GET / => generated 60578 bytes in 16 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 67/77] 127.0.0.1 () {30 vars in 332 bytes} [Sun May  1 20:47:35 2022] GET / => generated 60578 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 7/78] 127.0.0.1 () {38 vars in 563 bytes} [Sun May  1 22:03:30 2022] GET / => generated 60578 bytes in 28 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 68/79] 127.0.0.1 () {38 vars in 646 bytes} [Sun May  1 22:03:31 2022] GET / => generated 60578 bytes in 14 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 8/80] 127.0.0.1 () {38 vars in 646 bytes} [Sun May  1 22:03:32 2022] GET / => generated 60578 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 69/81] 127.0.0.1 () {34 vars in 540 bytes} [Sun May  1 22:03:34 2022] GET / => generated 60578 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 70/82] 127.0.0.1 () {38 vars in 682 bytes} [Sun May  1 23:08:57 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 71/83] 127.0.0.1 () {46 vars in 1061 bytes} [Mon May  2 01:23:46 2022] GET / => generated 60578 bytes in 19 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 72/84] 127.0.0.1 () {32 vars in 465 bytes} [Mon May  2 02:55:11 2022] GET /robots.txt => generated 179 bytes in 15 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 9/85] 127.0.0.1 () {36 vars in 727 bytes} [Mon May  2 02:55:12 2022] GET / => generated 60578 bytes in 15 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 10/86] 127.0.0.1 () {52 vars in 993 bytes} [Mon May  2 03:34:13 2022] GET / => generated 60578 bytes in 44 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 73/87] 127.0.0.1 () {32 vars in 374 bytes} [Mon May  2 04:14:52 2022] GET / => generated 60578 bytes in 30 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 74/88] 127.0.0.1 () {32 vars in 367 bytes} [Mon May  2 04:19:40 2022] GET / => generated 60578 bytes in 19 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 75/89] 127.0.0.1 () {50 vars in 945 bytes} [Mon May  2 04:23:46 2022] GET / => generated 60578 bytes in 19 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 76/90] 127.0.0.1 () {32 vars in 524 bytes} [Mon May  2 05:59:12 2022] GET / => generated 60578 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 77/91] 127.0.0.1 () {32 vars in 580 bytes} [Mon May  2 05:59:12 2022] GET //wp-includes/wlwmanifest.xml => generated 179 bytes in 3 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 11/92] 127.0.0.1 () {32 vars in 553 bytes} [Mon May  2 05:59:12 2022] GET //xmlrpc.php?rsd => generated 179 bytes in 9 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 78/93] 127.0.0.1 () {32 vars in 524 bytes} [Mon May  2 05:59:12 2022] GET / => generated 60578 bytes in 4 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 12/94] 127.0.0.1 () {32 vars in 543 bytes} [Mon May  2 05:59:13 2022] GET //?author=1 => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 1/95] 127.0.0.1 () {32 vars in 543 bytes} [Mon May  2 05:59:13 2022] GET //?author=2 => generated 179 bytes in 231 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 13/96] 127.0.0.1 () {32 vars in 543 bytes} [Mon May  2 05:59:13 2022] GET //?author=3 => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 2/97] 127.0.0.1 () {28 vars in 450 bytes} [Mon May  2 05:59:13 2022] GET //wp-json/wp/v2/users/ => generated 179 bytes in 3 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 79/98] 127.0.0.1 () {28 vars in 507 bytes} [Mon May  2 05:59:14 2022] GET //wp-json/oembed/1.0/embed?url=https://attcomp.com/ => generated 179 bytes in 3 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 80/99] 127.0.0.1 () {32 vars in 483 bytes} [Mon May  2 05:59:14 2022] POST //xmlrpc.php => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 81/100] 127.0.0.1 () {32 vars in 465 bytes} [Mon May  2 06:41:24 2022] GET /robots.txt => generated 179 bytes in 18 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 82/101] 127.0.0.1 () {34 vars in 602 bytes} [Mon May  2 06:41:25 2022] GET /index.php/industrynews/ => generated 179 bytes in 12 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 83/102] 127.0.0.1 () {36 vars in 763 bytes} [Mon May  2 07:26:23 2022] GET /backend/invitation => generated 179 bytes in 9 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 84/103] 127.0.0.1 () {36 vars in 727 bytes} [Mon May  2 08:55:17 2022] GET / => generated 60578 bytes in 25 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 85/104] 127.0.0.1 () {34 vars in 540 bytes} [Mon May  2 10:07:51 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 86/105] 127.0.0.1 () {38 vars in 561 bytes} [Mon May  2 10:07:57 2022] GET / => generated 60578 bytes in 4 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 14/106] 127.0.0.1 () {38 vars in 644 bytes} [Mon May  2 10:07:58 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 87/107] 127.0.0.1 () {38 vars in 644 bytes} [Mon May  2 10:07:58 2022] GET / => generated 60578 bytes in 4 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 15/108] 127.0.0.1 () {36 vars in 737 bytes} [Mon May  2 10:25:12 2022] GET /form/ => generated 179 bytes in 16 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 88/109] 127.0.0.1 () {32 vars in 367 bytes} [Mon May  2 11:25:45 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 89/110] 127.0.0.1 () {38 vars in 794 bytes} [Mon May  2 11:55:14 2022] GET /table/ => generated 40092 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 90/111] 127.0.0.1 () {50 vars in 949 bytes} [Mon May  2 12:54:03 2022] GET / => generated 60578 bytes in 48 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39729|app: 0|req: 5/112] 127.0.0.1 () {50 vars in 949 bytes} [Mon May  2 12:54:41 2022] GET / => generated 60578 bytes in 45 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 91/113] 127.0.0.1 () {32 vars in 524 bytes} [Mon May  2 15:03:45 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39729|app: 0|req: 6/114] 127.0.0.1 () {32 vars in 580 bytes} [Mon May  2 15:03:45 2022] GET //wp-includes/wlwmanifest.xml => generated 179 bytes in 20 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 92/115] 127.0.0.1 () {32 vars in 553 bytes} [Mon May  2 15:03:46 2022] GET //xmlrpc.php?rsd => generated 179 bytes in 8 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 93/116] 127.0.0.1 () {32 vars in 524 bytes} [Mon May  2 15:03:46 2022] GET / => generated 60578 bytes in 14 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 94/117] 127.0.0.1 () {32 vars in 550 bytes} [Mon May  2 15:03:46 2022] GET //wp-login.php => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 95/118] 127.0.0.1 () {54 vars in 1017 bytes} [Mon May  2 15:58:25 2022] GET / => generated 60578 bytes in 12 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 96/119] 127.0.0.1 () {42 vars in 743 bytes} [Mon May  2 16:19:03 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 97/120] 127.0.0.1 () {30 vars in 423 bytes} [Mon May  2 17:12:53 2022] GET / => generated 60578 bytes in 13 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 98/121] 127.0.0.1 () {30 vars in 424 bytes} [Mon May  2 17:13:21 2022] GET / => generated 60578 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 99/122] 127.0.0.1 () {30 vars in 446 bytes} [Mon May  2 17:14:06 2022] GET /favicon.ico => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 100/123] 127.0.0.1 () {32 vars in 492 bytes} [Mon May  2 17:17:45 2022] GET /favicon.ico => generated 179 bytes in 31 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 101/124] 127.0.0.1 () {30 vars in 376 bytes} [Mon May  2 17:56:40 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 102/125] 127.0.0.1 () {30 vars in 376 bytes} [Mon May  2 18:03:47 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 103/126] 127.0.0.1 () {32 vars in 464 bytes} [Mon May  2 18:19:18 2022] GET /robots.txt => generated 179 bytes in 15 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 104/127] 127.0.0.1 () {34 vars in 581 bytes} [Mon May  2 18:19:19 2022] GET /index.php/s2/ => generated 179 bytes in 11 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 105/128] 127.0.0.1 () {32 vars in 464 bytes} [Mon May  2 19:04:21 2022] GET /robots.txt => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 106/129] 127.0.0.1 () {36 vars in 740 bytes} [Mon May  2 19:04:21 2022] GET /backend => generated 179 bytes in 7 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 107/130] 127.0.0.1 () {34 vars in 582 bytes} [Mon May  2 20:34:13 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 108/131] 127.0.0.1 () {34 vars in 628 bytes} [Mon May  2 20:34:13 2022] GET /explicit_not_exist_path => generated 179 bytes in 3 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 16/132] 127.0.0.1 () {34 vars in 594 bytes} [Mon May  2 20:34:14 2022] GET /admin/ => generated 0 bytes in 45 msecs (HTTP/1.0 302) 8 headers in 308 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 17/133] 127.0.0.1 () {34 vars in 631 bytes} [Mon May  2 20:34:14 2022] GET /admin/login/?next=/admin/ => generated 4028 bytes in 28 msecs (HTTP/1.0 200) 8 headers in 438 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 109/134] 127.0.0.1 () {36 vars in 691 bytes} [Mon May  2 20:34:14 2022] GET /robots.txt => generated 179 bytes in 3 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 110/135] 127.0.0.1 () {36 vars in 693 bytes} [Mon May  2 20:34:15 2022] GET /favicon.ico => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 18/136] 127.0.0.1 () {36 vars in 723 bytes} [Mon May  2 20:34:15 2022] GET /login/img/product_logo.png => generated 179 bytes in 3 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39729|app: 0|req: 7/137] 127.0.0.1 () {36 vars in 704 bytes} [Mon May  2 20:34:16 2022] GET /images/ofbiz.ico => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 111/138] 127.0.0.1 () {36 vars in 696 bytes} [Mon May  2 20:34:19 2022] GET /wp-login.php => generated 179 bytes in 4 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 19/139] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:34:19 2022] GET /readme.html => generated 179 bytes in 4 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39729|app: 0|req: 8/140] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:34:20 2022] GET /license.txt => generated 179 bytes in 4 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 112/141] 127.0.0.1 () {36 vars in 720 bytes} [Mon May  2 20:34:20 2022] GET /wp-includes/js/wplink.js => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 113/142] 127.0.0.1 () {36 vars in 738 bytes} [Mon May  2 20:34:20 2022] GET /wp-admin/js/customize-controls.js => generated 179 bytes in 8 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 114/143] 127.0.0.1 () {36 vars in 718 bytes} [Mon May  2 20:34:20 2022] GET /wp-admin/js/nav-menu.js => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 20/144] 127.0.0.1 () {36 vars in 742 bytes} [Mon May  2 20:34:20 2022] GET /wp-includes/js/plupload/handlers.js => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 115/145] 127.0.0.1 () {36 vars in 750 bytes} [Mon May  2 20:34:20 2022] GET /wp-includes/js/tinymce/wp-tinymce.js.gz => generated 179 bytes in 8 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 21/146] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:34:21 2022] GET /phpMyAdmin/ => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 3/147] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:34:21 2022] GET /phpmyadmin/ => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 116/148] 127.0.0.1 () {36 vars in 680 bytes} [Mon May  2 20:34:21 2022] GET /wcm/ => generated 179 bytes in 4 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 117/149] 127.0.0.1 () {34 vars in 583 bytes} [Mon May  2 20:35:15 2022] GET / => generated 60578 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 118/150] 127.0.0.1 () {34 vars in 629 bytes} [Mon May  2 20:35:16 2022] GET /explicit_not_exist_path => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 119/151] 127.0.0.1 () {34 vars in 595 bytes} [Mon May  2 20:35:16 2022] GET /admin/ => generated 0 bytes in 80 msecs (HTTP/1.0 302) 8 headers in 308 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 120/152] 127.0.0.1 () {34 vars in 632 bytes} [Mon May  2 20:35:16 2022] GET /admin/login/?next=/admin/ => generated 4028 bytes in 39 msecs (HTTP/1.0 200) 8 headers in 438 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 121/153] 127.0.0.1 () {36 vars in 692 bytes} [Mon May  2 20:35:17 2022] GET /robots.txt => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 4/154] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:35:17 2022] GET /favicon.ico => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 22/155] 127.0.0.1 () {36 vars in 724 bytes} [Mon May  2 20:35:17 2022] GET /login/img/product_logo.png => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 122/156] 127.0.0.1 () {36 vars in 696 bytes} [Mon May  2 20:35:17 2022] GET /wp-login.php => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 5/157] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:35:17 2022] GET /readme.html => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 123/158] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:35:18 2022] GET /license.txt => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 23/159] 127.0.0.1 () {36 vars in 720 bytes} [Mon May  2 20:35:18 2022] GET /wp-includes/js/wplink.js => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39729|app: 0|req: 9/160] 127.0.0.1 () {36 vars in 738 bytes} [Mon May  2 20:35:18 2022] GET /wp-admin/js/customize-controls.js => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 24/161] 127.0.0.1 () {36 vars in 718 bytes} [Mon May  2 20:35:18 2022] GET /wp-admin/js/nav-menu.js => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 6/162] 127.0.0.1 () {36 vars in 742 bytes} [Mon May  2 20:35:18 2022] GET /wp-includes/js/plupload/handlers.js => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 7/163] 127.0.0.1 () {36 vars in 750 bytes} [Mon May  2 20:35:18 2022] GET /wp-includes/js/tinymce/wp-tinymce.js.gz => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39729|app: 0|req: 10/164] 127.0.0.1 () {36 vars in 704 bytes} [Mon May  2 20:35:19 2022] GET /images/ofbiz.ico => generated 179 bytes in 3 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 124/165] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:35:20 2022] GET /phpMyAdmin/ => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 125/166] 127.0.0.1 () {36 vars in 694 bytes} [Mon May  2 20:35:21 2022] GET /phpmyadmin/ => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 25/167] 127.0.0.1 () {36 vars in 680 bytes} [Mon May  2 20:35:21 2022] GET /wcm/ => generated 179 bytes in 2 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 126/168] 127.0.0.1 () {32 vars in 465 bytes} [Mon May  2 22:04:17 2022] GET /robots.txt => generated 179 bytes in 10 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39729|app: 0|req: 11/169] 127.0.0.1 () {34 vars in 556 bytes} [Mon May  2 22:04:18 2022] GET / => generated 60578 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 127/170] 127.0.0.1 () {34 vars in 948 bytes} [Mon May  2 22:06:49 2022] GET /catalog-portal/ui/oauth/verify?error=&deviceUdid=%24%7b%22%66%72%65%65%6d%61%72%6b%65%72%2e%74%65%6d%70%6c%61%74%65%2e%75%74%69%6c%69%74%79%2e%45%78%65%63%75%74%65%22%3f%6e%65%77%28%29%28%22%63%61%74%20%2f%65%74%63%2f%68%6f%73%74%73%22%29%7d => generated 179 bytes in 8 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 128/171] 127.0.0.1 () {38 vars in 646 bytes} [Mon May  2 22:10:20 2022] GET / => generated 60578 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 129/172] 127.0.0.1 () {38 vars in 563 bytes} [Mon May  2 22:10:20 2022] GET / => generated 60578 bytes in 4 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 26/173] 127.0.0.1 () {34 vars in 540 bytes} [Mon May  2 22:10:21 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 130/174] 127.0.0.1 () {38 vars in 646 bytes} [Mon May  2 22:10:26 2022] GET / => generated 60578 bytes in 6 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 27/175] 127.0.0.1 () {32 vars in 438 bytes} [Mon May  2 23:14:41 2022] GET /robots.txt => generated 179 bytes in 9 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 131/176] 127.0.0.1 () {32 vars in 418 bytes} [Mon May  2 23:14:43 2022] GET / => generated 60578 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 132/177] 127.0.0.1 () {36 vars in 599 bytes} [Tue May  3 06:47:15 2022] GET / => generated 60578 bytes in 11 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 133/178] 127.0.0.1 () {30 vars in 444 bytes} [Tue May  3 06:51:36 2022] GET / => generated 60578 bytes in 21 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 134/179] 127.0.0.1 () {44 vars in 817 bytes} [Tue May  3 08:08:41 2022] GET / => generated 60578 bytes in 62 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 135/180] 127.0.0.1 () {38 vars in 644 bytes} [Tue May  3 10:14:46 2022] GET / => generated 60578 bytes in 40 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 136/181] 127.0.0.1 () {38 vars in 561 bytes} [Tue May  3 10:14:46 2022] GET / => generated 60578 bytes in 23 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 137/182] 127.0.0.1 () {34 vars in 540 bytes} [Tue May  3 10:14:49 2022] GET / => generated 60578 bytes in 3 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 28/183] 127.0.0.1 () {38 vars in 644 bytes} [Tue May  3 10:14:58 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 29/184] 127.0.0.1 () {40 vars in 747 bytes} [Tue May  3 13:15:00 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 138/185] 127.0.0.1 () {40 vars in 747 bytes} [Tue May  3 13:17:00 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 139/186] 127.0.0.1 () {30 vars in 425 bytes} [Tue May  3 17:19:31 2022] GET / => generated 60578 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 140/187] 127.0.0.1 () {30 vars in 447 bytes} [Tue May  3 17:20:42 2022] GET /favicon.ico => generated 179 bytes in 7 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 141/188] 127.0.0.1 () {30 vars in 425 bytes} [Tue May  3 17:20:47 2022] GET / => generated 60578 bytes in 6 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 142/189] 127.0.0.1 () {32 vars in 468 bytes} [Tue May  3 17:24:10 2022] GET /wp-login.php => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 143/190] 127.0.0.1 () {30 vars in 353 bytes} [Tue May  3 20:11:18 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 144/191] 127.0.0.1 () {34 vars in 540 bytes} [Tue May  3 22:18:50 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 145/192] 127.0.0.1 () {38 vars in 646 bytes} [Tue May  3 22:18:52 2022] GET / => generated 60578 bytes in 4 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 30/193] 127.0.0.1 () {38 vars in 563 bytes} [Tue May  3 22:18:53 2022] GET / => generated 60578 bytes in 11 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 31/194] 127.0.0.1 () {38 vars in 646 bytes} [Tue May  3 22:18:53 2022] GET / => generated 60578 bytes in 5 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 146/195] 127.0.0.1 () {52 vars in 999 bytes} [Wed May  4 03:12:18 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 147/196] 127.0.0.1 () {50 vars in 975 bytes} [Wed May  4 03:12:23 2022] GET / => generated 60578 bytes in 6 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39729|app: 0|req: 12/197] 127.0.0.1 () {52 vars in 1055 bytes} [Wed May  4 03:15:33 2022] GET /search?q=TPS51219 => generated 0 bytes in 8 msecs (HTTP/1.0 301) 5 headers in 187 bytes (1 switches on core 0)
+{'preview_pager': None, 'current_pager': None, 'next_pager': 2, 'last_pager': None}
+{'pager_dict': {'preview_pager': None, 'current_pager': None, 'next_pager': 2, 'last_pager': None}, 'data_list': [{'item_detail_title': 'TPS51219RTE', 'item_detail_href': '/texas-instruments-tps51219rte.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': None, 'item_availablity_text': '\n75000  ', 'item_availablity_price': 'Lowest to $49.936', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': None, 'picture': 'https://www.win-source.net/content/images/thumbs/3001473_125.jpeg'}, {'item_detail_title': 'TPS51219', 'item_detail_href': '/texas-instruments-tps51219.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nHigh Performance, Single-Synchronous Step-Down Controller with Differential Voltage Feedback\n', 'item_availablity_text': '\n60000  ', 'item_availablity_price': 'Lowest to $69.678', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': None, 'picture': 'https://www.win-source.net/content/images/thumbs/2974251_125.jpeg'}, {'item_detail_title': 'TPS51219RTET', 'item_detail_href': '/pmic-voltage-regulators-dcdc-switching-controllers-tps51219rtet.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC REG CTRLR BUCK 16WQFN\n', 'item_availablity_text': '\n200  ', 'item_availablity_price': 'Lowest to $1.689', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': '/datasheet/377347/TPS51219RTET.pdf', 'picture': 'https://www.win-source.net/content/images/thumbs/2140747_125.jpeg'}, {'item_detail_title': 'TPS51219RTER', 'item_detail_href': '/pmic-voltage-regulators-dcdc-switching-controllers-tps51219rter.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC REG CTRLR BUCK 16WQFN\n', 'item_availablity_text': '\n11900  ', 'item_availablity_price': 'Lowest to $30.194', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': '/datasheet/377346/TPS51219RTER.pdf', 'picture': 'https://www.win-source.net/content/images/thumbs/3185829_125.jpeg'}]}
+[pid: 39729|app: 0|req: 13/198] 127.0.0.1 () {52 vars in 1057 bytes} [Wed May  4 03:15:33 2022] GET /search/?q=TPS51219 => generated 42708 bytes in 1244 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 148/199] 127.0.0.1 () {52 vars in 1106 bytes} [Wed May  4 03:15:53 2022] GET /datasheet/377347/TPS51219RTET.pdf => generated 179 bytes in 13 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 149/200] 127.0.0.1 () {48 vars in 942 bytes} [Wed May  4 03:15:55 2022] GET /favicon.ico => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 32/201] 127.0.0.1 () {52 vars in 1106 bytes} [Wed May  4 03:16:00 2022] GET /datasheet/377346/TPS51219RTER.pdf => generated 179 bytes in 12 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 33/202] 127.0.0.1 () {52 vars in 1069 bytes} [Wed May  4 03:16:15 2022] GET /search?q=INA226 => generated 0 bytes in 2 msecs (HTTP/1.0 301) 5 headers in 185 bytes (1 switches on core 1)
+{'preview_pager': None, 'current_pager': None, 'next_pager': 2, 'last_pager': None}
+{'pager_dict': {'preview_pager': None, 'current_pager': None, 'next_pager': 2, 'last_pager': None}, 'data_list': [{'item_detail_title': 'INA226AIDGST', 'item_detail_href': '/texas-instruments-ina226aidgst.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MONITOR PWR/CURR BIDIR 10MSOP\n', 'item_availablity_text': '\n6  ', 'item_availablity_price': 'Lowest to $46.452', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fina226', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'INA226AQDGSRQ1', 'item_detail_href': '/texas-instruments-ina226aqdgsrq1.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MONITOR PWR/CURR BIDIR 10MSOP\n', 'item_availablity_text': '\n2510  ', 'item_availablity_price': 'Lowest to $112.646', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fina226-q1', 'picture': 'https://tse1-mm.cn.bing.net/th/id/R-C.b5e81f23c999e79f634a391f5696d75a?rik=TqlZmYxAqlqvQg&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f01%2f55%2f11%2f8757474f9d53b45.jpg&ehk=bRlcpyThLmrNIdjGr1a7YderIllOwO5WkDOBBvJmpTE%3d&risl=&pid=ImgRaw&r=0'}, {'item_detail_title': 'INA226AIDGSR', 'item_detail_href': '/pmic-current-regulationmanagement-ina226aidgsr.html', 'item_detail_manufacturer_title': 'Texas Instruments', 'item_detail_manufacturer_href': 'texas-instruments.html', 'item_detail_addinfo': '\nIC MONITOR PWR/CURR BIDIR 10MSOP\n', 'item_availablity_text': '\n22612  ', 'item_availablity_price': 'Lowest to $37.162', 'item_availablity_env': '/content/images/rohs.png', 'item_availablity_pdf': 'https://www.ti.com/lit/ds/symlink/ina226.pdf', 'picture': 'https://www.win-source.net/content/images/thumbs/3269577_125.png'}]}
+[pid: 39728|app: 0|req: 8/203] 127.0.0.1 () {52 vars in 1071 bytes} [Wed May  4 03:16:16 2022] GET /search/?q=INA226 => generated 42350 bytes in 813 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 34/204] 127.0.0.1 () {52 vars in 1056 bytes} [Wed May  4 03:16:48 2022] GET /about_us/ => generated 28856 bytes in 11 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 150/205] 127.0.0.1 () {52 vars in 1006 bytes} [Wed May  4 03:18:41 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 151/206] 127.0.0.1 () {30 vars in 353 bytes} [Wed May  4 03:23:35 2022] GET / => generated 60578 bytes in 20 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 35/207] 127.0.0.1 () {52 vars in 1077 bytes} [Wed May  4 03:44:07 2022] GET /quality-certifications/ => generated 179 bytes in 24 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 36/208] 127.0.0.1 () {52 vars in 1077 bytes} [Wed May  4 03:44:12 2022] GET /quality-certifications/ => generated 179 bytes in 10 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 152/209] 127.0.0.1 () {52 vars in 1077 bytes} [Wed May  4 03:44:15 2022] GET /quality-certifications/ => generated 179 bytes in 24 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 153/210] 127.0.0.1 () {52 vars in 1077 bytes} [Wed May  4 03:44:18 2022] GET /quality-certifications/ => generated 179 bytes in 4 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39728|app: 0|req: 9/211] 127.0.0.1 () {52 vars in 1077 bytes} [Wed May  4 03:44:21 2022] GET /quality-certifications/ => generated 179 bytes in 11 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 154/212] 127.0.0.1 () {52 vars in 1077 bytes} [Wed May  4 03:44:24 2022] GET /quality-certifications/ => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 155/213] 127.0.0.1 () {52 vars in 1040 bytes} [Wed May  4 03:47:03 2022] GET /about_us/ => generated 28856 bytes in 9 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 156/214] 127.0.0.1 () {50 vars in 975 bytes} [Wed May  4 03:54:03 2022] GET / => generated 60578 bytes in 24 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 157/215] 127.0.0.1 () {52 vars in 1040 bytes} [Wed May  4 03:54:38 2022] GET /about_us/ => generated 28856 bytes in 17 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 158/216] 127.0.0.1 () {32 vars in 438 bytes} [Wed May  4 07:39:09 2022] GET /robots.txt => generated 179 bytes in 14 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 159/217] 127.0.0.1 () {32 vars in 418 bytes} [Wed May  4 07:39:10 2022] GET / => generated 60578 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 160/218] 127.0.0.1 () {38 vars in 563 bytes} [Wed May  4 10:20:59 2022] GET / => generated 60578 bytes in 16 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 161/219] 127.0.0.1 () {38 vars in 646 bytes} [Wed May  4 10:21:00 2022] GET / => generated 60578 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 162/220] 127.0.0.1 () {34 vars in 540 bytes} [Wed May  4 10:21:02 2022] GET / => generated 60578 bytes in 13 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 163/221] 127.0.0.1 () {38 vars in 646 bytes} [Wed May  4 10:21:05 2022] GET / => generated 60578 bytes in 4 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 164/222] 94.102.61.4 () {30 vars in 435 bytes} [Wed May  4 10:23:01 2022] GET / => generated 60578 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 165/223] 94.102.61.4 () {32 vars in 380 bytes} [Wed May  4 10:29:15 2022] GET / => generated 60578 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 166/224] 127.0.0.1 () {32 vars in 407 bytes} [Wed May  4 10:44:04 2022] GET / => generated 60578 bytes in 22 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 167/225] 127.0.0.1 () {50 vars in 934 bytes} [Wed May  4 13:17:39 2022] GET / => generated 60578 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 168/226] 127.0.0.1 () {54 vars in 1017 bytes} [Wed May  4 15:07:02 2022] GET / => generated 60578 bytes in 24 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 169/227] 127.0.0.1 () {34 vars in 461 bytes} [Wed May  4 15:51:21 2022] GET / => generated 60578 bytes in 34 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 170/228] 127.0.0.1 () {30 vars in 377 bytes} [Wed May  4 17:21:51 2022] GET / => generated 60578 bytes in 35 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 171/229] 127.0.0.1 () {30 vars in 377 bytes} [Wed May  4 17:24:40 2022] GET / => generated 60578 bytes in 26 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 172/230] 127.0.0.1 () {32 vars in 524 bytes} [Wed May  4 19:25:17 2022] GET / => generated 60578 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 173/231] 127.0.0.1 () {32 vars in 580 bytes} [Wed May  4 19:25:18 2022] GET //wp-includes/wlwmanifest.xml => generated 179 bytes in 7 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 174/232] 127.0.0.1 () {32 vars in 553 bytes} [Wed May  4 19:25:18 2022] GET //xmlrpc.php?rsd => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 37/233] 127.0.0.1 () {32 vars in 524 bytes} [Wed May  4 19:25:18 2022] GET / => generated 60578 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 175/234] 127.0.0.1 () {32 vars in 543 bytes} [Wed May  4 19:25:19 2022] GET //?author=1 => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 38/235] 127.0.0.1 () {32 vars in 543 bytes} [Wed May  4 19:25:19 2022] GET //?author=2 => generated 179 bytes in 7 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 176/236] 127.0.0.1 () {28 vars in 450 bytes} [Wed May  4 19:25:19 2022] GET //wp-json/wp/v2/users/ => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 177/237] 127.0.0.1 () {28 vars in 507 bytes} [Wed May  4 19:25:19 2022] GET //wp-json/oembed/1.0/embed?url=https://attcomp.com/ => generated 179 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 1)
+[pid: 39730|app: 0|req: 39/238] 127.0.0.1 () {32 vars in 481 bytes} [Wed May  4 19:25:19 2022] POST //xmlrpc.php => generated 179 bytes in 5 msecs (HTTP/1.0 404) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 40/239] 127.0.0.1 () {30 vars in 351 bytes} [Wed May  4 21:02:56 2022] GET / => generated 60578 bytes in 18 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 178/240] 127.0.0.1 () {38 vars in 560 bytes} [Wed May  4 22:25:54 2022] GET / => generated 60578 bytes in 14 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 179/241] 127.0.0.1 () {38 vars in 643 bytes} [Wed May  4 22:25:58 2022] GET / => generated 60578 bytes in 12 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 39727|app: 0|req: 180/242] 127.0.0.1 () {38 vars in 643 bytes} [Wed May  4 22:25:58 2022] GET / => generated 60578 bytes in 6 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39730|app: 0|req: 41/243] 127.0.0.1 () {34 vars in 539 bytes} [Wed May  4 22:25:59 2022] GET / => generated 60578 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 39727|app: 0|req: 181/244] 127.0.0.1 () {54 vars in 1023 bytes} [Thu May  5 04:03:42 2022] GET / => generated 60578 bytes in 10 msecs (HTTP/1.0 200) 4 headers in 145 bytes (1 switches on core 1)

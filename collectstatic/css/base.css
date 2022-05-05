@@ -1,0 +1,10 @@
+/* Global Style Overides */
+:root {
+  --bs-primary: #14b6ad;
+  --bs-decor1: #707cc5;
+  --bs-decor2: #aa8545;
+}
+
+.bg-green {
+  background-color: #30806f !important;
+}
