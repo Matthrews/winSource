@@ -49,7 +49,7 @@ def getData(searchParam, pagenumber):
         # print(item_info_tuple)
 
     res = {'searchParam': searchParam, 'current_page': current_page, 'next_page': next_page, 'data_list': data_list}
-    print(res)
+    # print(res)
     return res
 
 
