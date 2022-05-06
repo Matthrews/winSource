@@ -64,7 +64,7 @@ while True:
         tip = f"当前爬取的链接搜索参数是{searchParam}，页码是第{pagenumber}页"
         print(tip)
         with open('./file.txt', mode='a+', encoding='utf-8') as f:
-            print(tip, file=f, end="\n")
+            f.writelines(time.strftime('%Y-%m-%d %H:%I:%S', time.localtime()) + " " + tip +"\n")
         data = getData(searchParam=searchParam, pagenumber=pagenumber)
         if not data['next_page']:
             save_data(data['data_list'])
