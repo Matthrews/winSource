@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'winSource.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '127.0.0.1' if platform.system() in ["Windows", "Darwin"] else 'django.chuanyun101.com',
+        'HOST': '127.0.0.1' if platform.system() in ["Windows", "Darwin"] else '45.11.92.182',
         'NAME': 'winsourcedb',
         "PORT": 3306,
         'USER': 'root',

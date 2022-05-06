@@ -9,7 +9,7 @@ from getData import getData
 
 if platform.system() in ["Windows", "Darwin"]:
     dbinfo = {
-        "host": "django.chuanyun101.com",
+        "host": "45.11.92.182",
         "user": "root",
         "password": "qq1788lover",
         "port": 3306,
@@ -17,7 +17,7 @@ if platform.system() in ["Windows", "Darwin"]:
     }
 else:
     dbinfo = {
-        "host": "django.chuanyun101.com",
+        "host": "45.11.92.182",
         "user": "root",
         "password": "qq1788lover",
         "port": 3306,
