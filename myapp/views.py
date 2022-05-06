@@ -19,8 +19,6 @@ class Index(View):
         return render(request, template_name='myapp/index.html')
 
 
-
-
 class Table(View):
     def get(self, request):
         return render(request, template_name="myapp/table.html")
@@ -92,7 +90,6 @@ class UploadAndQuote(View):
         return render(request, template_name='myapp/upload_and_quote.html')
 
 
-
 def handleSearch(request):
     searchParam = request.GET.get("q")
     pageSize = request.GET.get("pagesize", 20)
@@ -102,24 +99,29 @@ def handleSearch(request):
     return render(request, template_name='myapp/index.html', context={'q': searchParam, 'res': res})
 
 
+import pprint
+
+mypprint = pprint.PrettyPrinter(indent=4)
+
+
 class ProductView(FilterView):
     filter = None
     model = Product
-    # 使用ProductFilter过滤
     filter_class = ProductFilter
     template_name = 'myapp/product.html'
+    paginate_by = 20  # 每页20条
 
     # 获取过滤后的查询集
     def get_queryset(self, **kwargs):
         qs = Product.objects.all().order_by('-id')
         self.filter = self.filter_class(self.request.GET, queryset=qs)
-        # print(self.filter.qs)
-        # return self.filter.qs
+        # mypprint.pprint(self.filter.qs)
+        return self.filter.qs
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['res'] = self.filter.qs
-        context['q'] = 'haha'
-
-        print(context)
+        context['page_range'] = context['paginator'].get_elided_page_range(context['page_obj'].number, on_each_side=3,
+                                                                           on_ends=2)
+        context['q'] = self.request.GET['q']
+        # mypprint.pprint(context)
         return context

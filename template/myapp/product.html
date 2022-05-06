@@ -1,526 +1,532 @@
 {% extends 'myapp/layout.html' %}
 {% load static %}
 {% block custom_style %}
-<style>
-    .home-cover {
-        background-image: url("{% static 'img/home_cover.png' %}");
-        background-size: cover;
-    }
+    <style>
+        .home-cover {
+            background-image: url("{% static 'img/home_cover.png' %}");
+            background-size: cover;
+        }
 
-    .home-wrapper {
-        position: relative;
-        min-width: 100%;
-        padding: 0;
-    }
+        .home-wrapper {
+            position: relative;
+            min-width: 100%;
+            padding: 0;
+        }
 
-    h3 {
-        margin: 20px;
-    }
+        h3 {
+            margin: 20px;
+        }
 
-    .search-container {
-        margin: 0 auto;
-        padding: 9px 0;
-        max-width: 860px;
-        border: 1px solid #EBEBEB;
-        border-radius: 4px;
-        transform: translateY(-50%);
-        background: var(--bs-body-bg);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1;
-    }
+        .search-container {
+            margin: 0 auto;
+            padding: 9px 0;
+            max-width: 860px;
+            border: 1px solid #EBEBEB;
+            border-radius: 4px;
+            transform: translateY(-50%);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
 
-    .search-container .search-bar-wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        .search-container .search-bar-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .search-container .search-bar-wrap input[type="search"] {
-        width: 360px;
-        padding: 8px 10px;
-        margin: 5px 16px 5px 0;
-        border: 2px solid var(--bs-primary);
-        box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02);
-    }
+        .search-container .search-bar-wrap input[type="search"] {
+            width: 360px;
+            padding: 8px 10px;
+            margin: 5px 16px 5px 0;
+            border: 2px solid var(--bs-primary);
+            box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02);
+        }
 
-    input[type="search"]::-webkit-input-placeholder {
-        color: var(--bs-body-bg);
-    }
+        input[type="search"]::-webkit-input-placeholder {
+            color: var(--bs-body-bg);
+        }
 
-    input[type="search"]::-moz-placeholder {
-        /* Mozilla Firefox 19+ */
-        color: var(--bs-body-bg);
-    }
+        input[type="search"]::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: var(--bs-body-bg);
+        }
 
-    input[type="search"]:-moz-placeholder {
-        /* Mozilla Firefox 4 to 18 */
-        color: var(--bs-body-bg);
-    }
+        input[type="search"]:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: var(--bs-body-bg);
+        }
 
-    input[type="search"]:-ms-input-placeholder {
-        /* Internet Explorer 10-11 */
-        color: var(--bs-body-bg);
-    }
+        input[type="search"]:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: var(--bs-body-bg);
+        }
 
 
-    .search-container .search-bar-wrap .logo {
-        background: var(--bs-body-bg);
-        border-radius: 8px;
-        cursor: pointer;
-    }
+        .search-container .search-bar-wrap .logo {
+            background: var(--bs-body-bg);
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
-    .feature-wrapper {
-        color: #626262;
-    }
+        .feature-wrapper {
+            color: #626262;
+        }
 
-    .one-third.column {
-        width: 31.33%;
-    }
+        .one-third.column {
+            width: 31.33%;
+        }
 
-    .feature-wrapper .column p {
-        margin: 0 0 15px;
-    }
+        .feature-wrapper .column p {
+            margin: 0 0 15px;
+        }
 
-    .feature-wrapper .column p a,
-    .feature-wrapper .column p a:visited,
-    .feature-wrapper .column p a:focus {
-        line-height: inherit;
-        text-decoration: none;
-        outline: 0;
-    }
+        .feature-wrapper .column p a,
+        .feature-wrapper .column p a:visited,
+        .feature-wrapper .column p a:focus {
+            line-height: inherit;
+            text-decoration: none;
+            outline: 0;
+        }
 
-    .feature-wrapper .column p img {
-        max-width: 100%;
-        height: auto;
-        text-align: center;
-        margin: 0 auto;
-        display: block;
-    }
+        .feature-wrapper .column p img {
+            max-width: 100%;
+            height: auto;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
 
-    .feature-wrapper .column h2 {
-        font-size: 28px;
-        line-height: 28px;
-        font-weight: 900;
-        letter-spacing: 5px;
-        text-align: center;
-    }
+        .feature-wrapper .column h2 {
+            font-size: 28px;
+            line-height: 28px;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-align: center;
+        }
 
-    .feature-wrapper .column a {
-        color: #444444;
-        font-weight: inherit;
-    }
+        .feature-wrapper .column a {
+            color: #444444;
+            font-weight: inherit;
+        }
 
-    .feature-wrapper .column a,
-    .feature-wrapper .column a:visited,
-    .feature-wrapper .column a:focus {
-        text-decoration: none;
-        outline: 0;
-    }
+        .feature-wrapper .column a,
+        .feature-wrapper .column a:visited,
+        .feature-wrapper .column a:focus {
+            text-decoration: none;
+            outline: 0;
+        }
 
-    .feature-wrapper .column hr {
-        background-color: rgba(0, 0, 0, .08);
-        color: rgba(0, 0, 0, .08);
-        margin: 0 auto 15px;
-        clear: both;
-        display: block;
-        border: none;
-        outline: none;
-        height: 1px;
-        width: 100%;
-    }
+        .feature-wrapper .column hr {
+            background-color: rgba(0, 0, 0, .08);
+            color: rgba(0, 0, 0, .08);
+            margin: 0 auto 15px;
+            clear: both;
+            display: block;
+            border: none;
+            outline: none;
+            height: 1px;
+            width: 100%;
+        }
 
-    .result-wrapper .title {
-        color: #444;
-        font-size: 28px;
-        line-height: 28px;
-        font-weight: 900;
-        letter-spacing: 4px;
-        padding-top: 32px;
-        padding-bottom: 16px;
-    }
+        .result-wrapper .title {
+            color: #444;
+            font-size: 28px;
+            line-height: 28px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            padding-top: 32px;
+            padding-bottom: 16px;
+        }
 
-    .search-result-list,
-    .feature-wrapper,
-    .product-wrapper {
-        position: relative;
-        margin: 0 calc(50vw - 600px);
-        max-width: 1200px;
-        background-color: var(--bs-body-bg);
-    }
+        .search-result-list,
+        .feature-wrapper,
+        .product-wrapper {
+            position: relative;
+            margin: 0 calc(50vw - 600px);
+            max-width: 1200px;
+            background-color: var(--bs-body-bg);
+        }
 
-    .search-result-list {
-        border: 1px solid #D3DAE6;
-        border-radius: 6px 6px 0 0;
-        margin: 0;
-        padding: 16px 16px 0;
-        margin-bottom: 32px;
-    }
+        .search-result-list {
+            border: 1px solid #D3DAE6;
+            border-radius: 6px 6px 0 0;
+            margin: 0;
+            padding: 16px 16px 0;
+            margin-bottom: 32px;
+        }
 
-    .product-wrapper {
-        position: relative;
-        margin-top: 80px;
-        margin-bottom: 15px;
-        padding-top: 32px;
-        background: #f0f4f3;
-        border-top: 6px solid #ffc107;
-        border-radius: 8px 8px 0 0;
-    }
+        .product-wrapper {
+            position: relative;
+            margin-top: 80px;
+            margin-bottom: 15px;
+            padding-top: 32px;
+            background: #f0f4f3;
+            border-top: 6px solid #ffc107;
+            border-radius: 8px 8px 0 0;
+        }
 
-    .product-wrapper .subCopy {
-        font-size: 72px;
-        font-weight: 300;
-        line-height: 60%;
-        color: #444;
-        font-style: normal;
-        text-align: center;
-    }
+        .product-wrapper .subCopy {
+            font-size: 72px;
+            font-weight: 300;
+            line-height: 60%;
+            color: #444;
+            font-style: normal;
+            text-align: center;
+        }
 
-    .product-wrapper .subtit {
-        color: #444;
-        font-size: 24px;
-        margin-bottom: 48px;
-        text-transform: uppercase;
-        text-align: center;
-    }
+        .product-wrapper .subtit {
+            color: #444;
+            font-size: 24px;
+            margin-bottom: 48px;
+            text-transform: uppercase;
+            text-align: center;
+        }
 
-    .product-wrapper ul {
-        gap: 4px 10px;
-        padding: 0 40px;
-    }
+        .product-wrapper ul {
+            gap: 4px 10px;
+            padding: 0 40px;
+        }
 
-    .product-wrapper ul li button {
-        min-width: 212px;
-    }
+        .product-wrapper ul li button {
+            min-width: 212px;
+        }
 
-    img {
-        border: none;
-        vertical-align: top;
-        font-size: 0;
-        line-height: 0;
-    }
+        img {
+            border: none;
+            vertical-align: top;
+            font-size: 0;
+            line-height: 0;
+        }
 
-    .pro_type_img {
-        max-height: 100%;
-        max-width: 100%;
-        vertical-align: middle;
-    }
+        .pro_type_img {
+            max-height: 100%;
+            max-width: 100%;
+            vertical-align: middle;
+        }
 
-    .product-wrapper .tab-content .tab-pane .typeimg {
-        float: left;
-        margin-right: 2rem;
-    }
+        .product-wrapper .tab-content .tab-pane .typeimg {
+            float: left;
+            margin-right: 2rem;
+        }
 
-    .product-wrapper .tab-content {
-        padding: 0 40px;
-    }
+        .product-wrapper .tab-content {
+            padding: 0 40px;
+        }
 
-    .product-wrapper .tab-content p {
-        color: #626262;
-        text-align: left;
-    }
+        .product-wrapper .tab-content p {
+            color: #626262;
+            text-align: left;
+        }
 
-    .product-wrapper .tab-content ul {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        outline: 0;
-        font-size: 100%;
-        vertical-align: baseline;
-        background: transparent;
-    }
+        .product-wrapper .tab-content ul {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
 
-    .product-wrapper .tab-content ul li {
-        list-style: none;
-    }
+        .product-wrapper .tab-content ul li {
+            list-style: none;
+        }
 
-    .product-wrapper .tab-content .pro-list {
-        overflow: hidden;
-        position: relative;
-        clear: both;
-        padding-top: 3rem;
-    }
+        .product-wrapper .tab-content .pro-list {
+            overflow: hidden;
+            position: relative;
+            clear: both;
+            padding-top: 3rem;
+        }
 
-    .product-wrapper .tab-content .pro-list a {
-        background-color: transparent;
-        text-decoration: none;
-    }
+        .product-wrapper .tab-content .pro-list a {
+            background-color: transparent;
+            text-decoration: none;
+        }
 
-    .product-wrapper .tab-content .pro-list .boxImg {
-        position: relative;
-        margin-bottom: 10px;
-    }
+        .product-wrapper .tab-content .pro-list .boxImg {
+            position: relative;
+            margin-bottom: 10px;
+        }
 
-    .box {
-        text-align: left;
-        display: block;
-        color: #555555;
-    }
+        .box {
+            text-align: left;
+            display: block;
+            color: #555555;
+        }
 
-    .box img {
-        width: 100%;
-        height: auto;
-    }
+        .box img {
+            width: 100%;
+            height: auto;
+        }
 
-    .product-wrapper .tab-content .pro-list .box {
-        text-align: center;
-        width: 32%;
-        margin-right: 1%;
-        display: inline-block;
-        color: #555;
-    }
+        .product-wrapper .tab-content .pro-list .box {
+            text-align: center;
+            width: 32%;
+            margin-right: 1%;
+            display: inline-block;
+            color: #555;
+        }
 
-    .product-wrapper .tab-content .pro-list .box h3 {
-        font-size: 16px;
-        display: block;
-        text-align: left;
-        text-transform: uppercase;
-        margin: 0;
-    }
+        .product-wrapper .tab-content .pro-list .box h3 {
+            font-size: 16px;
+            display: block;
+            text-align: left;
+            text-transform: uppercase;
+            margin: 0;
+        }
 
-    p {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        outline: 0;
-        font-size: 100%;
-        vertical-align: baseline;
-        background: transparent;
-    }
+        p {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
 
-    .product-wrapper .tab-content .pro-list .box h3+p {
-        text-align: left;
-        color: var(--bs-body-bg);
-        font-size: 16px;
-    }
+        .product-wrapper .tab-content .pro-list .box h3 + p {
+            text-align: left;
+            color: var(--bs-body-bg);
+            font-size: 16px;
+        }
 
-    img {
-        border: none;
-        vertical-align: top;
-        font-size: 0;
-        line-height: 0;
-    }
+        img {
+            border: none;
+            vertical-align: top;
+            font-size: 0;
+            line-height: 0;
+        }
 
-    .search-result-list table {
-        color: #626262;
-    }
+        .search-result-list table {
+            color: #626262;
+        }
 
-    table tr {
-        cursor: pointer;
-    }
+        table tr {
+            cursor: pointer;
+        }
 
-    table td,
-    table tr th {
-        text-align: center;
-        vertical-align: middle;
-    }
+        table td,
+        table tr th {
+            text-align: center;
+            vertical-align: middle;
+        }
 
-    table tr th,
-    table td:nth-child(4) {
-        text-align: left;
-    }
+        table tr th,
+        table td:nth-child(4) {
+            text-align: left;
+        }
 
-    table td:not(:nth-child(4)) {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        table td:not(:nth-child(4)) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    table th {
-        font-weight: 700;
-        background: #f9f9f9;
-        color: #444;
-        box-shadow: inset 0px 4px 3px -2px rgba(0, 0, 0, .04);
-    }
+        table th {
+            font-weight: 700;
+            background: #f9f9f9;
+            color: #444;
+            box-shadow: inset 0px 4px 3px -2px rgba(0, 0, 0, .04);
+        }
 
-    .table>:not(:first-child) {
-        border-top: none;
-    }
+        .table > :not(:first-child) {
+            border-top: none;
+        }
 
-    .table>:not(caption)>*>* {
-        text-align: center;
-    }
+        .table > :not(caption) > * > * {
+            text-align: center;
+        }
 
-    .empty-wrapper {
-        margin: 32px;
-    }
+        .empty-wrapper {
+            margin: 32px;
+        }
 
-    .empty-wrapper p {
-        color: #626262;
-    }
+        .empty-wrapper p {
+            color: #626262;
+        }
 
-    #backup {
-        width: 50px;
-        height: 50px;
-        display: inline;
-        border-radius: 50%;
-        background-color: #0D88C1;
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-    }
+        #backup {
+            width: 50px;
+            height: 50px;
+            display: inline;
+            border-radius: 50%;
+            background-color: #0D88C1;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
 
-    .fea-title {
-        font-size: 48px;
-        color: var(--bs-gray-800)
-    }
+        .fea-title {
+            font-size: 48px;
+            color: var(--bs-gray-800)
+        }
 
-    .shadow-f1 {
-        box-shadow: var(--bs-decor1) 0px 12px 20px -12px;
-    }
+        .shadow-f1 {
+            box-shadow: var(--bs-decor1) 0px 12px 20px -12px;
+        }
 
-    .title-f1 {
-        color: var(--bs-decor1);
-    }
+        .title-f1 {
+            color: var(--bs-decor1);
+        }
 
-    .shadow-f2 {
-        box-shadow: var(--bs-decor2) 0px 12px 20px -12px;
-    }
+        .shadow-f2 {
+            box-shadow: var(--bs-decor2) 0px 12px 20px -12px;
+        }
 
-    .title-f2 {
-        color: var(--bs-decor2);
-    }
+        .title-f2 {
+            color: var(--bs-decor2);
+        }
 
-    .shadow-f3 {
-        box-shadow: var(--bs-primary) 0px 12px 20px -12px;
-    }
+        .shadow-f3 {
+            box-shadow: var(--bs-primary) 0px 12px 20px -12px;
+        }
 
-    .title-f3 {
-        color: var(--bs-primary);
-    }
-</style>
+        .title-f3 {
+            color: var(--bs-primary);
+        }
+    </style>
 {% endblock %}
 
 {% block title %}
-Classic Components – Electronic Components Distributor
+    Classic Components – Electronic Components Distributor
 {% endblock %}
 
 {% block content %}
-<div class="cover home-cover">
-    {% if q %}
-    <div class="container">
-        <div class="row align-items-center">
-            <h1 class="title">Parts Search</h1>
-        </div>
+    <div class="cover home-cover">
+        {% if q %}
+            <div class="container">
+                <div class="row align-items-center">
+                    <h1 class="title">Parts Search</h1>
+                </div>
+            </div>
+        {% endif %}
     </div>
-    {% endif %}
-</div>
-<div class="container home-wrapper">
-    <!-- Search Bar -->
-    <div class="search-container">
-        <div class="search-bar-wrap">
-            <img class="logo me-3" onclick="document.location.href = '/';"
-                src="{% static 'logo/logo_single_brand.svg' %}" height="42" alt="ATTCOMP Logo">
-            <input type="search" class="form-control" id="value" placeholder="Part search..." name="q">
-            <button type="submit" class="btn btn-primary" onclick="doSearch()">
-                <i class="fa fa-search" style="margin-right: 4px;"></i>
-                Search
-            </button>
-            <a type="button" class="btn btn-primary upload-btn ms-3" href="/upload_and_quote/" target="_blank">
-                <i class="fa fa-upload" style="margin-right: 4px;"></i>
-                Upoad B.O.M
-            </a>
+    <div class="container home-wrapper">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar-wrap">
+                <img class="logo me-3" onclick="document.location.href = '/';"
+                     src="{% static 'logo/logo_single_brand.svg' %}" height="42" alt="ATTCOMP Logo">
+                <input type="search" class="form-control" id="value" placeholder="Part search..." name="q">
+                <button type="submit" class="btn btn-primary" onclick="doSearch()">
+                    <i class="fa fa-search" style="margin-right: 4px;"></i>
+                    Search
+                </button>
+                <a type="button" class="btn btn-primary upload-btn ms-3" href="/upload_and_quote/" target="_blank">
+                    <i class="fa fa-upload" style="margin-right: 4px;"></i>
+                    Upoad B.O.M
+                </a>
+            </div>
         </div>
-    </div>
 
-    {% if q and res %}
-    <div class="container result-wrapper">
-        <!-- Search Results -->
-        <p class="title">Search results for {{q}}</p>
-        <div class="search-result-list">
-            <table class="table table-hover caption-top">
-                <thead>
-                    <tr>
-                        <th scope="col">Index</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Manufacturer</th>
-                        <th scope="col">Catalog</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">RohsLink</th>
-                        <th scope="col">ProductionPDFLink</th>
-                        <th scope="col">Availability</th>
-                        <th scope="col">MOQ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in res %}
-                    <tr>
-                        <th scope="row">{{forloop.counter}}</th>
-                        <td>{{item.PartNo}}</td>
-                        <td>{{item.Manufacture}}</td>
-                        <td>{{item.Catalog}}</td>
-                        <td>{{item.Description}}</td>
-                        <td>
-                            {% if item.RohsLink %}
-                            <a target="_blank" href="{{item.RohsLink}}">Link</a>
-                            {% else %}Empty{% endif %}
-                        </td>
-                        <td>
-                            {% if item.ProductionPDFLink %}
-                            <a target="_blank" href="{{item.ProductionPDFLink}}">Check</a>
-                            {% else %}Empty{% endif %}
-                        </td>
-                        <td>{{ item.Availability }}</td>
-                        <td>{{ item.MOQ }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <!-- Pagination -->
-            {% if res %}
-            <nav class="pagination-wrapper">
-                <ul class="pagination">
-                    {% if res.pager_dict.preview_pager %}
-                    <li class="page-item"><a class="page-link"
-                            href="/search/?q={{q}}&pagenumber={{res.pager_dict.preview_pager}}">Preview Page</a>
-                    </li>
+        {% if q and object_list %}
+            <div class="container result-wrapper">
+                <!-- Search Results -->
+                <p class="title">Search results for "{{ q }}"</p>
+                <div class="search-result-list">
+                    <table class="table table-hover caption-top">
+                        <thead>
+                        <tr>
+                            <th scope="col">Index</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Manufacturer</th>
+                            {#                        <th scope="col">Catalog</th>#}
+                            <th scope="col">Description</th>
+                            <th scope="col">RohsLink</th>
+                            <th scope="col">ProductionPDFLink</th>
+                            <th scope="col">Availability</th>
+                            <th scope="col">MOQ</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in object_list %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ item.PartNo }}</td>
+                                <td>{{ item.Manufacture }}</td>
+                                {#                        <td>{{item.Catalog}}</td>#}
+                                <td>{{ item.Description }}</td>
+                                <td>
+                                    {% if item.RohsLink %}
+                                        <a target="_blank" href="{{ item.RohsLink }}">Link</a>
+                                    {% else %}Empty{% endif %}
+                                </td>
+                                <td>
+                                    {% if item.ProductionPDFLink %}
+                                        <a target="_blank" href="{{ item.ProductionPDFLink }}">Check</a>
+                                    {% else %}Empty{% endif %}
+                                </td>
+                                <td>{{ item.Availability }}</td>
+                                <td>{{ item.MOQ }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <!--下面是分页-->
+                    {% if is_paginated %}
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if q %}&q={{ q }}{% endif %}">Previous</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                            {% endif %}
+
+                            {% for i in page_range %}
+                                {% if page_obj.number == i %}
+                                    <li class="page-item active"><span class="page-link"> {{ i }} <span class="sr-only">(current)</span></span></li>
+                                {% elif i == '…' %}
+                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">{{ i }}</a></li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ i }}{% if q %}&q={{ q }}{% endif %}">{{ i }}</a></li>
+                               {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if q %}&q={{ q }}{% endif %}">Next</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled"><span class="page-link">Next</span></li>
+                            {% endif %}
+                        </ul>
                     {% endif %}
 
-                    <li class="page-item">
-                        <a class="page-link" href="javascript:void(0);">Current
-                            Page【{{res.pager_dict.current_pager}}】</a>
-                    </li>
+                </div>
+            </div>
 
-                    {% if res.pager_dict.next_pager %}
-                    <li class="page-item"><a class="page-link"
-                            href="/search/?q={{q}}&pagenumber={{res.pager_dict.next_pager}}">Next Page</a></li>
-                    {% endif %}
-
-                    {% if res.pager_dict.last_pager %}
-                    <li class="page-item"><a class="page-link"
-                            href="/search/?q={{q}}&pagenumber={{res.pager_dict.last_pager}}">Last Page</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
-            {% endif %}
-        </div>
-
-    </div>
-    {% elif q and not res.data_list %}
-    <div class="empty-wrapper">
-        <div class="float-start my-2" style="margin-right: 20px;">
-            <img src="{% static 'img/empty.png' %}" height="310" alt="logo">
-        </div>
-        <h2>No result for "{{q}}"</h2>
-        <b>Can’t find what you’re looking for?</b>
-        <p>&nbsp; <a class="request-for-quote-link" href="/table/">
-                <img src="{% static 'img/message.jpg' %}" alt="message" height="40">
-            </a></p>
-        <p style="margin-bottom: 12px;">Contact ATTCOMP sales representative email <a
-                href="mailto:sales@attcom.com">sales@attcom.com</a>
-        </p>
-        <p style="margin-bottom: 12px;">&nbsp; &nbsp; <a class="request-for-refresh-link" href="/search?q={{q}}">
-                <img src="{% static 'img/sync.png' %}" alt="refresh" height="40">
-            </a></p>
-        <b>Tips on Searching for Parts：</b>
-        <p>1. Recheck spelling of keywords</p>
-        <p>2. Search on one part number at a time</p>
-        <p>3. Divide the sentence or long term into shorter words.</p>
-        <p>4. Confirm the words more than 3 letters</p>
-        <p>5. Search by Manufacturer</p>
-    </div>
-    {% else %}
-    <!-- LOGO区 -->
-    <!-- <div class="d-flex justify-content-center flex-row bd-highlight my-3">
+        {% elif q and not object_list %}
+            <div class="empty-wrapper">
+                <div class="float-start my-2" style="margin-right: 20px;">
+                    <img src="{% static 'img/empty.png' %}" height="310" alt="logo">
+                </div>
+                <h2>No result for "{{ q }}"</h2>
+                <b>Can’t find what you’re looking for?</b>
+                <p>&nbsp; <a class="request-for-quote-link" href="/table/">
+                    <img src="{% static 'img/message.jpg' %}" alt="message" height="40">
+                </a></p>
+                <p style="margin-bottom: 12px;">Contact ATTCOMP sales representative email <a
+                        href="mailto:sales@attcom.com">sales@attcom.com</a>
+                </p>
+                <p style="margin-bottom: 12px;">&nbsp; &nbsp; <a class="request-for-refresh-link"
+                                                                 href="/search?q={{ q }}">
+                    <img src="{% static 'img/sync.png' %}" alt="refresh" height="40">
+                </a></p>
+                <b>Tips on Searching for Parts：</b>
+                <p>1. Recheck spelling of keywords</p>
+                <p>2. Search on one part number at a time</p>
+                <p>3. Divide the sentence or long term into shorter words.</p>
+                <p>4. Confirm the words more than 3 letters</p>
+                <p>5. Search by Manufacturer</p>
+            </div>
+        {% else %}
+            <!-- LOGO区 -->
+            <!-- <div class="d-flex justify-content-center flex-row bd-highlight my-3">
         <div class="p-2 bd-highlight bg-dark shadow rounded">
             <img src="{% static 'logo/logo_horizantal_light_backup.svg' %}" alt="logo_horizantal_light" height="150">
         </div>
@@ -537,445 +543,485 @@ Classic Components – Electronic Components Distributor
             <img src="{% static 'logo/logo_vertical_dark_backup.svg' %}" alt="logo_vertical_dark" height="150">
         </div>
     </div> -->
-    <!-- Features -->
-    <h1 class="text-uppercase text-center font-monospace fw-bold mt-4 fea-title">Our advantages</h1>
-    <div class="feature-wrapper d-flex flex-row align-items-center shadow-f1 rounded bg-1"
-        style="border-bottom-left-radius: 35px!important;">
-        <div class="d-flex bd-highlight me-4">
-            <a href="#">
-                <img class="aligncenter wp-image-3405 size-medium" src="{% static 'img/box_1200px_radius.png' %}"
-                    alt="Diversity" width="280">
-            </a>
-        </div>
-        <div class="bd-highlight flex-grow-1 pe-4">
-            <h2 class="text-uppercase title-f1">Zero-concerns of lacks</h2>
-            <hr>
-            <p class="mt-4">Attcomp can eliminate your electronic component lack concerns. Our Components will resolve
-                stockouts/shortages to keep your production running.We have access to a broad collection of allocated
-                components via our extensive network of global partners and regionalized distribution points.
-            </p>
-        </div>
+            <!-- Features -->
+            <h1 class="text-uppercase text-center font-monospace fw-bold mt-4 fea-title">Our advantages</h1>
+            <div class="feature-wrapper d-flex flex-row align-items-center shadow-f1 rounded bg-1"
+                 style="border-bottom-left-radius: 35px!important;">
+                <div class="d-flex bd-highlight me-4">
+                    <a href="#">
+                        <img class="aligncenter wp-image-3405 size-medium"
+                             src="{% static 'img/box_1200px_radius.png' %}"
+                             alt="Diversity" width="280">
+                    </a>
+                </div>
+                <div class="bd-highlight flex-grow-1 pe-4">
+                    <h2 class="text-uppercase title-f1">Zero-concerns of lacks</h2>
+                    <hr>
+                    <p class="mt-4">Attcomp can eliminate your electronic component lack concerns. Our Components will
+                        resolve
+                        stockouts/shortages to keep your production running.We have access to a broad collection of
+                        allocated
+                        components via our extensive network of global partners and regionalized distribution points.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-wrapper d-flex flex-row align-items-center shadow-f2 rounded my-4 bg-2"
+                 style="border-bottom-right-radius: 35px!important;">
+                <div class="bd-highlight flex-grow-1 ps-4">
+                    <h2 class="text-uppercase title-f2">Most competitive price</h2>
+                    <hr>
+                    <p class="mt-4">We are experts in fulfilling verified results for improved purchase price variance.
+                        Attcomp's components will leverage our considerable buying power and the comprehensive
+                        international
+                        organization of high-quality sources to meet your most aggressive cost targets.
+                    </p>
+                </div>
+                <div class="d-flex bd-highlight ms-4">
+                    <a href="#">
+                        <img class="aligncenter wp-image-3405 size-medium"
+                             src="{% static 'img/turnover_1200px_radius.png' %}"
+                             alt="Cost" width="280">
+                    </a>
+                </div>
+            </div>
+
+            <div class="feature-wrapper d-flex flex-row align-items-center shadow-f3 rounded bg-3"
+                 style="border-bottom-left-radius: 35px!important;">
+                <div class="d-flex bd-highlight me-4">
+                    <a href="#">
+                        <img class="aligncenter wp-image-3405 size-medium"
+                             src="{% static 'img/global_1200px_radius.png' %}"
+                             alt="Turnover" width="280">
+                    </a>
+                </div>
+                <div class="bd-highlight flex-grow-1 pe-4">
+                    <h2 class="text-uppercase title-f3">Efficient inventory turnover</h2>
+                    <hr>
+                    <p class="mt-4">The Attcomp team is quite experienced in getting the highest value for
+                        your spare electronic components. We will employ our network of international partners and our
+                        unparalleled digital marketing group to realize the best results for your excess inventory.</p>
+                </div>
+            </div>
+
+            <!-- Products  -->
+            <div class="product-wrapper">
+                <h2 class="subCopy font-monospace">PRODUCTS</h2>
+                <p class="subtit wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                   style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    Main Products: integrated&nbsp; circuit , Capacitor, Inductor, Relay, LCD, Module etc.
+                </p>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase active" id="pills-p-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#pills-p" type="button" role="tab" aria-controls="pills-p"
+                                aria-selected="true">XILINK
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase" id="pills-p2-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-p2" type="button" role="tab" aria-controls="pills-p2"
+                                aria-selected="false">Texas&nbsp; Instruments
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase" id="pills-p3-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-p3" type="button" role="tab" aria-controls="pills-p3"
+                                aria-selected="false">Infineon
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase" id="pills-p4-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-p4" type="button" role="tab" aria-controls="pills-p4"
+                                aria-selected="false">ALTERA
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase" id="pills-p5-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-p5" type="button" role="tab" aria-controls="pills-p5"
+                                aria-selected="false">MICRON
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase" id="pills-p6-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-p6" type="button" role="tab" aria-controls="pills-p6"
+                                aria-selected="false">ON&nbsp; semiconductor
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase" id="pills-p7-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-p7" type="button" role="tab" aria-controls="pills-p7"
+                                aria-selected="false">NXP
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-outline-primary  text-uppercase" id="pills-p8-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-p8" type="button" role="tab" aria-controls="pills-p8"
+                                aria-selected="false">ST
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <!-- XLINK -->
+                    <div class="tab-pane fade show active" id="pills-p" role="tabpanel" aria-labelledby="pills-p-tab">
+                        <div class="typeimg active in"><img class="pro_type_img"
+                                                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15221422609137.png"
+                                                            alt="XILINX"></div>
+
+
+                        <ul class="list-paddingleft-2" style="list-style-type: disc;">
+                            <li>
+                                <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering
+                                    original
+                                    genuine parts, supporting franchised agency source ! No worry to work with us!</p>
+                            </li>
+                            <li>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>Xilinx is the world's leading supplier of programmable logic complete solutions.
+                                    Xilinx
+                                    develope- product-and sell to &nbsp;a wide range of advanced integrated circuits,
+                                    software
+                                    design tools, and intellectual property (IP) cores that are predefined system-level
+                                    functions.</p>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>The Xilinx product line includes Complex Programmable Logic Devices (CPLDs). This
+                                    solution
+                                    reduces the time for electronics manufacturers to develop products and accelerates
+                                    the
+                                    time
+                                    to market, thereby reducing the manufacturer's risk.</p>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>Xilinx products have been widely used in digital electronic applications from
+                                    wireless
+                                    base
+                                    station to DVD player. Traditional semiconductor companies have only a few hundred
+                                    customers, and Xilinx has more than 7,500 customers worldwide and more than 50,000
+                                    design
+                                    starts.</p>
+                            </li>
+                        </ul>
+                        <div class="pro-list">
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231834280188.jpg"
+                                         alt="XC9536XL-10VQG44C">
+                                </div><!-- boxImg -->
+                                <h3>XC9536XL-10VQG44C</h3>
+                                <p></p>
+                            </a><!-- box -->
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15215331351204.jpg"
+                                         alt="XC3S50A-4TQG144I">
+                                </div><!-- boxImg -->
+                                <h3>XC3S50A-4TQG144I</h3>
+                                <p></p>
+                            </a><!-- box -->
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/1521533100845.jpg"
+                                         alt="XC95144XL-10TQG100I">
+                                </div><!-- boxImg -->
+                                <h3>XC95144XL-10TQG100I</h3>
+                                <p></p>
+                            </a><!-- box -->
+                        </div>
+                    </div>
+
+                    <!-- TexasInstruments -->
+                    <div class="tab-pane fade show " id="pills-p2" role="tabpanel" aria-labelledby="pills-p2-tab">
+                        <div class="typeimg active in"><img class="pro_type_img"
+                                                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313370499.png"
+                                                            alt="Texas Instruments"></div>
+
+
+                        <ul class="list-paddingleft-2" style="list-style-type: disc;">
+                            <li>
+                                <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering
+                                    original
+                                    genuine parts, supporting franchised agency source ! No worry to work with us!<br>
+                                </p>
+                            </li>
+                            <li>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>Texas Instruments (TI) is a multinational semiconductor design and manufacturing
+                                    company.&nbsp;</p>
+                            </li>
+                            <li>
+                                <p>Unique with more than 100,000+ analog ICs and embedded processors, it combines
+                                    software,
+                                    tools, and the industry's largest sales team/technical support team.</p>
+                            </li>
+                        </ul>
+
+                        <div class="pro-list">
+                        </div>
+
+                    </div>
+
+
+                    <!-- Infineon -->
+                    <div class="tab-pane fade show " id="pills-p3" role="tabpanel" aria-labelledby="pills-p3-tab">
+                        <div class="typeimg active in"><img class="pro_type_img"
+                                                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313697999.png"
+                                                            alt="Infineon"></div>
+
+
+                        <ul class="list-paddingleft-2" style="list-style-type: disc;">
+                            <li>
+                                <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering
+                                    original
+                                    genuine parts, supporting franchised agency source ! No worry to work with us!<br>
+                                </p>
+                            </li>
+                            <li>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>Infineon is one of the top ten semiconductor manufacturers in the world. On May 1,
+                                    1999,
+                                    Siemens Semiconductors officially changed its name to Infineon and is headquartered
+                                    in
+                                    Munich, Germany.</p>
+                            </li>
+                            <li>
+                                <p>It mainly produces automotive and industrial electronic chips, security and IC card
+                                    application ICs, communication multimedia chips, and storage devices.</p>
+                            </li>
+                        </ul>
+
+                        <div class="pro-list">
+                        </div>
+
+                    </div>
+
+                    <!-- ALTERA -->
+                    <div class="tab-pane fade show " id="pills-p4" role="tabpanel" aria-labelledby="pills-p4-tab">
+                        <div class="typeimg active in"><img class="pro_type_img"
+                                                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15221424686012.png"
+                                                            alt="ALTERA"></div>
+
+
+                        <ul class="list-paddingleft-2" style="list-style-type: disc;">
+                            <li>
+                                <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering
+                                    original
+                                    genuine parts, supporting franchised agency source ! No worry to work with us!<br>
+                                </p>
+                            </li>
+                            <li>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>Altera inherits the tradition of innovation and is the world's "Programmable Chip
+                                    System"
+                                    (SOPC) solution advocate.</p>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>Altera combines programmable logic technology, intellectual property (IP) and
+                                    technology
+                                    services with software tools to provide high-quality programmable solutions to more
+                                    than
+                                    14,000 customers worldwide. His new product line combines the inherent advantages of
+                                    programmable logic—flexibility, time-to-market, and advanced performance and
+                                    integration—into developing designs for today's wide-ranging system needs.</p>
+                            </li>
+                        </ul>
+
+                        <div class="pro-list">
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: none;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231887279875.jpg"
+                                         alt="EP4CE30F23C7N">
+                                </div><!-- boxImg -->
+                                <h3>EP4CE30F23C7N</h3>
+                                <p></p>
+                            </a><!-- box -->
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: none;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231884892532.jpg"
+                                         alt="EPM3128ATC100-10N">
+                                </div><!-- boxImg -->
+                                <h3>EPM3128ATC100-10N</h3>
+                                <p></p>
+                            </a><!-- box -->
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: none;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231886369407.jpg"
+                                         alt="EP3C16Q240C8N">
+                                </div><!-- boxImg -->
+                                <h3>EP3C16Q240C8N</h3>
+                                <p></p>
+                            </a><!-- box -->
+                        </div>
+                    </div>
+
+                    <!-- MICRON -->
+                    <div class="tab-pane fade show " id="pills-p5" role="tabpanel" aria-labelledby="pills-p5-tab">
+                        <div class="typeimg active in"><img class="pro_type_img"
+                                                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15220583653199.png"
+                                                            alt="MICRON"></div>
+
+
+                        <ul class="list-paddingleft-2" style="list-style-type: disc;">
+                            <li>
+                                <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering
+                                    original
+                                    genuine parts, supporting franchised agency source ! No worry to work with us!<br>
+                                </p>
+                            </li>
+                            <li>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p style="text-align: left;">Micron is one of the leading providers of advanced
+                                    semiconductor solutions. Its micro and flash components are used in modern,
+                                    state-of-the-art computing, Micron's network and communications products, including
+                                    computers, workstations, servers, cell phones, radios, digital cameras and GAMING
+                                    systems.</p>
+                                <p style="text-align: left;"><br></p>
+                            </li>
+                            <li>
+                                <p style="text-align: left;">As the&nbsp;one of the world's leading suppliers of
+                                    advanced
+                                    semiconductor solutions. Via its global operations, Micron product and sell these
+                                    especially &nbsp;products: such like DRAM, NAND flash memory, CMOS image sensors,
+                                    other
+                                    semiconductor components, and memory modules used in computing, consumer products,
+                                    networking, and mobile portable products..</p>
+                            </li>
+                        </ul>
+                        <div class="pro-list">
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/1523189104175.jpg"
+                                         alt="MT29F2G08ABAEAH4-IT:E">
+                                </div><!-- boxImg -->
+                                <h3>MT29F2G08ABAEAH4-IT:E</h3>
+                                <p></p>
+                            </a><!-- box -->
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231894713313.jpg"
+                                         alt="MT41K512M16HA-125 IT:A">
+                                </div><!-- boxImg -->
+                                <h3>MT41K512M16HA-125 IT:A</h3>
+                                <p></p>
+                            </a><!-- box -->
+                            <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
+                               style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <div class="boxImg active in">
+                                    <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231892859719.jpg"
+                                         alt="MT47H64M16HR-3:E">
+                                </div><!-- boxImg -->
+                                <h3>MT47H64M16HR-3:E</h3>
+                                <p></p>
+                            </a><!-- box -->
+                        </div>
+                    </div>
+
+                    <!-- ON semiconductor -->
+                    <div class="tab-pane fade show " id="pills-p6" role="tabpanel" aria-labelledby="pills-p6-tab">
+                        <div class="typeimg active in"><img class="pro_type_img"
+                                                            src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313930812.png"
+                                                            alt="ON&nbsp;semiconductor"></div>
+
+
+                        <ul class="list-paddingleft-2" style="list-style-type: disc;">
+                            <li>
+                                <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering
+                                    original
+                                    genuine parts, supporting franchised agency source ! No worry to work with us!<br>
+                                </p>
+                            </li>
+                            <li>
+                                <p><br></p>
+                            </li>
+                            <li>
+                                <p>ON Semiconductor is the premier supplier of high performance silicon solutions for
+                                    energy
+                                    efficient electronic products. The company's product portfolio includes power and
+                                    signal
+                                    management, logic, discrete and custom devices to help customers solve their unique
+                                    design challenges in automotive, communications, computer, consumer electronics,
+                                    industrial, LED lighting, medical, military/aerospace and power applications. Fast
+                                    and
+                                    cost-effective.</p>
+                            </li>
+                        </ul>
+                        <div class="pro-list">
+                        </div>
+                    </div>
+
+                    <!-- NXP -->
+                    <div class="tab-pane fade show " id="pills-p7" role="tabpanel" aria-labelledby="pills-p7-tab">
+                        <h2 style="color: var(--bs-body-bg);">暂无NXP相关描述</h2>
+                    </div>
+
+                    <!-- ST -->
+                    <div class="tab-pane fade show " id="pills-p8" role="tabpanel" aria-labelledby="pills-p8-tab">
+                        <h2 style="color: var(--bs-body-bg);">暂无ST相关描述</h2>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
     </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.min.js" crossorigin="anonymous"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        var spinnerElement, searchElement;
 
-    <div class="feature-wrapper d-flex flex-row align-items-center shadow-f2 rounded my-4 bg-2"
-        style="border-bottom-right-radius: 35px!important;">
-        <div class="bd-highlight flex-grow-1 ps-4">
-            <h2 class="text-uppercase title-f2">Most competitive price</h2>
-            <hr>
-            <p class="mt-4">We are experts in fulfilling verified results for improved purchase price variance.
-                Attcomp's components will leverage our considerable buying power and the comprehensive international
-                organization of high-quality sources to meet your most aggressive cost targets.
-            </p>
-        </div>
-        <div class="d-flex bd-highlight ms-4">
-            <a href="#">
-                <img class="aligncenter wp-image-3405 size-medium" src="{% static 'img/turnover_1200px_radius.png' %}"
-                    alt="Cost" width="280">
-            </a>
-        </div>
-    </div>
+        window.onload = function () {
+            document.body.classList.remove("opacity-75");
 
-    <div class="feature-wrapper d-flex flex-row align-items-center shadow-f3 rounded bg-3"
-        style="border-bottom-left-radius: 35px!important;">
-        <div class="d-flex bd-highlight me-4">
-            <a href="#">
-                <img class="aligncenter wp-image-3405 size-medium" src="{% static 'img/global_1200px_radius.png' %}"
-                    alt="Turnover" width="280">
-            </a>
-        </div>
-        <div class="bd-highlight flex-grow-1 pe-4">
-            <h2 class="text-uppercase title-f3">Efficient inventory turnover</h2>
-            <hr>
-            <p class="mt-4">The Attcomp team is quite experienced in getting the highest value for
-                your spare electronic components. We will employ our network of international partners and our
-                unparalleled digital marketing group to realize the best results for your excess inventory.</p>
-        </div>
-    </div>
+            spinnerElement = document.getElementById("spinner");
+            searchElement = document.getElementById("value");
+            if (spinnerElement) {
+                searchElement.addEventListener("keyup", function (event) {
+                    event.preventDefault();
+                    if (event.keyCode === 13) {
+                        doSearch()
+                    }
+                });
+            }
+        };
 
-    <!-- Products  -->
-    <div class="product-wrapper">
-        <h2 class="subCopy font-monospace">PRODUCTS</h2>
-        <p class="subtit wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-            style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            Main Products: integrated&nbsp; circuit , Capacitor, Inductor, Relay, LCD, Module etc.
-        </p>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase active" id="pills-p-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p" type="button" role="tab" aria-controls="pills-p"
-                    aria-selected="true">XILINK</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase" id="pills-p2-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p2" type="button" role="tab" aria-controls="pills-p2"
-                    aria-selected="false">Texas&nbsp; Instruments</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase" id="pills-p3-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p3" type="button" role="tab" aria-controls="pills-p3"
-                    aria-selected="false">Infineon</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase" id="pills-p4-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p4" type="button" role="tab" aria-controls="pills-p4"
-                    aria-selected="false">ALTERA</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase" id="pills-p5-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p5" type="button" role="tab" aria-controls="pills-p5"
-                    aria-selected="false">MICRON</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase" id="pills-p6-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p6" type="button" role="tab" aria-controls="pills-p6"
-                    aria-selected="false">ON&nbsp; semiconductor</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase" id="pills-p7-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p7" type="button" role="tab" aria-controls="pills-p7"
-                    aria-selected="false">NXP</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="btn btn-outline-primary  text-uppercase" id="pills-p8-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-p8" type="button" role="tab" aria-controls="pills-p8"
-                    aria-selected="false">ST</button>
-            </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <!-- XLINK -->
-            <div class="tab-pane fade show active" id="pills-p" role="tabpanel" aria-labelledby="pills-p-tab">
-                <div class="typeimg active in"><img class="pro_type_img"
-                        src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15221422609137.png"
-                        alt="XILINX"></div>
+        function doSearch() {
+            if (!spinnerElement || !searchElement) {
+                return
+            }
 
-
-                <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                    <li>
-                        <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                            genuine parts, supporting franchised agency source ! No worry to work with us!</p>
-                    </li>
-                    <li>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>Xilinx is the world's leading supplier of programmable logic complete solutions. Xilinx
-                            develope- product-and sell to &nbsp;a wide range of advanced integrated circuits,
-                            software
-                            design tools, and intellectual property (IP) cores that are predefined system-level
-                            functions.</p>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>The Xilinx product line includes Complex Programmable Logic Devices (CPLDs). This
-                            solution
-                            reduces the time for electronics manufacturers to develop products and accelerates the
-                            time
-                            to market, thereby reducing the manufacturer's risk.</p>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>Xilinx products have been widely used in digital electronic applications from wireless
-                            base
-                            station to DVD player. Traditional semiconductor companies have only a few hundred
-                            customers, and Xilinx has more than 7,500 customers worldwide and more than 50,000
-                            design
-                            starts.</p>
-                    </li>
-                </ul>
-                <div class="pro-list">
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231834280188.jpg"
-                                alt="XC9536XL-10VQG44C">
-                        </div><!-- boxImg -->
-                        <h3>XC9536XL-10VQG44C</h3>
-                        <p></p>
-                    </a><!-- box -->
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15215331351204.jpg"
-                                alt="XC3S50A-4TQG144I">
-                        </div><!-- boxImg -->
-                        <h3>XC3S50A-4TQG144I</h3>
-                        <p></p>
-                    </a><!-- box -->
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/1521533100845.jpg"
-                                alt="XC95144XL-10TQG100I">
-                        </div><!-- boxImg -->
-                        <h3>XC95144XL-10TQG100I</h3>
-                        <p></p>
-                    </a><!-- box -->
-                </div>
-            </div>
-
-            <!-- TexasInstruments -->
-            <div class="tab-pane fade show " id="pills-p2" role="tabpanel" aria-labelledby="pills-p2-tab">
-                <div class="typeimg active in"><img class="pro_type_img"
-                        src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313370499.png"
-                        alt="Texas Instruments"></div>
-
-
-                <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                    <li>
-                        <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                            genuine parts, supporting franchised agency source ! No worry to work with us!<br></p>
-                    </li>
-                    <li>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>Texas Instruments (TI) is a multinational semiconductor design and manufacturing
-                            company.&nbsp;</p>
-                    </li>
-                    <li>
-                        <p>Unique with more than 100,000+ analog ICs and embedded processors, it combines software,
-                            tools, and the industry's largest sales team/technical support team.</p>
-                    </li>
-                </ul>
-
-                <div class="pro-list">
-                </div>
-
-            </div>
-
-
-            <!-- Infineon -->
-            <div class="tab-pane fade show " id="pills-p3" role="tabpanel" aria-labelledby="pills-p3-tab">
-                <div class="typeimg active in"><img class="pro_type_img"
-                        src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313697999.png"
-                        alt="Infineon"></div>
-
-
-                <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                    <li>
-                        <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                            genuine parts, supporting franchised agency source ! No worry to work with us!<br></p>
-                    </li>
-                    <li>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>Infineon is one of the top ten semiconductor manufacturers in the world. On May 1, 1999,
-                            Siemens Semiconductors officially changed its name to Infineon and is headquartered in
-                            Munich, Germany.</p>
-                    </li>
-                    <li>
-                        <p>It mainly produces automotive and industrial electronic chips, security and IC card
-                            application ICs, communication multimedia chips, and storage devices.</p>
-                    </li>
-                </ul>
-
-                <div class="pro-list">
-                </div>
-
-            </div>
-
-            <!-- ALTERA -->
-            <div class="tab-pane fade show " id="pills-p4" role="tabpanel" aria-labelledby="pills-p4-tab">
-                <div class="typeimg active in"><img class="pro_type_img"
-                        src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15221424686012.png"
-                        alt="ALTERA"></div>
-
-
-                <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                    <li>
-                        <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                            genuine parts, supporting franchised agency source ! No worry to work with us!<br></p>
-                    </li>
-                    <li>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>Altera inherits the tradition of innovation and is the world's "Programmable Chip System"
-                            (SOPC) solution advocate.</p>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>Altera combines programmable logic technology, intellectual property (IP) and technology
-                            services with software tools to provide high-quality programmable solutions to more than
-                            14,000 customers worldwide. His new product line combines the inherent advantages of
-                            programmable logic—flexibility, time-to-market, and advanced performance and
-                            integration—into developing designs for today's wide-ranging system needs.</p>
-                    </li>
-                </ul>
-
-                <div class="pro-list">
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: none;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231887279875.jpg"
-                                alt="EP4CE30F23C7N">
-                        </div><!-- boxImg -->
-                        <h3>EP4CE30F23C7N</h3>
-                        <p></p>
-                    </a><!-- box -->
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: none;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231884892532.jpg"
-                                alt="EPM3128ATC100-10N">
-                        </div><!-- boxImg -->
-                        <h3>EPM3128ATC100-10N</h3>
-                        <p></p>
-                    </a><!-- box -->
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: none;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231886369407.jpg"
-                                alt="EP3C16Q240C8N">
-                        </div><!-- boxImg -->
-                        <h3>EP3C16Q240C8N</h3>
-                        <p></p>
-                    </a><!-- box -->
-                </div>
-            </div>
-
-            <!-- MICRON -->
-            <div class="tab-pane fade show " id="pills-p5" role="tabpanel" aria-labelledby="pills-p5-tab">
-                <div class="typeimg active in"><img class="pro_type_img"
-                        src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201803/15220583653199.png"
-                        alt="MICRON"></div>
-
-
-                <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                    <li>
-                        <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                            genuine parts, supporting franchised agency source ! No worry to work with us!<br></p>
-                    </li>
-                    <li>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p style="text-align: left;">Micron is one of the leading providers of advanced
-                            semiconductor solutions. Its micro and flash components are used in modern,
-                            state-of-the-art computing, Micron's network and communications products, including
-                            computers, workstations, servers, cell phones, radios, digital cameras and GAMING
-                            systems.</p>
-                        <p style="text-align: left;"><br></p>
-                    </li>
-                    <li>
-                        <p style="text-align: left;">As the&nbsp;one of the world's leading suppliers of advanced
-                            semiconductor solutions. Via its global operations, Micron product and sell these
-                            especially &nbsp;products: such like DRAM, NAND flash memory, CMOS image sensors, other
-                            semiconductor components, and memory modules used in computing, consumer products,
-                            networking, and mobile portable products..</p>
-                    </li>
-                </ul>
-                <div class="pro-list">
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/1523189104175.jpg"
-                                alt="MT29F2G08ABAEAH4-IT:E">
-                        </div><!-- boxImg -->
-                        <h3>MT29F2G08ABAEAH4-IT:E</h3>
-                        <p></p>
-                    </a><!-- box -->
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231894713313.jpg"
-                                alt="MT41K512M16HA-125 IT:A">
-                        </div><!-- boxImg -->
-                        <h3>MT41K512M16HA-125 IT:A</h3>
-                        <p></p>
-                    </a><!-- box -->
-                    <a href="#" class="box wow fadeInUp" data-wow-delay="0.1s" data-wow-offset="200"
-                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <div class="boxImg active in">
-                            <img src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201804/15231892859719.jpg"
-                                alt="MT47H64M16HR-3:E">
-                        </div><!-- boxImg -->
-                        <h3>MT47H64M16HR-3:E</h3>
-                        <p></p>
-                    </a><!-- box -->
-                </div>
-            </div>
-
-            <!-- ON semiconductor -->
-            <div class="tab-pane fade show " id="pills-p6" role="tabpanel" aria-labelledby="pills-p6-tab">
-                <div class="typeimg active in"><img class="pro_type_img"
-                        src="http://www-x-3acomponents-x-hk.img.abc188.com/upload/images/201901/15468313930812.png"
-                        alt="ON&nbsp;semiconductor"></div>
-
-
-                <ul class="list-paddingleft-2" style="list-style-type: disc;">
-                    <li>
-                        <p>3A components is&nbsp;your reliable partner from Asia . We insist on offering original
-                            genuine parts, supporting franchised agency source ! No worry to work with us!<br></p>
-                    </li>
-                    <li>
-                        <p><br></p>
-                    </li>
-                    <li>
-                        <p>ON Semiconductor is the premier supplier of high performance silicon solutions for energy
-                            efficient electronic products. The company's product portfolio includes power and signal
-                            management, logic, discrete and custom devices to help customers solve their unique
-                            design challenges in automotive, communications, computer, consumer electronics,
-                            industrial, LED lighting, medical, military/aerospace and power applications. Fast and
-                            cost-effective.</p>
-                    </li>
-                </ul>
-                <div class="pro-list">
-                </div>
-            </div>
-
-            <!-- NXP -->
-            <div class="tab-pane fade show " id="pills-p7" role="tabpanel" aria-labelledby="pills-p7-tab">
-                <h2 style="color: var(--bs-body-bg);">暂无NXP相关描述</h2>
-            </div>
-
-            <!-- ST -->
-            <div class="tab-pane fade show " id="pills-p8" role="tabpanel" aria-labelledby="pills-p8-tab">
-                <h2 style="color: var(--bs-body-bg);">暂无ST相关描述</h2>
-            </div>
-        </div>
-    </div>
-    {% endif %}
-</div>
-<script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.min.js" crossorigin="anonymous"></script>
-<script>
-    new WOW().init();
-</script>
-<script>
-    var spinnerElement, searchElement;
-
-    window.onload = function () {
-        document.body.classList.remove("opacity-75");
-
-        spinnerElement = document.getElementById("spinner");
-        searchElement = document.getElementById("value");
-        if (spinnerElement) {
-            searchElement.addEventListener("keyup", function (event) {
-                event.preventDefault();
-                if (event.keyCode === 13) {
-                    doSearch()
-                }
-            });
+            // Search
+            var searchValue = searchElement.value.trim();
+            if (searchValue === "") {
+                return
+            }
+            document.body.classList.add("opacity-75");
+            spinnerElement.classList.remove("d-none");
+            if (/([a-zA-Z0-9]{1,11})/.test(searchValue)) {
+                document.location.href = `/search?q=${searchValue}`
+            }
         }
-    };
-
-    function doSearch() {
-        if (!spinnerElement || !searchElement) {
-            return
-        }
-
-        // Search
-        var searchValue = searchElement.value.trim();
-        if (searchValue === "") {
-            return
-        }
-        document.body.classList.add("opacity-75");
-        spinnerElement.classList.remove("d-none");
-        if (/([a-zA-Z0-9]{1,11})/.test(searchValue)) {
-            document.location.href = `/search?q=${searchValue}`
-        }
-    }
-</script>
+    </script>
 
 {% endblock content %}

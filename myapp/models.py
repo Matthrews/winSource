@@ -26,6 +26,7 @@ class Product(models.Model):
     Picture = models.URLField(verbose_name="图片链接", db_column='item_picture')  # item_picture
 
     class Meta:
+        ordering = ('PartNo',)
         verbose_name = "产品信息"
         verbose_name_plural = verbose_name
 
