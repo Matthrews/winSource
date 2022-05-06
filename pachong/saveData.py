@@ -9,7 +9,7 @@ from getData import getData
 
 if platform.system() in ["Windows", "Darwin"]:
     dbinfo = {
-        "host": "127.0.0.1",
+        "host": "django.chuanyun101.com",
         "user": "root",
         "password": "qq1788lover",
         "port": 3306,
@@ -52,21 +52,27 @@ def save_data(data):
 
 try:
     searchParam = sys.argv[1]  # 'a' 第一个参数
-    pagenumber = int(sys.argv[2])  # 1   第二个参数
+    pagenumber = sys.argv[2]  # 1   第二个参数
     duration = int(sys.argv[3])
 except:
     searchParam = input("输入搜索参数：")  # 第一个参数
     pagenumber = input("输入从第几页开始：")  # 第二个参数
-    duration = input("输入间隔时间：")
+    duration = int(input("输入间隔时间："))
 
 while True:
-    print(f"当前爬取的链接搜索参数是{searchParam}，页码是第{pagenumber}页")
-    data = getData(searchParam=searchParam, pagenumber=pagenumber)
-    if not data['next_page']:
+    try:
+        print(f"当前爬取的链接搜索参数是{searchParam}，页码是第{pagenumber}页")
+        data = getData(searchParam=searchParam, pagenumber=pagenumber)
+        if not data['next_page']:
+            save_data(data['data_list'])
+            break
+        # 存储爬取的当前页数据
         save_data(data['data_list'])
-        break
-    # 存储爬取的当前页数据
-    save_data(data['data_list'])
-    # 把页码设置为下一页
-    pagenumber = data['next_page']
-    time.sleep(duration)
+        # 把页码设置为下一页
+        pagenumber = data['next_page']
+        time.sleep(10)
+    except (IndexError, pymysql.err.OperationalError) as e:
+        print("报错信息为："+e)
+        duration += 60
+        print("报错后进行下一轮，尝试等待时间："+str(duration)+" 秒")
+        time.sleep(duration)
