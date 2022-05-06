@@ -61,7 +61,10 @@ except:
 
 while True:
     try:
-        print(f"当前爬取的链接搜索参数是{searchParam}，页码是第{pagenumber}页")
+        tip = f"当前爬取的链接搜索参数是{searchParam}，页码是第{pagenumber}页"
+        print(tip)
+        with open('./file.txt', mode='a+', encoding='utf-8') as f:
+            print(tip, file=f, end="\n")
         data = getData(searchParam=searchParam, pagenumber=pagenumber)
         if not data['next_page']:
             save_data(data['data_list'])
@@ -72,7 +75,7 @@ while True:
         pagenumber = data['next_page']
         time.sleep(10)
     except (IndexError, pymysql.err.OperationalError) as e:
-        print("报错信息为："+str(e))
+        print("报错信息为：" + str(e))
         duration += 60
-        print("报错后进行下一轮，尝试等待时间："+str(duration)+" 秒")
+        print("报错后进行下一轮，尝试等待时间：" + str(duration) + " 秒")
         time.sleep(duration)
