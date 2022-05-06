@@ -73,7 +73,7 @@ while True:
         save_data(data['data_list'])
         # 把页码设置为下一页
         pagenumber = data['next_page']
-        time.sleep(10)
+        time.sleep(240)
     except (IndexError, pymysql.err.OperationalError) as e:
         print("报错信息为：" + str(e))
         duration += 60
