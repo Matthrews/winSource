@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import platform
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, './extraApp')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -118,7 +120,7 @@ TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -135,3 +137,10 @@ MEDIA_ROOT = BASE_DIR.joinpath('upload')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+SIMPLEUI_HOME_INFO = False
+# SIMPLEUI_HOME_QUICK = False
+# SIMPLEUI_HOME_ACTION = False
+# SIMPLEUI_ANALYSIS = False
+# SIMPLEUI_HOME_TITLE = '百度一下你就知道' # 【首页】按钮文案配置
+# SIMPLEUI_HOME_PAGE = 'https://www.baidu.com' # 可用于嵌入其他链接，这里可以直接方便的嵌入报表链接
+# SIMPLEUI_HOME_ICON = 'el el-icon-platform-eleme'
