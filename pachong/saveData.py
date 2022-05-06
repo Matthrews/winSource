@@ -72,7 +72,7 @@ while True:
         pagenumber = data['next_page']
         time.sleep(10)
     except (IndexError, pymysql.err.OperationalError) as e:
-        print("报错信息为："+e)
+        print("报错信息为："+str(e))
         duration += 60
         print("报错后进行下一轮，尝试等待时间："+str(duration)+" 秒")
         time.sleep(duration)
