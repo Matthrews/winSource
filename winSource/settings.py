@@ -10,11 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from pathlib import Path
 import platform
+import sys
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, './extraApp')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -30,7 +32,6 @@ else:
     DEBUG = False
     Domain = "//"
 
-
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     'myapp',
     'background_task',
 ]
@@ -82,13 +84,12 @@ WSGI_APPLICATION = 'winSource.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'HOST': '127.0.0.1',
-        # 'DATABASE': 'winSource',
-        # "PASSWORD": "winSource",
-        # "PORT": 3306
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '127.0.0.1' if platform.system() in ["Windows", "Darwin"] else '45.11.92.182',
+        'NAME': 'winsourcedb',
+        "PORT": 3306,
+        'USER': 'root',
+        "PASSWORD": "qq1788lover",
     }
 }
 
@@ -113,13 +114,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -128,7 +129,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR.joinpath('static')]
 STATIC_ROOT = BASE_DIR.joinpath('collectstatic')
 
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('upload')
 
@@ -136,3 +136,11 @@ MEDIA_ROOT = BASE_DIR.joinpath('upload')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SIMPLEUI_HOME_INFO = False
+# SIMPLEUI_HOME_QUICK = False
+# SIMPLEUI_HOME_ACTION = False
+# SIMPLEUI_ANALYSIS = False
+# SIMPLEUI_HOME_TITLE = '百度一下你就知道' # 【首页】按钮文案配置
+# SIMPLEUI_HOME_PAGE = 'https://www.baidu.com' # 可用于嵌入其他链接，这里可以直接方便的嵌入报表链接
+# SIMPLEUI_HOME_ICON = 'el el-icon-platform-eleme'

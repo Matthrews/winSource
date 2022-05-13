@@ -1,2 +1,5 @@
 upload/
 *pyc
+.idea
+loguwsgi.log
+piduwsgi.pid
